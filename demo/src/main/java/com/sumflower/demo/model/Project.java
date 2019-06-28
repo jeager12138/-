@@ -25,45 +25,25 @@ public class Project {
     private String videoUrl;
     private double averageScore;
     private int submitStatus;     //提交状态 0已经提交 1还可修改
+    private int studentId;
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
 
     public Project(){}
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "id=" + id +
-                ", projectName='" + projectName + '\'' +
-                ", college='" + college + '\'' +
-                ", competitionType=" + competitionType +
-                ", studentName='" + studentName + '\'' +
-                ", studentNumber='" + studentNumber + '\'' +
-                ", birthDay='" + birthDay + '\'' +
-                ", education='" + education + '\'' +
-                ", major='" + major + '\'' +
-                ", entryYear='" + entryYear + '\'' +
-                ", projectFullName='" + projectFullName + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", friends='" + friends + '\'' +
-                ", projectType=" + projectType +
-                ", details='" + details + '\'' +
-                ", invention='" + invention + '\'' +
-                ", keywords='" + keywords + '\'' +
-                ", picUrl='" + picUrl + '\'' +
-                ", docUrl='" + docUrl + '\'' +
-                ", videoUrl='" + videoUrl + '\'' +
-                ", averageScore=" + averageScore +
-                ", submitStatus=" + submitStatus +
-                '}';
-    }
-
-    public Project(String projectName, String college, int competitionType, String studentName,
+    public Project(int id,String projectName, String college, int competitionType, String studentName,
                    String studentNumber, String birthDay, String education, String major,
                    String entryYear, String projectFullName, String address, String phone,
                    String email, String friends, int projectType, String details, String invention,
                    String keywords, String picUrl, String docUrl, String videoUrl,
                    double averageScore, int submitStatus){
+        this.id = id;
         this.projectName = projectName;
         this.college = college;
         this.competitionType = competitionType;
@@ -116,6 +96,7 @@ public class Project {
                 ", videoUrl='" + videoUrl + '\'' +
                 ", averageScore=" + averageScore +
                 ", submitStatus=" + submitStatus +
+                ", studentId=" + studentId +
                 '}';
     }
 
