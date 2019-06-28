@@ -4,7 +4,7 @@ public class Project {
     private int id;
     private String projectName;  //作品名称
     private String college;    //院系
-    private int competitonType;    //竞赛类别
+    private int competitionType;    //竞赛类别
     private String studentName;
     private String studentNumber;
     private String birthDay;
@@ -31,7 +31,7 @@ public class Project {
     public Project(String projectName,String college,int competitonType,String studentName,String studentNumber,String birthDay,String education,String major,String entryYear,String projectFullName,String address,String phone,String email,String friends,int projectType,String details,String invention,String keywords,String picUrl,String docUrl,String videoUrl,double averageScore,int submitStatus){
         this.projectName = projectName;
         this.college = college;
-        this.competitonType = competitonType;
+        this.competitionType = competitonType;
         this.studentName = studentName;
         this.studentNumber = studentNumber;
         this.birthDay = birthDay;
@@ -86,12 +86,12 @@ public class Project {
         this.college = college;
     }
 
-    public int getCompetitonType() {
-        return competitonType;
+    public int getCompetitionType() {
+        return competitionType;
     }
 
-    public void setCompetitonType(int competitonType) {
-        this.competitonType = competitonType;
+    public void setCompetitionType(int competitionType) {
+        this.competitionType = competitionType;
     }
 
     public String getStudentName() {
