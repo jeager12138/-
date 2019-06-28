@@ -28,10 +28,10 @@ public class Project {
 
     public Project(){}
 
-    public Project(String projectName,String college,int competitonType,String studentName,String studentNumber,String birthDay,String education,String major,String entryYear,String projectFullName,String address,String phone,String email,String friends,int projectType,String details,String invention,String keywords,String picUrl,String docUrl,String videoUrl,double averageScore,int submitStatus){
+    public Project(String projectName,String college,int competitionType,String studentName,String studentNumber,String birthDay,String education,String major,String entryYear,String projectFullName,String address,String phone,String email,String friends,int projectType,String details,String invention,String keywords,String picUrl,String docUrl,String videoUrl,double averageScore,int submitStatus){
         this.projectName = projectName;
         this.college = college;
-        this.competitionType = competitonType;
+        this.competitionType = competitionType;
         this.studentName = studentName;
         this.studentNumber = studentNumber;
         this.birthDay = birthDay;
