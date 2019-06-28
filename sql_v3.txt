@@ -1,0 +1,71 @@
+CREATE TABLE IF NOT EXISTS `StudentLogin`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `studentNumber` VARCHAR(20) NOT NULL,
+   `studentName` VARCHAR(30) NOT NULL,
+   `college` VARCHAR(50) NOT NULL,
+   `major` VARCHAR(50) NOT NULL,
+   `entryYear` VARCHAR(50) NOT NULL,
+   `phone` VARCHAR(20) NOT NULL,
+   `email` VARCHAR(50) NOT NULL,
+   `passwords` VARCHAR(40) NOT NULL,
+   `salt` VARCHAR(20) NOT NULL,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `ExpertLogin`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `email` VARCHAR(50) NOT NULL,
+   `passwords` VARCHAR(40) NOT NULL,
+   `salt` VARCHAR(20) NOT NULL,
+   `expertName` VARCHAR(30) NOT NULL,
+   `major` VARCHAR(50) NOT NULL,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `CommitteeLogin`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `userName` VARCHAR(30) NOT NULL,
+   `passwords` VARCHAR(40) NOT NULL,
+   `salt` VARCHAR(20) NOT NULL,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `Project`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `projectName` VARCHAR(100),
+   `college` VARCHAR(50),
+   `competitionType` int,
+   `studentName` VARCHAR(30),
+   `studentNumber` VARCHAR(20),
+   `birthDay` VARCHAR(30),
+   `education` VARCHAR(30),
+   `major` VARCHAR(50),
+   `entryYear` VARCHAR(50),
+   `projectFullName` VARCHAR(100),
+   `address` VARCHAR(200),
+   `phone` VARCHAR(40),
+   `email` VARCHAR(50),
+   `friends` TEXT,
+   `projectType` int,
+   `details` TEXT,
+   `invention` TEXT,
+   `keywords` VARCHAR(200),
+   `picUrl` TEXT,
+   `docUrl` TEXT,
+   `videoUrl` TEXT,
+   `averageScore` double,
+   `submitStatus` int,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `Judge`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `projectId` INT NOT NULL,
+   `score` INT,
+   `suggestion` TEXT,
+   `judgeStatus` int,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
