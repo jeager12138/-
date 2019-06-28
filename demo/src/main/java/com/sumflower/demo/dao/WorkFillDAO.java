@@ -17,7 +17,7 @@ public interface WorkFillDAO {
     ") values ( #{projectName}, #{college}, #{competitionType}, #{studentName}, #{studentNumber}, #{birthDay}, " +
             "#{education}, #{major}, #{entryYear}, #{projectFullName}, #{address}, #{phone}, #{email}," +
             " #{friends}, #{projectType}, #{details}, #{invention}, #{keywords}, " +
-            "#{picUrl}, #{docUrl}, #{videoUrl}, #{averageScore}, #{submitStatus}"})
+            "#{picUrl}, #{docUrl}, #{videoUrl}, #{averageScore}, #{submitStatus} )"})
     int addProject(Project project);
 
 }

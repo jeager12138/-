@@ -54,6 +54,36 @@ public class Project {
         this.submitStatus = submitStatus;
     }
 
+    @Override
+    public String toString() {
+        return "Project{" +
+                "id=" + id +
+                ", projectName='" + projectName + '\'' +
+                ", college='" + college + '\'' +
+                ", competitionType=" + competitionType +
+                ", studentName='" + studentName + '\'' +
+                ", studentNumber='" + studentNumber + '\'' +
+                ", birthDay='" + birthDay + '\'' +
+                ", education='" + education + '\'' +
+                ", major='" + major + '\'' +
+                ", entryYear='" + entryYear + '\'' +
+                ", projectFullName='" + projectFullName + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", friends='" + friends + '\'' +
+                ", projectType=" + projectType +
+                ", details='" + details + '\'' +
+                ", invention='" + invention + '\'' +
+                ", keywords='" + keywords + '\'' +
+                ", picUrl='" + picUrl + '\'' +
+                ", docUrl='" + docUrl + '\'' +
+                ", videoUrl='" + videoUrl + '\'' +
+                ", averageScore=" + averageScore +
+                ", submitStatus=" + submitStatus +
+                '}';
+    }
+
     public String getProjectName() {
         return projectName;
     }
