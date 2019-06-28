@@ -13,7 +13,6 @@ public class WinjaceController {
     @ResponseBody
     public Judge api2(){
         Judge j = new Judge();
-
         return j;
     }
 }
