@@ -26,6 +26,34 @@ public class Project {
     private double averageScore;
     private int submitStatus;     //提交状态 0已经提交 1还可修改
 
+    public Project(){}
+
+    public Project(String projectName,String college,int competitonType,String studentName,String studentNumber,String birthDay,String education,String major,String entryYear,String projectFullName,String address,String phone,String email,String friends,int projectType,String details,String invention,String keywords,String picUrl,String docUrl,String videoUrl,double averageScore,int submitStatus){
+        this.projectName = projectName;
+        this.college = college;
+        this.competitonType = competitonType;
+        this.studentName = studentName;
+        this.studentNumber = studentNumber;
+        this.birthDay = birthDay;
+        this.education = education;
+        this.major = major;
+        this.entryYear = entryYear;
+        this.projectFullName = projectFullName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.friends = friends;
+        this.projectType = projectType;
+        this.details = details;
+        this.invention = invention;
+        this.keywords = keywords;
+        this.picUrl = picUrl;
+        this.docUrl = docUrl;
+        this.videoUrl = videoUrl;
+        this.averageScore = averageScore;
+        this.submitStatus = submitStatus;
+    }
+
     public String getProjectName() {
         return projectName;
     }

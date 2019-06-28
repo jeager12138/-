@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `StudentLogin`(
 CREATE TABLE IF NOT EXISTS `ExpertLogin`(
    `id` INT UNSIGNED AUTO_INCREMENT,
    `email` VARCHAR(50) NOT NULL,
-   `passwords` VARCHAR(40) NOT NULL,
+   `passwords` varchar(40) NOT NULL DEFAULT ' ',
    `salt` VARCHAR(20) NOT NULL,
    `expertName` VARCHAR(30) NOT NULL,
    `major` VARCHAR(50) NOT NULL,
@@ -50,9 +50,9 @@ CREATE TABLE IF NOT EXISTS `Project`(
    `details` TEXT,
    `invention` TEXT,
    `keywords` VARCHAR(200),
-   `picUrl` TEXT,
-   `docUrl` TEXT,
-   `videoUrl` TEXT,
+   `picUrl` varchar(1000) DEFAULT ' ',
+   `docUrl` varchar(1000) DEFAULT ' ',
+   `videoUrl` varchar(1000) DEFAULT ' ',
    `averageScore` double,
    `submitStatus` int,
    PRIMARY KEY ( `id` )

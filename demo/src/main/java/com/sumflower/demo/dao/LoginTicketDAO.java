@@ -14,5 +14,4 @@ public interface LoginTicketDAO {
     ") values (#{userId}, #{expired}, #{userType}, #{ticket}, #{ticketStatus}"})
     int addTicket(LoginTicket ticket);
 
-
 }
