@@ -65,32 +65,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sumflower/demo/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Judge.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/Judge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#304#305#0" expanded="true" />
-                <element signature="e#349#350#0" expanded="true" />
-                <element signature="e#389#390#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#459#460#0" expanded="true" />
-                <element signature="e#511#512#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,9 +131,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/LoginTicket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sumflower/demo/dao/LoginTicketDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sumflower/demo/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/HostHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/Judge.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sumflower/demo/service/UserService.java" />
       </list>
     </option>
   </component>
@@ -331,12 +312,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561647498796</updated>
       <workItem from="1561647505130" duration="278000" />
-      <workItem from="1561681529037" duration="3226000" />
+      <workItem from="1561681529037" duration="3610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3504000" />
+    <option name="totallyTimeSpent" value="3888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="653" height="687" extended-state="0" />
@@ -475,16 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sumflower/demo/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/Judge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -498,6 +469,16 @@
             <element signature="e#459#460#0" expanded="true" />
             <element signature="e#511#512#0" expanded="true" />
             <element signature="e#555#556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sumflower/demo/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
