@@ -14,7 +14,7 @@ public class UserService {
     @Autowired
     LoginTicketDAO loginTicketDAO;
 
-    private String addLoginTicket(int userId, int userType) {
+    public String addLoginTicket(int userId, int userType) {
         LoginTicket ticket = new LoginTicket();
         ticket.setUserId(userId);
         Date date = new Date();
