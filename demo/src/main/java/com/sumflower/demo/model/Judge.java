@@ -7,7 +7,7 @@ public class Judge {
     private String expertName;
     private int score;
     private String suggestion;
-    private int judgeStatus;
+    private int judgeStatus;   //评审状态 0是已经提交 1是可以修改
 
     public int getExpertId() {
         return expertId;

@@ -5,9 +5,9 @@ import java.util.Date;
 public class LoginTicket {
     private int id;
     private int userId;
-    private Date expired;
-    private int ticketStatus;
-    private int userType;
+    private Date expired;  //过期时间
+    private int ticketStatus;  //0是有效 1是无效
+    private int userType;  //0参赛者 1专家 2校团委
     private String ticket;
 
     public int getId() {

@@ -2,29 +2,29 @@ package com.sumflower.demo.model;
 
 public class Project {
     private int id;
-    private String projectName;
-    private String college;
-    private int competitonType;
+    private String projectName;  //作品名称
+    private String college;    //院系
+    private int competitonType;    //竞赛类别
     private String studentName;
     private String studentNumber;
     private String birthDay;
-    private String education;
+    private String education;    //学历
     private String major;
     private String entryYear;
-    private String projectFullName;
+    private String projectFullName;  //作品全称
     private String address;
     private String phone;
     private String email;
-    private String friends;
-    private int projectType;
-    private String details;
-    private String invention;
+    private String friends;    //合作者情况
+    private int projectType;   //作品分类
+    private String details;    //作品总体情况说明
+    private String invention;  //创新点
     private String keywords;
     private String picUrl;
     private String docUrl;
     private String videoUrl;
     private double averageScore;
-    private int submitStatus;
+    private int submitStatus;     //提交状态 0已经提交 1还可修改
 
     public String getProjectName() {
         return projectName;

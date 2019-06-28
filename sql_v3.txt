@@ -61,9 +61,21 @@ CREATE TABLE IF NOT EXISTS `Project`(
 CREATE TABLE IF NOT EXISTS `Judge`(
    `id` INT UNSIGNED AUTO_INCREMENT,
    `projectId` INT NOT NULL,
+   `expertId` INT NOT NULL,
+   `expertName` VARCHAR(30) NOT NULL,
    `score` INT,
    `suggestion` TEXT,
    `judgeStatus` int,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `LoginTicket`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `userId` INT NOT NULL,
+   `expired` DATETIME NOT NULL,
+   `userType` INT NOT NULL,
+   `ticket` VARCHAR(45) NOT NULL,
+   `ticketStatus` INT NULL DEFAULT 0,
    PRIMARY KEY ( `id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
