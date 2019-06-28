@@ -1,4 +1,4 @@
-package com.sumflower.demo.controller;
+package com.sumflower.demo.Controller;
 
 import com.sumflower.demo.model.StudentLogin;
 import com.sumflower.demo.service.StudentService;
