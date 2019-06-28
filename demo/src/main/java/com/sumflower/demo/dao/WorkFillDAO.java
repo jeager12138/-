@@ -12,4 +12,12 @@ public interface WorkFillDAO {
             "entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl," +
             "docUrl,videoUrl,averageScore,submitStatus " ;
 
+
+    @Insert({" insert into ", TABLE_NAME, "(", INSERT_FILEDS,
+    ") values ( #{projectName}, #{college}, #{competitionType}, #{studentName}, #{studentNumber}, #{birthDay}, " +
+            "#{education}, #{major}, #{entryYear}, #{projectFullName}, #{address}, #{phone}, #{email}," +
+            " #{friends}, #{projectType}, #{details}, #{invention}, #{keywords}, " +
+            "#{picUrl}, #{docUrl}, #{videoUrl}, #{averageScore}, #{submitStatus} )"})
+    int addProject(Project project);
+
 }

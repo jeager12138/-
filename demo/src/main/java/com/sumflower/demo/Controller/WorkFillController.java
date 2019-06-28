@@ -21,15 +21,48 @@ public class WorkFillController {
     @RequestMapping(path = "/workFillTmp")
     @ResponseBody
     public String workFill(@RequestBody Map m){
-        return "";
+        System.out.println((m.get("projectName")).toString());
+        System.out.println(Integer.parseInt(m.get("competitionType").toString()));
+        System.out.println(Double.parseDouble((m.get("averageScore")).toString()));
+
+Project p = new Project((m.get("projectName")).toString(),(m.get("college")).toString(),Integer.parseInt((m.get("competitionType")).toString()),
+        (m.get("studentName")).toString(),(m.get("studentNumber")).toString(),(m.get("birthDay")).toString(),
+        (m.get("education")).toString(),(m.get("major")).toString(),(m.get("entryYear")).toString(),
+		(m.get("projectFullName")).toString(),(m.get("address")).toString(),(m.get("phone")).toString(),
+        (m.get("email")).toString(),(m.get("friends")).toString(),Integer.parseInt((m.get("projectType")).toString()),
+        (m.get("details")).toString(),(m.get("invention")).toString(),(m.get("keywords")).toString(),
+        (m.get("picUrl")).toString(),(m.get("docUrl")).toString(),(m.get("videoUrl")).toString(),
+        Double.parseDouble((m.get("averageScore")).toString()),	Integer.parseInt((m.get("submitStatus")).toString()));
+        System.out.println(p.toString());
+        int res = workFillDAO.addProject(p);
+        if(res > 0) return "Successful";
+        else return "Failed";
+        /*
+        Project p2 = new Project();
+        p2.setProjectName((m.get("projectName")).toString());
+        p2.setCompetitionType(1);
+        p2.setAverageScore(1);
+        p2.setProjectType(1);
+        p2.setSubmitStatus(1);
+        System.out.println(p2.toString());
+
+        int res = workFillDAO.addProject(p2);
+        if(res > 0) return "Successful";
+        else return "Failed";*/
     }
 
-    @RequestMapping(path = "/test")
+    @RequestMapping(path = "test")
     @ResponseBody
-    public String test(@RequestBody Map m){
-        System.out.println(m.get("projectName").toString());
-        Project p2 = new Project("","",1,"","","","","","","","","","","",1,"","","","","","",1,1);
-        System.out.println(p2.toString());
-        return "Success";
+    public String test(){
+        Project p2 = new Project();
+        p2.setProjectName("Winjace");
+        p2.setCompetitionType(1);
+        p2.setAverageScore(1);
+        p2.setProjectType(1);
+        p2.setSubmitStatus(1);
+        p2.setKeywords("");
+        int res = workFillDAO.addProject(p2);
+        if(res > 0) return "Successful";
+        else return "Failed";
     }
 }
