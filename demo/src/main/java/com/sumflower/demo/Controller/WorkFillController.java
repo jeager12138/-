@@ -1,7 +1,7 @@
 package com.sumflower.demo.Controller;
 
-import com.sumflower.demo.dao.WorkFillDAO;
-import com.sumflower.demo.model.Project;
+import com.sumflower.demo.dao.*;
+import com.sumflower.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.Map;
 
 @CrossOrigin
@@ -17,12 +21,49 @@ import java.util.Map;
 public class WorkFillController {
     @Autowired
     WorkFillDAO workFillDAO;
+    @Autowired
+    LoginTicketDAO loginTicketDAO;
+    @Autowired
+    HostHolder hostHolder;
+    @Autowired
+    StudentLoginDAO studentLoginDAO;
+    @Autowired
+    ExpertLoginDAO expertLoginDAO;
+    @Autowired
+    CommitteeLoginDAO committeeLoginDAO;
 
     @RequestMapping(path = "/api/CreateWork")
     @ResponseBody
     public int CreateWork(@RequestBody Map m){
         int res = workFillDAO.createProject(Integer.parseInt(m.get("studentId").toString()));
         return res > 0 ? 1:0;
+    }
+
+    @RequestMapping(path = "/api/CreateWorkCookie")
+    @ResponseBody
+    public int CreateWorkCookie(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+
+        String ticket = null;
+        if (httpServletRequest.getCookies() != null) {
+            for (Cookie cookie : httpServletRequest.getCookies()) {
+                if (cookie.getName().equals("ticket")) {
+                    ticket = cookie.getValue();
+                    break;
+                }
+            }
+        }
+
+        if (ticket != null) {
+            LoginTicket loginTicket = loginTicketDAO.selectTicket(ticket);
+            if (loginTicket == null || loginTicket.getExpired().before(new Date()) || loginTicket.getTicketStatus() != 0) {
+                return 1;
+            }
+
+            int res = workFillDAO.createProject(loginTicket.getUserId());
+            return res > 0 ? 1:0;
+        }
+
+        return 1;
     }
 
     @RequestMapping(path = "/api/UpdateWork")
