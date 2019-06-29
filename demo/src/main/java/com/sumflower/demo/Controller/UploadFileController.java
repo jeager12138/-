@@ -20,7 +20,7 @@ public class UploadFileController {
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
     public String upload(@RequestParam("file") MultipartFile file) throws IOException {// 文件上传
         BufferedOutputStream outputStream = new BufferedOutputStream(
-                new FileOutputStream(new File("/uploadFile"+file.getOriginalFilename())));
+                new FileOutputStream(new File("/root/uploadFile"+file.getOriginalFilename())));
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
