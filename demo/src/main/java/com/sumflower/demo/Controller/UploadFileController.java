@@ -19,8 +19,9 @@ public class UploadFileController {
     @ResponseBody
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
     public String upload(@RequestParam("file") MultipartFile file) throws IOException {// 文件上传
+        File f = new File("/home/uploadFile/abc.txt");
         BufferedOutputStream outputStream = new BufferedOutputStream(
-                new FileOutputStream(new File("/root/uploadFile"+file.getOriginalFilename())));
+                new FileOutputStream(new File("/home/uploadFile/"+file.getOriginalFilename())));
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
