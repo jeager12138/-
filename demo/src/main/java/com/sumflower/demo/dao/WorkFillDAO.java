@@ -4,6 +4,8 @@ import com.sumflower.demo.model.LoginTicket;
 import com.sumflower.demo.model.Project;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface WorkFillDAO {
     String TABLE_NAME = "Project";
@@ -34,5 +36,8 @@ public interface WorkFillDAO {
 
     @Select({"Select * From " , TABLE_NAME , " where id = #{id}"})
     Project getInfo(int id);
+
+    @Select({"Select * From " , TABLE_NAME , " where studentId = #{studentId}"})
+    List<Project> getWorkList(int studentId);
 
 }
