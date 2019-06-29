@@ -14,6 +14,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin
@@ -130,6 +131,14 @@ public class WorkFillController {
         int res = workFillDAO.updateProject(p);
         System.out.println(p.toString());
         return res > 0 ? 1:0;
+    }
+
+    @RequestMapping(path = {"/api/ViewWorkList"})
+    @ResponseBody
+    public List<Project> ViewWorkList(@RequestBody Map m){
+        int id = Integer.parseInt((m.get("studentId")).toString());
+        List<Project> projectList = workFillDAO.getWorkList(id);
+        return  projectList;
     }
 
 
