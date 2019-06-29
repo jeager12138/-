@@ -14,6 +14,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -135,10 +136,13 @@ public class WorkFillController {
 
     @RequestMapping(path = {"/api/ViewWorkList"})
     @ResponseBody
-    public List<Project> ViewWorkList(@RequestBody Map m){
+    public Map<String, Object> ViewWorkList(@RequestBody Map m){
         int id = Integer.parseInt((m.get("studentId")).toString());
+        Map<String,Object> map = new HashMap<>();
         List<Project> projectList = workFillDAO.getWorkList(id);
-        return  projectList;
+        map.put("projectList", projectList);
+        map.put("length", projectList.size());
+        return map;
     }
 
 
