@@ -1,9 +1,12 @@
 package com.sumflower.demo.service;
 
 
+import com.sumflower.demo.Controller.LoginController;
 import com.sumflower.demo.dao.StudentLoginDAO;
 import com.sumflower.demo.model.StudentLogin;
 import com.sumflower.demo.util.SunflowerUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,8 @@ import java.util.UUID;
 
 @Service
 public class StudentService {
+
+    private static final Logger logger = LoggerFactory.getLogger(StudentService.class);
 
     @Autowired
     StudentLoginDAO studentLoginDAO;
@@ -28,6 +33,7 @@ public class StudentService {
         Map<String, Object> map = new HashMap<>();
 
         StudentLogin student = studentLoginDAO.selectByStudentNumber(userName);
+
         if (student != null) {
             map.put("msg", "用户名已被注册");
             return map;
