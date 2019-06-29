@@ -2,6 +2,7 @@ package com.sumflower.demo.service;
 
 
 import com.sumflower.demo.dao.LoginTicketDAO;
+import com.sumflower.demo.model.HostHolder;
 import com.sumflower.demo.model.LoginTicket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,10 +10,15 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.UUID;
 
+
+
 @Service
 public class UserService {
     @Autowired
     LoginTicketDAO loginTicketDAO;
+    @Autowired
+    HostHolder hostHolder;
+
 
     public String addLoginTicket(int userId, int userType) {
         LoginTicket ticket = new LoginTicket();

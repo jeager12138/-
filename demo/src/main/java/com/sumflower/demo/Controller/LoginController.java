@@ -58,8 +58,12 @@ public class LoginController {
     public String expertReg(@RequestBody Map m,
                             HttpServletResponse response) {
         String email = (m.get("email")).toString();
+        logger.error(m.get("email").toString());
         String passwords = (m.get("passwords")).toString();
+        logger.error(m.get("passwords").toString());
+
         Map<String, Object> map = expertService.register(email, passwords);
+
         if (map.containsKey("ticket")) {
             Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
             cookie.setPath("/");
@@ -78,7 +82,7 @@ public class LoginController {
                                HttpServletResponse response) {
         String userName = (m.get("userName")).toString();
         String passwords = (m.get("passwords")).toString();
-        String userType = (m.get("userType")).toString();
+        String userType = "1";
 
         Map<String, Object> map = null;
         if (userType.equals("1")) {
