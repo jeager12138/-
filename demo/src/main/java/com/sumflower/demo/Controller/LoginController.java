@@ -12,6 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
+@CrossOrigin
 @Controller
 public class LoginController {
     @Autowired
@@ -25,15 +26,18 @@ public class LoginController {
 
     @RequestMapping(path = {"/studentReg/"}, method = {RequestMethod.POST})
     @ResponseBody
-    public String studentReg(@RequestParam("userName") String userName,
-                             @RequestParam("passwords") String passwords,
-                             @RequestParam("studentName") String studentName,
-                             @RequestParam("college") String college,
-                             @RequestParam("major") String major,
-                             @RequestParam("entryYear") String entryYear,
-                             @RequestParam("phone") String phone,
-                             @RequestParam("email") String email,
+    public String studentReg(@RequestBody Map m,
                              HttpServletResponse response) {
+
+        String userName = (m.get("studentNumber")).toString();
+        String passwords = (m.get("password")).toString();
+        String studentName = (m.get("studentName")).toString();
+        String college = (m.get("college")).toString();
+        String major = (m.get("major")).toString();
+        String entryYear = (m.get("entryYear")).toString();
+        String phone = (m.get("mobile")).toString();
+        String email = (m.get("email")).toString();
+
         Map<String, Object> map = studentService.register(userName, passwords, studentName, college, major, entryYear, phone, email);
         if (map.containsKey("ticket")) {
             Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
@@ -48,9 +52,10 @@ public class LoginController {
 
     @RequestMapping(path = {"/expertReg/"}, method = {RequestMethod.POST})
     @ResponseBody
-    public String expertReg(@RequestParam("email") String email,
-                            @RequestParam("passwords") String passwords,
+    public String expertReg(@RequestBody Map m,
                             HttpServletResponse response) {
+        String email = (m.get("email")).toString();
+        String passwords = (m.get("passwords")).toString();
         Map<String, Object> map = expertService.register(email, passwords);
         if (map.containsKey("ticket")) {
             Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
@@ -63,12 +68,15 @@ public class LoginController {
         }
     }
 
+
     @RequestMapping(path = {"/login/"}, method = {RequestMethod.POST})
     @ResponseBody
-    public String studentLogin(@RequestParam("userName") String userName,
-                               @RequestParam("passwords") String passwords,
-                               @RequestParam("userType") String userType,
+    public String studentLogin(@RequestBody Map m,
                                HttpServletResponse response) {
+        String userName = (m.get("userName")).toString();
+        String passwords = (m.get("passwords")).toString();
+        String userType = (m.get("userType")).toString();
+
         Map<String, Object> map = null;
         if (userType.equals("1")) {
             map = studentService.login(userName, passwords);
