@@ -23,6 +23,9 @@ public interface WorkFillDAO {
             "invention = #{invention},keywords = #{keywords},picUrl = #{picUrl},docUrl = #{docUrl}," +
             "videoUrl = #{videoUrl},submitStatus = #{submitStatus} where id = #{id}"})
     int updateProject(Project project);
+
+    @Update({"update Project set submitStatus = 0 where id = #{id}"})
+    int updateProjectStatus(int id);
     /*
     @Insert({" insert into ", TABLE_NAME, "(", INSERT_FILEDS,
     ") values ( #{projectName}, #{college}, #{competitionType}, #{studentName}, #{studentNumber}, #{birthDay}, " +

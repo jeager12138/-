@@ -96,7 +96,5 @@ public class LoginController {
             return map.get("msg").toString();
         }
     }
-
-
 }
 
