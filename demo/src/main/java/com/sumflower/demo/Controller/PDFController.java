@@ -114,7 +114,7 @@ public class PDFController{
             // 7遍历data 给pdf表单表格赋值
             for (String key : data.keySet()) {
 
-                form.setFieldProperty(key, "textfont",bfChinese, null);// 设置字体
+                form.setFieldProperty(key, "textfont",font, null);// 设置字体
                 form.setField(key, data.get(key).toString());
             }
 
