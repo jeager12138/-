@@ -17,14 +17,7 @@ public class UploadFileController {
     @Autowired
     HostHolder hostHolder;
 
-    @RequestMapping(path = "/upload", method = RequestMethod.GET)
-    public String file() {
-        return "file";
-    }
-
-    @ResponseBody
-    @RequestMapping(path = "/upload", method = RequestMethod.POST)
-    public String upload(@RequestParam("file") MultipartFile file) throws IOException {// 文件上传
+    public String upload(String id,MultipartFile file) throws IOException {// 文件上传
 
         LoginTicket loginTicket = hostHolder.getLoginTicket();
         String filename;
@@ -43,6 +36,7 @@ public class UploadFileController {
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
                         (new File("/var/www/html/"+filename)));
+        String FileUrl = "http://liuterry.cn/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
         /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
                 new FileOutputStream(new File(filename)));
@@ -50,6 +44,6 @@ public class UploadFileController {
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
-        return "Finished";
+        return FileUrl;
     }
 }
