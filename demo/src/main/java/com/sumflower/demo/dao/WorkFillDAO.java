@@ -20,7 +20,7 @@ public interface WorkFillDAO {
             "studentName = #{studentName},studentNumber = #{studentNumber},birthDay = #{birthDay},education = #{education}," +
             "major = #{major},entryYear = #{entryYear},projectFullName = #{projectFullName},address = #{address}," +
             "phone = #{phone},email = #{email},friends = #{friends},projectType = #{projectType},details = #{details}," +
-            "invention = #{invention},keywords = #{keywords},picUrl = #{picUrl},docUrl = #{docUrl}," +
+            "invention = #{invention},keywords = #{keywords}," +
             "videoUrl = #{videoUrl},submitStatus = #{submitStatus} where id = #{id}"})
     int updateProject(Project project);
 

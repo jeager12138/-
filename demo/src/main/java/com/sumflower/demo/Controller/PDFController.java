@@ -76,11 +76,12 @@ public class PDFController{
             Map<String, Object> data = new HashMap<String, Object>();
             data.put("id", p.getId());
             data.put("projectName", p.getProjectName());
+            data.put("college",p.getCollege());
             if(p.getCompetitionType() == 0){
-                data.put("competitionType0","@");
+                data.put("competitionType0","1");
             }
             else{
-                data.put("competitionType1","@");
+                data.put("competitionType1","1");
             }
             data.put("studentName",p.getStudentName());
             data.put("studentNumber",p.getStudentNumber());
