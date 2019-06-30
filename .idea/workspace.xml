@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e275b1-6ecf-4a43-9a9e-6aa1540586c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/my.log" beforeDir="false" afterPath="$PROJECT_DIR$/demo/my.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/UploadFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/UploadFileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/UploadFileController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/TEST-com.sumflower.demo.DemoApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/TEST-com.sumflower.demo.DemoApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/com.sumflower.demo.DemoApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/com.sumflower.demo.DemoApplicationTests.txt" afterDir="false" />
     </list>
@@ -65,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkDetailController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state relative-caret-position="156">
+              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -285,7 +284,7 @@
       <workItem from="1561770444752" duration="7723000" />
       <workItem from="1561792973032" duration="123000" />
       <workItem from="1561813304902" duration="1732000" />
-      <workItem from="1561856157810" duration="14016000" />
+      <workItem from="1561856157810" duration="14271000" />
     </task>
     <task id="LOCAL-00001" summary="test setcookies">
       <created>1561772762551</created>
@@ -406,11 +405,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561881467425</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add getWorkDetail">
+      <created>1561882609710</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1561882609710</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23594000" />
+    <option name="totallyTimeSpent" value="23849000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -423,7 +429,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3116622" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -436,7 +441,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932975" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7593834" visible="true" weight="0.12150838" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7593834" visible="true" weight="0.27793297" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -444,7 +449,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932975" weight="0.3282123" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24061662" side_tool="true" visible="true" weight="0.12150838" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24061662" side_tool="true" visible="true" weight="0.27793297" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49865952" weight="0.30307263" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -492,7 +497,8 @@
     <MESSAGE value="not ignore local *.iml" />
     <MESSAGE value="upload(int id, multipartFile file) for server" />
     <MESSAGE value="upload(int id, multipartFile file) for server2" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload(int id, multipartFile file) for server2" />
+    <MESSAGE value="add getWorkDetail" />
+    <option name="LAST_COMMIT_MESSAGE" value="add getWorkDetail" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/configuration/WebConfiguration.java">
@@ -632,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkDetailController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        <state relative-caret-position="156">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
