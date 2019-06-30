@@ -40,10 +40,13 @@ public class UploadFileController {
         {
             filename = "expert_"+file.getOriginalFilename();
         }
-        //BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(new File("/var/www/html/"+filename)));
-        //本地测试
+        BufferedOutputStream outputStream =
+                new BufferedOutputStream(new FileOutputStream
+                        (new File("/var/www/html/"+filename)));
+        /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
                 new FileOutputStream(new File(filename)));
+        */
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
