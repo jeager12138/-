@@ -13,7 +13,6 @@ HELP.md
 
 ### IntelliJ IDEA ###
 *.iws
-*.iml
 *.ipr
 
 ### NetBeans ###
