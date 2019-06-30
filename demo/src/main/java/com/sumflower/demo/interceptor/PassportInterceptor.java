@@ -1,10 +1,13 @@
 package com.sumflower.demo.interceptor;
 
+import com.sumflower.demo.Controller.LoginController;
 import com.sumflower.demo.dao.CommitteeLoginDAO;
 import com.sumflower.demo.dao.ExpertLoginDAO;
 import com.sumflower.demo.dao.LoginTicketDAO;
 import com.sumflower.demo.dao.StudentLoginDAO;
 import com.sumflower.demo.model.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -17,6 +20,8 @@ import java.util.Date;
 
 @Component
 public class PassportInterceptor implements HandlerInterceptor {
+    private static final Logger logger = LoggerFactory.getLogger(PassportInterceptor.class);
+
     @Autowired
     LoginTicketDAO loginTicketDAO;
     @Autowired
@@ -46,10 +51,11 @@ public class PassportInterceptor implements HandlerInterceptor {
                 return true;
             }
 
-            if (loginTicket.getUserType() == 1) {
+            hostHolder.setLoginTicket(loginTicket);
+            if (loginTicket.getUserType() == 0) {
                 StudentLogin student = studentLoginDAO.selectById(loginTicket.getUserId());
                 hostHolder.setStudents(student);
-            } else if (loginTicket.getUserType() == 2) {
+            } else if (loginTicket.getUserType() == 1) {
                 ExpertLogin expert = expertLoginDAO.selectById(loginTicket.getUserId());
                 hostHolder.setExperts(expert);
             } else {
