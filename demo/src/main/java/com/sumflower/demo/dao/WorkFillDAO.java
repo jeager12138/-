@@ -21,7 +21,7 @@ public interface WorkFillDAO {
             "major = #{major},entryYear = #{entryYear},projectFullName = #{projectFullName},address = #{address}," +
             "phone = #{phone},email = #{email},friends = #{friends},projectType = #{projectType},details = #{details}," +
             "invention = #{invention},keywords = #{keywords}," +
-            "videoUrl = #{videoUrl},submitStatus = #{submitStatus} where id = #{id}"})
+            "submitStatus = #{submitStatus} where id = #{id}"})
     int updateProject(Project project);
 
     @Update({"update Project set submitStatus = 0 where id = #{id}"})
