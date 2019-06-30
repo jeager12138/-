@@ -4,7 +4,7 @@ public class Project {
     private int id;
     private String projectName;  //作品名称
     private String college;    //院系
-    private int competitionType;    //竞赛类别
+    private int competitionType;    //竞赛类别 0是科技发明制作，1是调查报告和学术论文
     private String studentName;
     private String studentNumber;
     private String birthDay;
@@ -16,7 +16,7 @@ public class Project {
     private String phone;
     private String email;
     private String friends;    //合作者情况
-    private int projectType;   //作品分类
+    private int projectType;   //作品分类,0~5对应A~F
     private String details;    //作品总体情况说明
     private String invention;  //创新点
     private String keywords;
