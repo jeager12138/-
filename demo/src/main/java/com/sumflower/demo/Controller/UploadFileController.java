@@ -3,9 +3,12 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Map;
 
+import com.sumflower.demo.dao.UploadFileDao;
 import com.sumflower.demo.model.HostHolder;
 import com.sumflower.demo.model.LoginTicket;
+import com.sumflower.demo.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +20,14 @@ public class UploadFileController {
     @Autowired
     HostHolder hostHolder;
 
-    public String upload(String id,MultipartFile file) throws IOException {// 文件上传
+    @Autowired
+    UploadFileDao uploadFileDao;
 
+    @RequestMapping(path = "/upload", method = RequestMethod.POST)
+    @ResponseBody
+    public String upload(@RequestParam("id") int id , @RequestParam("file") MultipartFile file) throws IOException {// 文件上传
+
+        System.out.println(id);
         LoginTicket loginTicket = hostHolder.getLoginTicket();
         String filename;
         System.out.println(loginTicket.getUserType());
@@ -33,17 +42,39 @@ public class UploadFileController {
         {
             filename = "expert_"+file.getOriginalFilename();
         }
-        BufferedOutputStream outputStream =
-                new BufferedOutputStream(new FileOutputStream
-                        (new File("/var/www/html/"+filename)));
-        String FileUrl = "http://liuterry.cn/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
         /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
                 new FileOutputStream(new File(filename)));
         */
+
+        BufferedOutputStream outputStream =
+                new BufferedOutputStream(new FileOutputStream
+                        (new File("/var/www/html/"+filename)));
+
+
+        String FileUrl = "http://liuterry.cn/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
+        String docUrl = "" , picUrl = "" , videoUrl = "";
+        if (FileUrl.endsWith("pdf") | FileUrl.endsWith("PDF")) {
+            docUrl = FileUrl + ";";
+        }else if(FileUrl.endsWith("jpg") | FileUrl.endsWith("JPG"))
+        {
+            picUrl = FileUrl + ";";
+        }else if(FileUrl.endsWith("mp4") | FileUrl.endsWith("MP4"))
+        {
+            videoUrl = FileUrl + ";";
+        }
+
+        Project project = new Project();
+        project.setDocUrl(docUrl);
+        project.setPicUrl(picUrl);
+        project.setVideoUrl(videoUrl);
+        project.setId(id);
+        //project.setId(Integer.parseInt(id.toString()));
+        uploadFileDao.updateFileUrl(project);
+
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
-        return FileUrl;
+        return "Finished";
     }
 }
