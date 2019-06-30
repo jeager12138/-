@@ -52,10 +52,10 @@ public class PassportInterceptor implements HandlerInterceptor {
             }
 
             hostHolder.setLoginTicket(loginTicket);
-            if (loginTicket.getUserType() == 1) {
+            if (loginTicket.getUserType() == 0) {
                 StudentLogin student = studentLoginDAO.selectById(loginTicket.getUserId());
                 hostHolder.setStudents(student);
-            } else if (loginTicket.getUserType() == 2) {
+            } else if (loginTicket.getUserType() == 1) {
                 ExpertLogin expert = expertLoginDAO.selectById(loginTicket.getUserId());
                 hostHolder.setExperts(expert);
             } else {
