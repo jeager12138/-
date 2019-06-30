@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9e275b1-6ecf-4a43-9a9e-6aa1540586c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkFillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkFillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/RanderousController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/UploadFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/UploadFileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/WinjaceController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/WorkFillController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/configuration/WebConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/dao/CommitteeLoginDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/dao/ExpertLoginDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/interceptor/PassportInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/model/Judge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/service/CommitteeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/service/ExpertService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/util/SunflowerUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/test-classes/com/sumflower/demo/DemoApplicationTests.class" beforeDir="false" />
-    </list>
+    <list default="true" id="b9e275b1-6ecf-4a43-9a9e-6aa1540586c7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/RanderousController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1692">
@@ -64,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/dao/WorkFillDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="532">
               <caret line="23" column="34" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="34" />
             </state>
           </provider>
@@ -155,6 +138,61 @@
               <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -209,7 +247,7 @@
       <workItem from="1561770444752" duration="7723000" />
       <workItem from="1561792973032" duration="123000" />
       <workItem from="1561813304902" duration="1732000" />
-      <workItem from="1561856157810" duration="10048000" />
+      <workItem from="1561856157810" duration="10430000" />
     </task>
     <task id="LOCAL-00001" summary="test setcookies">
       <created>1561772762551</created>
@@ -295,11 +333,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561862874747</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="nothing to do">
+      <created>1561877492392</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1561877492392</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19626000" />
+    <option name="totallyTimeSpent" value="20008000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -311,7 +356,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3116622" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -365,7 +411,8 @@
     <MESSAGE value="add prefix type for different types of uploader for upload file" />
     <MESSAGE value="test server add prefix type for different types of uploader for upload file" />
     <MESSAGE value="add winjey's code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add winjey's code" />
+    <MESSAGE value="nothing to do" />
+    <option name="LAST_COMMIT_MESSAGE" value="nothing to do" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/configuration/WebConfiguration.java">
@@ -462,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/dao/WorkFillDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/UploadFileController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -493,6 +533,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/dao/WorkFillDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="34" />
         </state>
       </provider>
     </entry>
