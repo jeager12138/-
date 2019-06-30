@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.itextpdf.text.Font;
 import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
@@ -63,8 +63,11 @@ public class PDFController{
             AcroFields form = ps.getAcroFields();
 
             // 5给表单添加中文字体 这里采用系统字体。不设置的话，中文可能无法显示
-            BaseFont bf = BaseFont.createFont("/Fonts/simsunb.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            form.addSubstitutionFont(bf);
+            //BaseFont bf = BaseFont.createFont("/Fonts/simsunb.TTF", BaseFont.IDENTITY_H,BaseFont.NOT_EMBEDDED);
+            BaseFont bfChinese = BaseFont.createFont( "STSongStd-Light" ,"UniGB-UCS2-H",BaseFont.NOT_EMBEDDED);
+            Font font = new Font(bfChinese, 12,Font.NORMAL);
+            //form.addSubstitutionFont(font);
+            //BaseFont bf = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
 
             // 6查询数据
             //int id = Integer.parseInt(m.get("id").toString());
@@ -74,10 +77,10 @@ public class PDFController{
             data.put("id", p.getId());
             data.put("projectName", p.getProjectName());
             if(p.getCompetitionType() == 0){
-                data.put("competitionType0","*");
+                data.put("competitionType0","@");
             }
             else{
-                data.put("competitionType1","*");
+                data.put("competitionType1","@");
             }
             data.put("studentName",p.getStudentName());
             data.put("studentNumber",p.getStudentNumber());
@@ -107,9 +110,11 @@ public class PDFController{
             data.put("keywords",p.getKeywords());
 
 
+            //Font font = new Font(bf, 12, Font.NORMAL);
             // 7遍历data 给pdf表单表格赋值
             for (String key : data.keySet()) {
-                form.setFieldProperty(key, "textfont", bf, null);// 设置字体
+
+                form.setFieldProperty(key, "textfont",bfChinese, null);// 设置字体
                 form.setField(key, data.get(key).toString());
             }
 
