@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b9e275b1-6ecf-4a43-9a9e-6aa1540586c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/UploadFileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/TEST-com.sumflower.demo.DemoApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/TEST-com.sumflower.demo.DemoApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/com.sumflower.demo.DemoApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/com.sumflower.demo.DemoApplicationTests.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkFillController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2322">
-              <caret line="118" selection-start-line="118" selection-end-line="118" />
+            <state relative-caret-position="366">
+              <caret line="129" column="32" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,14 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkDetailController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/TerryTestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -128,8 +122,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="747" />
-    <option name="y" value="212" />
+    <option name="x" value="593" />
+    <option name="y" value="157" />
     <option name="width" value="1222" />
     <option name="height" value="1103" />
   </component>
@@ -175,59 +169,7 @@
               <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sunflower-Cup-Competition-Reporting-System" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,7 +226,7 @@
       <workItem from="1561770444752" duration="7723000" />
       <workItem from="1561792973032" duration="123000" />
       <workItem from="1561813304902" duration="1732000" />
-      <workItem from="1561856157810" duration="14271000" />
+      <workItem from="1561856157810" duration="15407000" />
     </task>
     <task id="LOCAL-00001" summary="test setcookies">
       <created>1561772762551</created>
@@ -412,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561882609710</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="remove GetWorkDetail">
+      <created>1561882827869</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1561882827869</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23849000" />
+    <option name="totallyTimeSpent" value="24985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -430,7 +379,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3116622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18096514" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -498,7 +447,8 @@
     <MESSAGE value="upload(int id, multipartFile file) for server" />
     <MESSAGE value="upload(int id, multipartFile file) for server2" />
     <MESSAGE value="add getWorkDetail" />
-    <option name="LAST_COMMIT_MESSAGE" value="add getWorkDetail" />
+    <MESSAGE value="remove GetWorkDetail" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove GetWorkDetail" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/configuration/WebConfiguration.java">
@@ -595,16 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkFillController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2322">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/RanderousController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1692">
@@ -640,6 +580,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/TerryTestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/Controller/WorkFillController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="129" column="32" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
