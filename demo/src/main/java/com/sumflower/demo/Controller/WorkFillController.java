@@ -136,14 +136,12 @@ public class WorkFillController {
 
     @RequestMapping(path = {"/api/ViewWorkList"})
     @ResponseBody
-    public Map<String, Object> ViewWorkList(@RequestBody Map m){
+    public List<Project> ViewWorkList(@RequestBody Map m){
         int id = Integer.parseInt((m.get("studentId")).toString());
-        Map<String,Object> map = new HashMap<>();
         List<Project> projectList = workFillDAO.getWorkList(id);
-        map.put("projectList", projectList);
-        map.put("length", projectList.size());
-        return map;
+        return projectList;
     }
+
 
 
     @RequestMapping(path = {"/api/ViewWorkInfo"})

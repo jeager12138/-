@@ -28,20 +28,25 @@ public class UploadFileController {
 
         LoginTicket loginTicket = hostHolder.getLoginTicket();
         String filename;
+        System.out.println(loginTicket.getUserType());
         if(loginTicket.getUserType() == 0)//student
         {
-            filename = loginTicket.getUserId() + "_" + file.getOriginalFilename();
+
+            filename = "student_"+loginTicket.getUserId() + "_" + file.getOriginalFilename();
         }else if(loginTicket.getUserType() == 2)//committee
         {
             filename = "committee" + "_" +file.getOriginalFilename();
         }else
         {
-            filename = file.getOriginalFilename();
+            filename = "expert_"+file.getOriginalFilename();
         }
-        //BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(new File("/var/www/html/"+filename)));
-        //本地测试
+        BufferedOutputStream outputStream =
+                new BufferedOutputStream(new FileOutputStream
+                        (new File("/var/www/html/"+filename)));
+        /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
                 new FileOutputStream(new File(filename)));
+        */
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
