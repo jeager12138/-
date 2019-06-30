@@ -68,7 +68,7 @@ public class UploadFileController {
         project.setDocUrl(docUrl);
         project.setPicUrl(picUrl);
         project.setVideoUrl(videoUrl);
-        project.setId(11);
+        project.setId(id);
         //project.setId(Integer.parseInt(id.toString()));
         uploadFileDao.updateFileUrl(project);
 
