@@ -82,12 +82,12 @@ public class LoginController {
                                HttpServletResponse response) {
         String userName = (m.get("userName")).toString();
         String passwords = (m.get("passwords")).toString();
-        String userType = "1";
+        String userType = (m.get("userType")).toString();
 
         Map<String, Object> map = null;
-        if (userType.equals("1")) {
+        if (userType.equals("0")) {
             map = studentService.login(userName, passwords);
-        } else if (userType.equals("2")) {
+        } else if (userType.equals("1")) {
             map = expertService.login(userName, passwords);
         } else {
             map = committeeService.login(userName, passwords);

@@ -50,7 +50,7 @@ public class StudentService {
         student.setPassword(SunflowerUtil.MD5(passwords + student.getSalt()));
         studentLoginDAO.addStudent(student);
 
-        String ticket = userService.addLoginTicket(student.getId(), 1);
+        String ticket = userService.addLoginTicket(student.getId(), 0);
         map.put("ticket", ticket);
 
         return map;
@@ -70,7 +70,7 @@ public class StudentService {
             return map;
         }
 
-        String ticket = userService.addLoginTicket(student.getId(), 1);
+        String ticket = userService.addLoginTicket(student.getId(), 0);
         map.put("ticket", ticket);
         return map;
     }

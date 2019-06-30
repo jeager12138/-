@@ -26,7 +26,7 @@ public class ExpertService {
         expert.setPassword(SunflowerUtil.MD5(passwords + expert.getSalt()));
         expertLoginDAO.updateExpert(expert);
 
-        String ticket = userService.addLoginTicket(expert.getId(), 2);
+        String ticket = userService.addLoginTicket(expert.getId(), 1);
         map.put("ticket", ticket);
         return map;
     }
@@ -43,7 +43,7 @@ public class ExpertService {
             map.put("msg", "密码不正确");
             return map;
         }
-        String ticket = userService.addLoginTicket(expert.getId(), 2);
+        String ticket = userService.addLoginTicket(expert.getId(), 1);
         map.put("ticket", ticket);
         return map;
     }
