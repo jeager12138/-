@@ -37,8 +37,15 @@ public class WorkFillController {
     @RequestMapping(path = "/api/CreateWork")
     @ResponseBody
     public int CreateWork(@RequestBody Map m){
-        int res = workFillDAO.createProject(Integer.parseInt(m.get("studentId").toString()));
-        return res > 0 ? 1 : 0;
+        int studentId = Integer.parseInt(m.get("studentId").toString());
+        workFillDAO.createProject(studentId);
+        List<Project> projectList = workFillDAO.getWorkList(studentId);
+        if(projectList.size() > 0){
+            int id = projectList.get(projectList.size()-1).getId();
+            return id;
+        }else{
+            return 1000;
+        }
     }
 
     @RequestMapping(path = "/api/CreateWorkCookie")
@@ -84,7 +91,7 @@ public class WorkFillController {
         String address = (m.get("address")).toString();
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
-        String friends = (m.get("friends")).toString();
+        String friends = (m.get("friends")).toString()+"friends";
         int projectType = Integer.parseInt((m.get("projectType")).toString());
         String details = (m.get("details")).toString();
         String invention = (m.get("invention")).toString();
@@ -113,9 +120,7 @@ public class WorkFillController {
     @ResponseBody
     public List<Project> ViewWorkList(@RequestBody Map m){
         int id = Integer.parseInt((m.get("studentId")).toString());
-        Map<String,Object> map = new HashMap<>();
         List<Project> projectList = workFillDAO.getWorkList(id);
-        map.put("projectList", projectList);
         return projectList;
     }
 
