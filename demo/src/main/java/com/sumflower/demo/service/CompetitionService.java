@@ -22,6 +22,7 @@ public class CompetitionService {
             map.put("msg", "竞赛名称重复");
             return map;
         } else {
+            c = new Competition();
             c.setCompetitionName(competitionName);
             c.setDescription(description);
             c.setStartTime(startTime);

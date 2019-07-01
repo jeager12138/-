@@ -47,9 +47,9 @@ public class LoginController {
             cookie.setPath("/");
             response.addCookie(cookie);
 
-            return "success";
+            return map.get("ticket").toString();
         } else {
-            return map.get("msg").toString();
+            return "fail";
         }
     }
 
@@ -69,9 +69,9 @@ public class LoginController {
             cookie.setPath("/");
             response.addCookie(cookie);
 
-            return "success";
+            return map.get("ticket").toString();
         } else {
-            return map.get("msg").toString();
+            return "fail";
         }
     }
 
@@ -98,10 +98,11 @@ public class LoginController {
             cookie.setPath("/");
             response.addCookie(cookie);
 
-            return "success";
+            return map.get("ticket").toString();
         } else {
-            return map.get("msg").toString();
+            return "fail";
         }
     }
+
 }
 

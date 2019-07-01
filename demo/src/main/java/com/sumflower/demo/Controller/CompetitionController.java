@@ -28,10 +28,12 @@ public class CompetitionController {
         String endTime = (m.get("endTime")).toString();
         String description = (m.get("description")).toString();
 
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        ParsePosition pos = new ParsePosition(0);
-        Date startDate = formatter.parse(startTime, pos);
-        Date endDate = formatter.parse(endTime, pos);
+        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
+        ParsePosition pos1 = new ParsePosition(0);
+        ParsePosition pos2 = new ParsePosition(0);
+        Date startDate = formatter1.parse(startTime, pos1);
+        Date endDate = formatter2.parse(endTime, pos2);
 
         Map<String, String> map = competitionService.addCompetition(competitionName, startDate, endDate, description);
         if (map.containsKey("msg")) {

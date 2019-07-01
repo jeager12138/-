@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.sumflower.demo.dao.UploadFileDao;
 import com.sumflower.demo.model.HostHolder;
 import com.sumflower.demo.model.LoginTicket;
@@ -14,9 +16,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @CrossOrigin
 @Controller
 public class UploadFileController {
+
+    private static final Logger logger = LoggerFactory.getLogger(UploadFileController.class);
+
     @Autowired
     HostHolder hostHolder;
 
@@ -25,7 +34,9 @@ public class UploadFileController {
 
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public String upload(@RequestParam("id") int id , @RequestParam("file") MultipartFile file) throws IOException {// 文件上传
+    public String upload(@RequestParam("id") int id , @RequestParam("file") MultipartFile file,
+                         HttpServletRequest httpServletRequest) throws IOException {// 文件上传
+
 
         System.out.println(id);
         LoginTicket loginTicket = hostHolder.getLoginTicket();
@@ -75,6 +86,6 @@ public class UploadFileController {
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
-        return "Finished";
+        return "success";
     }
 }
