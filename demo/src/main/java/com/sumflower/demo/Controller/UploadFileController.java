@@ -50,10 +50,8 @@ public class UploadFileController {
 
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
-                        (new File("/var/www/html/"+filename)));
-
-
-        String FileUrl = "http://liuterry.cn/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
+                        (new File("/var/www/html/uploadfile/"+filename)));
+        String FileUrl = "http://liuterry.cn/uploadfile/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
         String docUrl = "" , picUrl = "" , videoUrl = "";
         if (FileUrl.endsWith("pdf") | FileUrl.endsWith("PDF")) {
             docUrl = FileUrl + ";";
