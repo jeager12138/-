@@ -84,4 +84,11 @@ public class RanderousController {
         return "/success";
     }
 
+    @RequestMapping(path = "/testHttpServletRequest")
+    @ResponseBody
+    public String suc(HttpServletRequest a)
+    {
+        return  a.getSession().toString();
+    }
+
 }
