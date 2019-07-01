@@ -28,6 +28,7 @@ public class UploadFileController {
     public String upload(@RequestParam("id") int id , @RequestParam("file") MultipartFile file) throws IOException {// 文件上传
 
         System.out.println(id);
+
         LoginTicket loginTicket = hostHolder.getLoginTicket();
         String filename;
         System.out.println(loginTicket.getUserType());
