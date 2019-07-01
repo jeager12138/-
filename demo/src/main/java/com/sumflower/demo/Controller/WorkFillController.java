@@ -64,7 +64,7 @@ public class WorkFillController {
             }
 
             int res = workFillDAO.createProject(loginTicket.getUserId());
-            return res > 0 ? 1:0;
+            return res > 0 ? 1 : 0;
         }
 
         return 1;
