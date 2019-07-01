@@ -28,13 +28,13 @@ public class PDFController{
     @Autowired
     WorkFillDAO workFillDAO;
     @RequestMapping(path = "/api/DownloadPDF")
-    public String pdfexport(HttpServletResponse response) {
+    public String pdfexport(HttpServletResponse response,@RequestBody Map m) {
         // 指定解析器
         System.setProperty("javax.xml.parsers.DocumentBuilderFactory",
                 "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
 
         String filename = "科技竞赛作品提交表.pdf";
-        int id = 5;
+        int id = Integer.parseInt(m.get("id").toString());
         Project p = workFillDAO.getInfo(id);
 
         response.setContentType("api/DownloadPdf");

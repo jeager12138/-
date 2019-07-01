@@ -38,9 +38,14 @@ public class WorkFillController {
     @ResponseBody
     public int CreateWork(@RequestBody Map m){
         int studentId = Integer.parseInt(m.get("studentId").toString());
-        int res = workFillDAO.createProject(studentId);
-        //int id = workFillDAO.getWorkList(studentId);
-        return res > 0 ? 1:0;
+        workFillDAO.createProject(studentId);
+        List<Project> projectList = workFillDAO.getWorkList(studentId);
+        if(projectList.size() > 0){
+            int id = projectList.get(projectList.size()-1).getId();
+            return id;
+        }else{
+            return 1000;
+        }
     }
 
     @RequestMapping(path = "/api/CreateWorkCookie")
