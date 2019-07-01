@@ -34,11 +34,13 @@ public class PDFController{
                 "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
 
         String filename = "科技竞赛作品提交表.pdf";
+        int id = 5;
+        Project p = workFillDAO.getInfo(id);
 
         response.setContentType("api/DownloadPdf");
         try {
             //设置文件头：最后一个参数是设置下载文件名(这里我们叫：个人简历.pdf)
-            response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode("个人简历.pdf", "UTF-8"));
+            response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(p.getProjectFullName()+ ".pdf", "UTF-8"));
         } catch (UnsupportedEncodingException e1) {
             e1.printStackTrace();
         }
@@ -65,23 +67,22 @@ public class PDFController{
             // 5给表单添加中文字体 这里采用系统字体。不设置的话，中文可能无法显示
             //BaseFont bf = BaseFont.createFont("/Fonts/simsunb.TTF", BaseFont.IDENTITY_H,BaseFont.NOT_EMBEDDED);
             BaseFont bfChinese = BaseFont.createFont( "STSongStd-Light" ,"UniGB-UCS2-H",BaseFont.NOT_EMBEDDED);
-            Font font = new Font(bfChinese, 12,Font.NORMAL);
+            //Font font = new Font(bfChinese, 10,Font.NORMAL);
             //form.addSubstitutionFont(font);
             //BaseFont bf = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
 
             // 6查询数据
             //int id = Integer.parseInt(m.get("id").toString());
-            int id = 5;
-            Project p = workFillDAO.getInfo(id);
+
             Map<String, Object> data = new HashMap<String, Object>();
             data.put("id", p.getId());
             data.put("projectName", p.getProjectName());
             data.put("college",p.getCollege());
             if(p.getCompetitionType() == 0){
-                data.put("competitionType0","1");
+                data.put("competitionType0","√");
             }
             else{
-                data.put("competitionType1","1");
+                data.put("competitionType1","√");
             }
             data.put("studentName",p.getStudentName());
             data.put("studentNumber",p.getStudentNumber());
@@ -115,7 +116,7 @@ public class PDFController{
             // 7遍历data 给pdf表单表格赋值
             for (String key : data.keySet()) {
 
-                form.setFieldProperty(key, "textfont",font, null);// 设置字体
+                form.setFieldProperty(key, "textfont",bfChinese, null);// 设置字体
                 form.setField(key, data.get(key).toString());
             }
 
