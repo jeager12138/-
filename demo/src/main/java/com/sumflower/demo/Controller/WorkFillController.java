@@ -38,7 +38,7 @@ public class WorkFillController {
     @ResponseBody
     public int CreateWork(@RequestBody Map m){
         int res = workFillDAO.createProject(Integer.parseInt(m.get("studentId").toString()));
-        return res > 0 ? 1:0;
+        return res > 0 ? 1 : 0;
     }
 
     @RequestMapping(path = "/api/CreateWorkCookie")
@@ -62,7 +62,7 @@ public class WorkFillController {
             }
 
             int res = workFillDAO.createProject(loginTicket.getUserId());
-            return res > 0 ? 1:0;
+            return res > 0 ? 1 : 0;
         }
 
         return 1;
@@ -111,13 +111,12 @@ public class WorkFillController {
 
     @RequestMapping(path = {"/api/ViewWorkList"})
     @ResponseBody
-    public Map<String, Object> ViewWorkList(@RequestBody Map m){
+    public List<Project> ViewWorkList(@RequestBody Map m){
         int id = Integer.parseInt((m.get("studentId")).toString());
         Map<String,Object> map = new HashMap<>();
         List<Project> projectList = workFillDAO.getWorkList(id);
         map.put("projectList", projectList);
-        map.put("length", projectList.size());
-        return map;
+        return projectList;
     }
 
 
