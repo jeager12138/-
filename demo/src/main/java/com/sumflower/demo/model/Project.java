@@ -42,7 +42,7 @@ public class Project {
                    String entryYear, String projectFullName, String address, String phone,
                    String email, String friends, int projectType, String details, String invention,
                    String keywords, String picUrl, String docUrl, String videoUrl,
-                   double averageScore, int submitStatus){
+                   double averageScore, int submitStatus,int studentId){
         this.id = id;
         this.projectName = projectName;
         this.college = college;
@@ -67,6 +67,7 @@ public class Project {
         this.videoUrl = videoUrl;
         this.averageScore = averageScore;
         this.submitStatus = submitStatus;
+        this.studentId = studentId;
     }
 
     @Override
