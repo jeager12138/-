@@ -55,7 +55,7 @@ public class UploadFileController {
         String docUrl = "" , picUrl = "" , videoUrl = "";
         if (FileUrl.endsWith("pdf") | FileUrl.endsWith("PDF")) {
             docUrl = FileUrl + ";";
-        }else if(FileUrl.endsWith("jpg") | FileUrl.endsWith("JPG"))
+        }else if(FileUrl.endsWith("png") | FileUrl.endsWith("PNG"))
         {
             picUrl = FileUrl + ";";
         }else if(FileUrl.endsWith("mp4") | FileUrl.endsWith("MP4"))
