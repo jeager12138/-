@@ -2824,3 +2824,239 @@
 2019-07-03 17:52:43.968 ERROR 3340 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : null
 2019-07-03 17:53:06.743  INFO 3340 --- [Thread-9] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@32e0946c: startup date [Wed Jul 03 17:52:32 CST 2019]; root of context hierarchy
 2019-07-03 17:53:06.754  INFO 3340 --- [Thread-9] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-07-03 17:54:03.775  INFO 3404 --- [restartedMain] com.sumflower.demo.DemoApplication       : Starting DemoApplication on MacdeMacBook-Pro.local with PID 3404 (/Users/Mac/Desktop/Sunflower-Cup-Competition-Reporting-System/demo/target/classes started by JeremyLi in /Users/Mac/Desktop/Sunflower-Cup-Competition-Reporting-System/demo)
+2019-07-03 17:54:03.796  INFO 3404 --- [restartedMain] com.sumflower.demo.DemoApplication       : No active profile set, falling back to default profiles: default
+2019-07-03 17:54:03.930  INFO 3404 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 17:54:03 CST 2019]; root of context hierarchy
+2019-07-03 17:54:06.807  INFO 3404 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-07-03 17:54:06.855  INFO 3404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-03 17:54:06.856  INFO 3404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-07-03 17:54:07.008  INFO 3404 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-03 17:54:07.009  INFO 3404 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3079 ms
+2019-07-03 17:54:07.233  INFO 3404 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-07-03 17:54:07.240  INFO 3404 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-07-03 17:54:07.242  INFO 3404 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-07-03 17:54:07.242  INFO 3404 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-07-03 17:54:07.242  INFO 3404 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-07-03 17:54:08.310  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 17:54:03 CST 2019]; root of context hierarchy
+2019-07-03 17:54:08.410  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showAlreadyList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CommitteeController.showAlreadyList()
+2019-07-03 17:54:08.414  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.passProject(java.util.Map)
+2019-07-03 17:54:08.415  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectProject(java.util.Map)
+2019-07-03 17:54:08.416  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveBackProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.giveBackProject(java.util.Map)
+2019-07-03 17:54:08.417  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCompetition],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.addCompetition(java.util.Map)
+2019-07-03 17:54:08.419  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewExpertList],methods=[POST]}" onto public java.util.List<com.sumflower.demo.model.ExpertLogin> com.sumflower.demo.Controller.EmailController.ViewExpertList(java.util.Map)
+2019-07-03 17:54:08.420  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/inviteExperts],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.EmailController.SendEmail(java.util.Map)
+2019-07-03 17:54:08.422  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/studentReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 17:54:08.422  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/expertReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.expertReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 17:54:08.423  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentLogin(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 17:54:08.424  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DownloadPDF]}" onto public void com.sumflower.demo.Controller.PDFController.pdfexport(javax.servlet.http.HttpServletResponse,java.util.Map)
+2019-07-03 17:54:08.426  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/setCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.setCookies(javax.servlet.http.HttpServletResponse)
+2019-07-03 17:54:08.426  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.getCookies(javax.servlet.http.HttpServletRequest)
+2019-07-03 17:54:08.427  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/springUpload]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.springUpload(javax.servlet.http.HttpServletRequest) throws java.lang.IllegalStateException,java.io.IOException
+2019-07-03 17:54:08.428  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testHttpServletRequest]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.suc(javax.servlet.http.HttpServletRequest)
+2019-07-03 17:54:08.431  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/get]}" onto public int com.sumflower.demo.Controller.TerryTestController.get(javax.servlet.http.HttpServletRequest)
+2019-07-03 17:54:08.433  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testMysql]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.test()
+2019-07-03 17:54:08.434  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testCookie]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.testCookie()
+2019-07-03 17:54:08.435  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/post]}" onto public java.util.Map com.sumflower.demo.Controller.TerryTestController.post(java.util.Map)
+2019-07-03 17:54:08.436  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/upload],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.upload(int,org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2019-07-03 17:54:08.439  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api2],methods=[GET]}" onto public com.sumflower.demo.model.Judge com.sumflower.demo.Controller.WinjaceController.api2()
+2019-07-03 17:54:08.441  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWork(java.util.Map)
+2019-07-03 17:54:08.442  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWorkCookie]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWorkCookie(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 17:54:08.443  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/UpdateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.UpdateWork(java.util.Map)
+2019-07-03 17:54:08.443  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/FinishWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.FinishWork(java.util.Map)
+2019-07-03 17:54:08.444  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkList(java.util.Map)
+2019-07-03 17:54:08.445  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfo]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfo(java.util.Map)
+2019-07-03 17:54:08.446  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DeleteWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.DeleteWork(java.util.Map)
+2019-07-03 17:54:08.449  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-03 17:54:08.450  INFO 3404 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 17:54:08.491  INFO 3404 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 17:54:08.492  INFO 3404 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 17:54:08.549  INFO 3404 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 17:54:08.964  INFO 3404 --- [restartedMain] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 17:54:03 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-07-03 17:54:08.966  INFO 3404 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-07-03 17:54:09.006  WARN 3404 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-07-03 17:54:09.183  INFO 3404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-03 17:54:09.255  INFO 3404 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-07-03 17:54:09.324  INFO 3404 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-07-03 17:54:09.331  INFO 3404 --- [restartedMain] com.sumflower.demo.DemoApplication       : Started DemoApplication in 6.125 seconds (JVM running for 6.843)
+2019-07-03 17:54:11.353  INFO 3404 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-03 17:54:11.353  INFO 3404 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-07-03 17:54:11.372  INFO 3404 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2019-07-03 17:54:11.387 ERROR 3404 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : ############
+2019-07-03 17:54:11.387 ERROR 3404 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : null
+2019-07-03 17:54:40.348  INFO 3404 --- [Thread-9] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 17:54:03 CST 2019]; root of context hierarchy
+2019-07-03 17:54:40.352  INFO 3404 --- [Thread-9] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-07-03 18:15:38.152  INFO 3522 --- [main] com.sumflower.demo.DemoApplicationTests  : Starting DemoApplicationTests on MacdeMacBook-Pro.local with PID 3522 (started by JeremyLi in /Users/Mac/Desktop/Sunflower-Cup-Competition-Reporting-System/demo)
+2019-07-03 18:15:38.159  INFO 3522 --- [main] com.sumflower.demo.DemoApplicationTests  : No active profile set, falling back to default profiles: default
+2019-07-03 18:15:38.305  INFO 3522 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3059cbc: startup date [Wed Jul 03 18:15:38 CST 2019]; root of context hierarchy
+2019-07-03 18:15:39.822 ERROR 3522 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+java.lang.NoClassDefFoundError: javax/mail/Address
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_211]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_211]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_211]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:713) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:685) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:671) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:63) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:142) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:134) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:283) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:171) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:121) [spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: java.lang.ClassNotFoundException: javax.mail.Address
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_211]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_211]
+	... 45 common frames omitted
+
+2019-07-03 18:15:39.825  INFO 3522 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3059cbc: startup date [Wed Jul 03 18:15:38 CST 2019]; root of context hierarchy
+2019-07-03 18:15:39.828 ERROR 3522 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@525b461a] to prepare test instance [com.sumflower.demo.DemoApplicationTests@7a11c4c7]
+
+java.lang.NoClassDefFoundError: javax/mail/Address
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_211]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_211]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_211]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:713) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:685) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:671) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:63) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:142) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:134) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:283) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:171) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:121) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: java.lang.ClassNotFoundException: javax.mail.Address
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_211]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_211]
+	... 45 common frames omitted
+
+2019-07-03 18:16:17.329  INFO 3601 --- [restartedMain] com.sumflower.demo.DemoApplication       : Starting DemoApplication on MacdeMacBook-Pro.local with PID 3601 (/Users/Mac/Desktop/Sunflower-Cup-Competition-Reporting-System/demo/target/classes started by JeremyLi in /Users/Mac/Desktop/Sunflower-Cup-Competition-Reporting-System/demo)
+2019-07-03 18:16:17.331  INFO 3601 --- [restartedMain] com.sumflower.demo.DemoApplication       : No active profile set, falling back to default profiles: default
+2019-07-03 18:16:17.438  INFO 3601 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 18:16:17 CST 2019]; root of context hierarchy
+2019-07-03 18:16:21.315  INFO 3601 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-07-03 18:16:21.363  INFO 3601 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-03 18:16:21.364  INFO 3601 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-07-03 18:16:21.532  INFO 3601 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-03 18:16:21.532  INFO 3601 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4095 ms
+2019-07-03 18:16:21.746  INFO 3601 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-07-03 18:16:21.765  INFO 3601 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-07-03 18:16:21.766  INFO 3601 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-07-03 18:16:21.767  INFO 3601 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-07-03 18:16:21.767  INFO 3601 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-07-03 18:16:22.963  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 18:16:17 CST 2019]; root of context hierarchy
+2019-07-03 18:16:23.079  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showAlreadyList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CommitteeController.showAlreadyList()
+2019-07-03 18:16:23.083  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.passProject(java.util.Map)
+2019-07-03 18:16:23.084  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectProject(java.util.Map)
+2019-07-03 18:16:23.085  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveBackProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.giveBackProject(java.util.Map)
+2019-07-03 18:16:23.087  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCompetition],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.addCompetition(java.util.Map)
+2019-07-03 18:16:23.088  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewExpertList],methods=[POST]}" onto public java.util.List<com.sumflower.demo.model.ExpertLogin> com.sumflower.demo.Controller.EmailController.ViewExpertList(java.util.Map)
+2019-07-03 18:16:23.089  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/inviteExperts],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.EmailController.SendEmail(java.util.Map)
+2019-07-03 18:16:23.091  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/studentReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:16:23.092  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/expertReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.expertReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:16:23.093  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentLogin(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:16:23.094  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DownloadPDF]}" onto public void com.sumflower.demo.Controller.PDFController.pdfexport(javax.servlet.http.HttpServletResponse,java.util.Map)
+2019-07-03 18:16:23.096  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/setCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.setCookies(javax.servlet.http.HttpServletResponse)
+2019-07-03 18:16:23.096  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.getCookies(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:16:23.097  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/springUpload]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.springUpload(javax.servlet.http.HttpServletRequest) throws java.lang.IllegalStateException,java.io.IOException
+2019-07-03 18:16:23.098  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testHttpServletRequest]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.suc(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:16:23.103  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/get]}" onto public int com.sumflower.demo.Controller.TerryTestController.get(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:16:23.104  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testMysql]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.test()
+2019-07-03 18:16:23.106  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testCookie]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.testCookie()
+2019-07-03 18:16:23.107  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/post]}" onto public java.util.Map com.sumflower.demo.Controller.TerryTestController.post(java.util.Map)
+2019-07-03 18:16:23.111  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/upload],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.upload(int,org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2019-07-03 18:16:23.115  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api2],methods=[GET]}" onto public com.sumflower.demo.model.Judge com.sumflower.demo.Controller.WinjaceController.api2()
+2019-07-03 18:16:23.117  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWork(java.util.Map)
+2019-07-03 18:16:23.118  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWorkCookie]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWorkCookie(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:16:23.118  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/UpdateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.UpdateWork(java.util.Map)
+2019-07-03 18:16:23.119  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/FinishWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.FinishWork(java.util.Map)
+2019-07-03 18:16:23.120  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkList(java.util.Map)
+2019-07-03 18:16:23.121  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfo]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfo(java.util.Map)
+2019-07-03 18:16:23.122  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DeleteWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.DeleteWork(java.util.Map)
+2019-07-03 18:16:23.128  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:16:23.129  INFO 3601 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:16:23.204  INFO 3601 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 18:16:23.204  INFO 3601 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 18:16:23.298  INFO 3601 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 18:16:23.803  INFO 3601 --- [restartedMain] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 18:16:17 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-07-03 18:16:23.805  INFO 3601 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-07-03 18:16:23.834  WARN 3601 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-07-03 18:16:24.023  INFO 3601 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-03 18:16:24.093  INFO 3601 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-07-03 18:16:24.158  INFO 3601 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-07-03 18:16:24.167  INFO 3601 --- [restartedMain] com.sumflower.demo.DemoApplication       : Started DemoApplication in 7.515 seconds (JVM running for 8.696)
+2019-07-03 18:16:38.154  INFO 3601 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-03 18:16:38.156  INFO 3601 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-07-03 18:16:38.186  INFO 3601 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 29 ms
+2019-07-03 18:16:38.211 ERROR 3601 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : ############
+2019-07-03 18:16:38.211 ERROR 3601 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : null
+2019-07-03 18:17:09.461  INFO 3601 --- [Thread-9] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 18:16:17 CST 2019]; root of context hierarchy
+2019-07-03 18:17:09.485  INFO 3601 --- [Thread-9] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
