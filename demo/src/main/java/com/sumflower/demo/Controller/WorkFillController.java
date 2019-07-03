@@ -1,7 +1,13 @@
 package com.sumflower.demo.Controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.sumflower.demo.dao.*;
 import com.sumflower.demo.model.*;
+import com.sun.javafx.collections.MappingChange;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -13,14 +19,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @CrossOrigin
 @Controller
 public class WorkFillController {
+    private static final Logger logger = LoggerFactory.getLogger(WorkFillController.class);
+
     @Autowired
     WorkFillDAO workFillDAO;
     @Autowired
@@ -34,11 +39,20 @@ public class WorkFillController {
     @Autowired
     CommitteeLoginDAO committeeLoginDAO;
 
+
+
     @RequestMapping(path = "/api/CreateWork")
     @ResponseBody
     public int CreateWork(@RequestBody Map m){
-        int res = workFillDAO.createProject(Integer.parseInt(m.get("studentId").toString()));
-        return res > 0 ? 1:0;
+        int studentId = Integer.parseInt(m.get("studentId").toString());
+        workFillDAO.createProject(studentId);
+        List<Project> projectList = workFillDAO.getWorkList(studentId);
+        if(projectList.size() > 0){
+            int id = projectList.get(projectList.size()-1).getId();
+            return id;
+        }else{
+            return 1000;
+        }
     }
 
     @RequestMapping(path = "/api/CreateWorkCookie")
@@ -62,7 +76,7 @@ public class WorkFillController {
             }
 
             int res = workFillDAO.createProject(loginTicket.getUserId());
-            return res > 0 ? 1:0;
+            return res > 0 ? 1 : 0;
         }
 
         return 1;
@@ -85,17 +99,21 @@ public class WorkFillController {
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
         String friends = (m.get("friends")).toString();
+
+        logger.error(friends);
+
         int projectType = Integer.parseInt((m.get("projectType")).toString());
         String details = (m.get("details")).toString();
         String invention = (m.get("invention")).toString();
         String keywords =(m.get("keywords")).toString();
+        int studentId = Integer.parseInt((m.get("studentId")).toString());
         String picUrl = "";
         String docUrl = "";
         String videoUrl =  "";
         double averageScore = 0;
         int submitStatus = 1;
         int id = Integer.parseInt((m.get("id")).toString());
-        Project p = new Project(id,projectName,college,competitionType,studentName,studentNumber,birthDay,education,major,entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl,docUrl,videoUrl,averageScore,submitStatus);
+        Project p = new Project(id,projectName,college,competitionType,studentName,studentNumber,birthDay,education,major,entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl,docUrl,videoUrl,averageScore,submitStatus,studentId);
         int res = workFillDAO.updateProject(p);
         System.out.println(p.toString());
         return res > 0 ? 1:0;
@@ -111,25 +129,35 @@ public class WorkFillController {
 
     @RequestMapping(path = {"/api/ViewWorkList"})
     @ResponseBody
-    public Map<String, Object> ViewWorkList(@RequestBody Map m){
+    public List<Project> ViewWorkList(@RequestBody Map m){
         int id = Integer.parseInt((m.get("studentId")).toString());
-        Map<String,Object> map = new HashMap<>();
         List<Project> projectList = workFillDAO.getWorkList(id);
-        map.put("projectList", projectList);
-        map.put("length", projectList.size());
-        return map;
+        return projectList;
     }
 
 
     @RequestMapping(path = {"/api/ViewWorkInfo"})
     @ResponseBody
-    public Project ViewWorkInfo(@RequestBody Map m)
-    {
+    public Project ViewWorkInfo(@RequestBody Map m) {
         int id = Integer.parseInt((m.get("id")).toString());
         Project project = new Project();
         project = workFillDAO.getInfo(id);
         return project;
     }
+
+//    @RequestMapping(path = {"/api/FindFriends"})
+//    @ResponseBody
+//    public List< HashMap<String, Object> > FindFriends(@RequestBody Map m) {
+//        int id = Integer.parseInt((m.get("id")).toString());
+//        Project project = new Project();
+//        project = workFillDAO.getInfo(id);
+//        String friendStr = project.getFriends();
+//
+//        List< HashMap<String, Object> > list = (List< HashMap<String, Object> >)(JSONObject.parseArray(friendStr));
+//
+//        return list;
+//    }
+
 
     @RequestMapping(path = "/api/DeleteWork")
     @ResponseBody

@@ -21,26 +21,30 @@ import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @CrossOrigin
 @Controller
 public class PDFController{
     @Autowired
     WorkFillDAO workFillDAO;
+
     @RequestMapping(path = "/api/DownloadPDF")
-    public String pdfexport(HttpServletResponse response) {
+    @ResponseBody
+    public void pdfexport(HttpServletResponse response,@RequestBody Map m) {
         // 指定解析器
         System.setProperty("javax.xml.parsers.DocumentBuilderFactory",
                 "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
-
         String filename = "科技竞赛作品提交表.pdf";
-        int id = 5;
+        int id = Integer.parseInt(m.get("id").toString());
+        //int id = 5;
         Project p = workFillDAO.getInfo(id);
 
-        response.setContentType("api/DownloadPdf");
+
         try {
             //设置文件头：最后一个参数是设置下载文件名(这里我们叫：个人简历.pdf)
             response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(p.getProjectFullName()+ ".pdf", "UTF-8"));
+            response.setContentType("/application/pdf");
         } catch (UnsupportedEncodingException e1) {
             e1.printStackTrace();
         }
@@ -136,8 +140,5 @@ public class PDFController{
                 e.printStackTrace();
             }
         }
-
-        return "F";
     }
-
 }
