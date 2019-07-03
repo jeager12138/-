@@ -1,7 +1,13 @@
 package com.sumflower.demo.Controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.sumflower.demo.dao.*;
 import com.sumflower.demo.model.*;
+import com.sun.javafx.collections.MappingChange;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -13,14 +19,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @CrossOrigin
 @Controller
 public class WorkFillController {
+    private static final Logger logger = LoggerFactory.getLogger(WorkFillController.class);
+
     @Autowired
     WorkFillDAO workFillDAO;
     @Autowired
@@ -93,7 +98,11 @@ public class WorkFillController {
         String address = (m.get("address")).toString();
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
-        String friends = (m.get("friends")).toString()+"friends";
+        ArrayList< HashMap<String, Object> > friend = (ArrayList< HashMap<String, Object>>)(m.get("friends"));
+        String friends = JSONArray.toJSONString(friend);
+
+        logger.error(friends);
+
         int projectType = Integer.parseInt((m.get("projectType")).toString());
         String details = (m.get("details")).toString();
         String invention = (m.get("invention")).toString();
@@ -129,13 +138,26 @@ public class WorkFillController {
 
     @RequestMapping(path = {"/api/ViewWorkInfo"})
     @ResponseBody
-    public Project ViewWorkInfo(@RequestBody Map m)
-    {
+    public Project ViewWorkInfo(@RequestBody Map m) {
         int id = Integer.parseInt((m.get("id")).toString());
         Project project = new Project();
         project = workFillDAO.getInfo(id);
         return project;
     }
+
+//    @RequestMapping(path = {"/api/FindFriends"})
+//    @ResponseBody
+//    public List< HashMap<String, Object> > FindFriends(@RequestBody Map m) {
+//        int id = Integer.parseInt((m.get("id")).toString());
+//        Project project = new Project();
+//        project = workFillDAO.getInfo(id);
+//        String friendStr = project.getFriends();
+//
+//        List< HashMap<String, Object> > list = (List< HashMap<String, Object> >)(JSONObject.parseArray(friendStr));
+//
+//        return list;
+//    }
+
 
     @RequestMapping(path = "/api/DeleteWork")
     @ResponseBody
