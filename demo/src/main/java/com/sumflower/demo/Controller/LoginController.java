@@ -49,6 +49,7 @@ public class LoginController {
             response.addCookie(cookie);
             ret.put("ticket", map.get("ticket").toString());
             ret.put("user", map.get("user"));
+            ret.put("msg", "success");
             return ret;
         } else {
             ret.put("msg", "fail");
@@ -74,6 +75,7 @@ public class LoginController {
 
             ret.put("ticket", map.get("ticket").toString());
             ret.put("user", map.get("user"));
+            ret.put("msg", "success");
             return ret;
         } else {
             ret.put("msg", "fail");
@@ -109,6 +111,7 @@ public class LoginController {
 
             ret.put("ticket", map.get("ticket").toString());
             ret.put("user", map.get("user"));
+            ret.put("msg", "success");
             return ret;
         } else {
             ret.put("msg", "fail");
