@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface ExpertLoginDAO {
     String TABLE_NAME = " ExpertLogin ";
@@ -19,4 +21,7 @@ public interface ExpertLoginDAO {
 
     @Select({"select ", SELECT_FIELDS, " from ", TABLE_NAME, "where id=#{id}"})
     ExpertLogin selectById(int id);
+
+    @Select({"select ", SELECT_FIELDS, " from ", TABLE_NAME, "where major=#{major}"})
+    List<ExpertLogin> getExpertList(String major);
 }
