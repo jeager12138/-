@@ -3060,3 +3060,315 @@ Caused by: java.lang.ClassNotFoundException: javax.mail.Address
 2019-07-03 18:16:38.211 ERROR 3601 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : null
 2019-07-03 18:17:09.461  INFO 3601 --- [Thread-9] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22b999c6: startup date [Wed Jul 03 18:16:17 CST 2019]; root of context hierarchy
 2019-07-03 18:17:09.485  INFO 3601 --- [Thread-9] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-07-03 18:28:14.950  INFO 12124 --- [main] com.sumflower.demo.DemoApplicationTests  : Starting DemoApplicationTests on DESKTOP-QPEOM2I with PID 12124 (started by randerous in D:\spring_project\rander\Sunflower-Cup-Competition-Reporting-System\demo)
+2019-07-03 18:28:14.951  INFO 12124 --- [main] com.sumflower.demo.DemoApplicationTests  : No active profile set, falling back to default profiles: default
+2019-07-03 18:28:14.991  INFO 12124 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@37654521: startup date [Wed Jul 03 18:28:14 CST 2019]; root of context hierarchy
+2019-07-03 18:28:15.978 ERROR 12124 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+java.lang.NoClassDefFoundError: javax/mail/Address
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_211]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_211]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_211]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:713) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:685) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:671) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:63) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:142) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:134) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:283) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:171) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:121) [spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: java.lang.ClassNotFoundException: javax.mail.Address
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_211]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_211]
+	... 45 common frames omitted
+
+2019-07-03 18:28:15.981  INFO 12124 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@37654521: startup date [Wed Jul 03 18:28:14 CST 2019]; root of context hierarchy
+2019-07-03 18:28:15.983 ERROR 12124 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@ba8d91c] to prepare test instance [com.sumflower.demo.DemoApplicationTests@69f63d95]
+
+java.lang.NoClassDefFoundError: javax/mail/Address
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_211]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_211]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_211]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:713) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:685) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:671) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:63) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:142) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:134) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:283) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:171) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:121) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: java.lang.ClassNotFoundException: javax.mail.Address
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_211]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_211]
+	... 45 common frames omitted
+
+2019-07-03 18:49:01.822  INFO 4716 --- [main] com.sumflower.demo.DemoApplicationTests  : Starting DemoApplicationTests on DESKTOP-QPEOM2I with PID 4716 (started by randerous in D:\spring_project\rander\Sunflower-Cup-Competition-Reporting-System\demo)
+2019-07-03 18:49:01.823  INFO 4716 --- [main] com.sumflower.demo.DemoApplicationTests  : No active profile set, falling back to default profiles: default
+2019-07-03 18:49:01.867  INFO 4716 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@33990a0c: startup date [Wed Jul 03 18:49:01 CST 2019]; root of context hierarchy
+2019-07-03 18:49:02.792 ERROR 4716 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+java.lang.NoClassDefFoundError: javax/mail/Address
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_211]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_211]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_211]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:713) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:685) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:671) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:63) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:142) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:134) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:283) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:171) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:121) [spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: java.lang.ClassNotFoundException: javax.mail.Address
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_211]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_211]
+	... 45 common frames omitted
+
+2019-07-03 18:49:02.794  INFO 4716 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@33990a0c: startup date [Wed Jul 03 18:49:01 CST 2019]; root of context hierarchy
+2019-07-03 18:49:02.797 ERROR 4716 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5d20e46] to prepare test instance [com.sumflower.demo.DemoApplicationTests@6928f576]
+
+java.lang.NoClassDefFoundError: javax/mail/Address
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_211]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_211]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_211]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:713) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:685) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:671) ~[spring-core-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:63) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:142) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:134) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:283) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:171) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:121) ~[spring-boot-test-1.5.19.RELEASE.jar:1.5.19.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+Caused by: java.lang.ClassNotFoundException: javax.mail.Address
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_211]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_211]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_211]
+	... 45 common frames omitted
+
+2019-07-03 18:51:31.399  INFO 4504 --- [main] com.sumflower.demo.DemoApplicationTests  : Starting DemoApplicationTests on DESKTOP-QPEOM2I with PID 4504 (started by randerous in D:\spring_project\rander\Sunflower-Cup-Competition-Reporting-System\demo)
+2019-07-03 18:51:31.400  INFO 4504 --- [main] com.sumflower.demo.DemoApplicationTests  : No active profile set, falling back to default profiles: default
+2019-07-03 18:51:31.431  INFO 4504 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Wed Jul 03 18:51:31 CST 2019]; root of context hierarchy
+2019-07-03 18:51:33.468  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Wed Jul 03 18:51:31 CST 2019]; root of context hierarchy
+2019-07-03 18:51:33.531  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.passProject(java.util.Map)
+2019-07-03 18:51:33.533  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showAlreadyList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CommitteeController.showAlreadyList()
+2019-07-03 18:51:33.533  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveBackProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.giveBackProject(java.util.Map)
+2019-07-03 18:51:33.534  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectProject(java.util.Map)
+2019-07-03 18:51:33.535  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCompetition],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.addCompetition(java.util.Map)
+2019-07-03 18:51:33.536  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/inviteExperts],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.EmailController.SendEmail(java.util.Map)
+2019-07-03 18:51:33.536  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewExpertList],methods=[POST]}" onto public java.util.List<com.sumflower.demo.model.ExpertLogin> com.sumflower.demo.Controller.EmailController.ViewExpertList(java.util.Map)
+2019-07-03 18:51:33.537  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentLogin(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:51:33.538  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/studentReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:51:33.538  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/expertReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.expertReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:51:33.539  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DownloadPDF]}" onto public void com.sumflower.demo.Controller.PDFController.pdfexport(javax.servlet.http.HttpServletResponse,java.util.Map)
+2019-07-03 18:51:33.540  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/setCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.setCookies(javax.servlet.http.HttpServletResponse)
+2019-07-03 18:51:33.540  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.getCookies(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:51:33.541  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/springUpload]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.springUpload(javax.servlet.http.HttpServletRequest) throws java.lang.IllegalStateException,java.io.IOException
+2019-07-03 18:51:33.541  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testHttpServletRequest]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.suc(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:51:33.543  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/get]}" onto public int com.sumflower.demo.Controller.TerryTestController.get(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:51:33.544  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testMysql]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.test()
+2019-07-03 18:51:33.544  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testCookie]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.testCookie()
+2019-07-03 18:51:33.544  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/post]}" onto public java.util.Map com.sumflower.demo.Controller.TerryTestController.post(java.util.Map)
+2019-07-03 18:51:33.545  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/upload],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.upload(int,org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2019-07-03 18:51:33.547  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api2],methods=[GET]}" onto public com.sumflower.demo.model.Judge com.sumflower.demo.Controller.WinjaceController.api2()
+2019-07-03 18:51:33.548  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/FinishWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.FinishWork(java.util.Map)
+2019-07-03 18:51:33.548  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWork(java.util.Map)
+2019-07-03 18:51:33.549  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWorkCookie]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWorkCookie(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:51:33.549  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/UpdateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.UpdateWork(java.util.Map)
+2019-07-03 18:51:33.550  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkList(java.util.Map)
+2019-07-03 18:51:33.550  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfo]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfo(java.util.Map)
+2019-07-03 18:51:33.551  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DeleteWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.DeleteWork(java.util.Map)
+2019-07-03 18:51:33.552  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-03 18:51:33.553  INFO 4504 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 18:51:33.586  INFO 4504 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 18:51:33.587  INFO 4504 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 18:51:33.632  INFO 4504 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 18:51:33.825  INFO 4504 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Wed Jul 03 18:51:31 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-07-03 18:51:33.827  INFO 4504 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-07-03 18:51:33.844  WARN 4504 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-07-03 18:51:34.034  INFO 4504 --- [main] com.sumflower.demo.DemoApplicationTests  : Started DemoApplicationTests in 2.955 seconds (JVM running for 3.81)
+2019-07-03 18:51:34.091  INFO 4504 --- [Thread-3] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Wed Jul 03 18:51:31 CST 2019]; root of context hierarchy
+2019-07-03 19:00:05.438  INFO 7644 --- [main] com.sumflower.demo.DemoApplicationTests  : Starting DemoApplicationTests on DESKTOP-QPEOM2I with PID 7644 (started by randerous in D:\spring_project\rander\Sunflower-Cup-Competition-Reporting-System\demo)
+2019-07-03 19:00:05.439  INFO 7644 --- [main] com.sumflower.demo.DemoApplicationTests  : No active profile set, falling back to default profiles: default
+2019-07-03 19:00:05.472  INFO 7644 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7ea9e1e2: startup date [Wed Jul 03 19:00:05 CST 2019]; root of context hierarchy
+2019-07-03 19:00:07.478  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7ea9e1e2: startup date [Wed Jul 03 19:00:05 CST 2019]; root of context hierarchy
+2019-07-03 19:00:07.547  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectProject(java.util.Map)
+2019-07-03 19:00:07.548  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveBackProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.giveBackProject(java.util.Map)
+2019-07-03 19:00:07.549  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.passProject(java.util.Map)
+2019-07-03 19:00:07.550  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showAlreadyList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CommitteeController.showAlreadyList()
+2019-07-03 19:00:07.551  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCompetition],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.addCompetition(java.util.Map)
+2019-07-03 19:00:07.551  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewExpertList],methods=[POST]}" onto public java.util.List<com.sumflower.demo.model.ExpertLogin> com.sumflower.demo.Controller.EmailController.ViewExpertList(java.util.Map)
+2019-07-03 19:00:07.552  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/inviteExperts],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.EmailController.SendEmail(java.util.Map)
+2019-07-03 19:00:07.553  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/studentReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 19:00:07.554  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/expertReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.expertReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 19:00:07.554  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentLogin(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-03 19:00:07.555  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DownloadPDF]}" onto public void com.sumflower.demo.Controller.PDFController.pdfexport(javax.servlet.http.HttpServletResponse,java.util.Map)
+2019-07-03 19:00:07.556  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.getCookies(javax.servlet.http.HttpServletRequest)
+2019-07-03 19:00:07.557  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/setCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.setCookies(javax.servlet.http.HttpServletResponse)
+2019-07-03 19:00:07.557  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/springUpload]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.springUpload(javax.servlet.http.HttpServletRequest) throws java.lang.IllegalStateException,java.io.IOException
+2019-07-03 19:00:07.558  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testHttpServletRequest]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.suc(javax.servlet.http.HttpServletRequest)
+2019-07-03 19:00:07.560  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/get]}" onto public int com.sumflower.demo.Controller.TerryTestController.get(javax.servlet.http.HttpServletRequest)
+2019-07-03 19:00:07.561  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testMysql]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.test()
+2019-07-03 19:00:07.562  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/post]}" onto public java.util.Map com.sumflower.demo.Controller.TerryTestController.post(java.util.Map)
+2019-07-03 19:00:07.562  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testCookie]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.testCookie()
+2019-07-03 19:00:07.563  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/upload],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.upload(int,org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2019-07-03 19:00:07.565  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api2],methods=[GET]}" onto public com.sumflower.demo.model.Judge com.sumflower.demo.Controller.WinjaceController.api2()
+2019-07-03 19:00:07.566  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/UpdateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.UpdateWork(java.util.Map)
+2019-07-03 19:00:07.567  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkList(java.util.Map)
+2019-07-03 19:00:07.567  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWork(java.util.Map)
+2019-07-03 19:00:07.568  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWorkCookie]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWorkCookie(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 19:00:07.568  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/FinishWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.FinishWork(java.util.Map)
+2019-07-03 19:00:07.569  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfo]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfo(java.util.Map)
+2019-07-03 19:00:07.569  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DeleteWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.DeleteWork(java.util.Map)
+2019-07-03 19:00:07.572  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-03 19:00:07.572  INFO 7644 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-03 19:00:07.610  INFO 7644 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 19:00:07.611  INFO 7644 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 19:00:07.643  INFO 7644 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-03 19:00:07.842  INFO 7644 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.web.context.support.GenericWebApplicationContext@7ea9e1e2: startup date [Wed Jul 03 19:00:05 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-07-03 19:00:07.843  INFO 7644 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-07-03 19:00:07.867  WARN 7644 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-07-03 19:00:08.062  INFO 7644 --- [main] com.sumflower.demo.DemoApplicationTests  : Started DemoApplicationTests in 2.967 seconds (JVM running for 3.845)
+2019-07-03 19:00:08.106  INFO 7644 --- [Thread-3] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@7ea9e1e2: startup date [Wed Jul 03 19:00:05 CST 2019]; root of context hierarchy
