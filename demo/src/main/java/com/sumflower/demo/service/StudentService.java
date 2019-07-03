@@ -52,6 +52,7 @@ public class StudentService {
 
         String ticket = userService.addLoginTicket(student.getId(), 0);
         map.put("ticket", ticket);
+        map.put("user", student);
 
         return map;
     }
@@ -71,6 +72,7 @@ public class StudentService {
         }
 
         String ticket = userService.addLoginTicket(student.getId(), 0);
+        map.put("user", student);
         map.put("ticket", ticket);
         return map;
     }

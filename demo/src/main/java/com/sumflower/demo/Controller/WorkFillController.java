@@ -38,15 +38,21 @@ public class WorkFillController {
     ExpertLoginDAO expertLoginDAO;
     @Autowired
     CommitteeLoginDAO committeeLoginDAO;
+    @Autowired
+    CompetitionDAO competitionDAO;
 
 
 
     @RequestMapping(path = "/api/CreateWork")
     @ResponseBody
-    public int CreateWork(@RequestBody Map m){
+    public int CreateWork(@RequestBody Map m) {
+        int competitionId = competitionDAO.selectLastId();
         int studentId = Integer.parseInt(m.get("studentId").toString());
-        workFillDAO.createProject(studentId);
-        List<Project> projectList = workFillDAO.getWorkList(studentId);
+        Project p = new Project();
+        p.setStudentId(studentId);
+        p.setCompetitionId(competitionId);
+        workFillDAO.createProject(p);
+        List<Project> projectList = workFillDAO.getWorkList(studentId, competitionId);
         if(projectList.size() > 0){
             int id = projectList.get(projectList.size()-1).getId();
             return id;
@@ -74,8 +80,12 @@ public class WorkFillController {
             if (loginTicket == null || loginTicket.getExpired().before(new Date()) || loginTicket.getTicketStatus() != 0) {
                 return 1;
             }
-
-            int res = workFillDAO.createProject(loginTicket.getUserId());
+            int competitionId = competitionDAO.selectLastId();
+            Project p = new Project();
+            p.setStudentId(loginTicket.getUserId());
+            p.setCompetitionId(competitionId);
+            workFillDAO.createProject(p);
+            int res = workFillDAO.createProject(p);
             return res > 0 ? 1 : 0;
         }
 
@@ -131,7 +141,8 @@ public class WorkFillController {
     @ResponseBody
     public List<Project> ViewWorkList(@RequestBody Map m){
         int id = Integer.parseInt((m.get("studentId")).toString());
-        List<Project> projectList = workFillDAO.getWorkList(id);
+        int competitionId = competitionDAO.selectLastId();
+        List<Project> projectList = workFillDAO.getWorkList(id, competitionId);
         return projectList;
     }
 
