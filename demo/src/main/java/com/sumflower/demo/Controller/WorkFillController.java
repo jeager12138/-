@@ -98,8 +98,7 @@ public class WorkFillController {
         String address = (m.get("address")).toString();
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
-        ArrayList< HashMap<String, Object> > friend = (ArrayList< HashMap<String, Object>>)(m.get("friends"));
-        String friends = JSONArray.toJSONString(friend);
+        String friends = (m.get("friends")).toString();
 
         logger.error(friends);
 
