@@ -107,13 +107,14 @@ public class WorkFillController {
         String details = (m.get("details")).toString();
         String invention = (m.get("invention")).toString();
         String keywords =(m.get("keywords")).toString();
+        int studentId = Integer.parseInt((m.get("studentId")).toString());
         String picUrl = "";
         String docUrl = "";
         String videoUrl =  "";
         double averageScore = 0;
         int submitStatus = 1;
         int id = Integer.parseInt((m.get("id")).toString());
-        Project p = new Project(id,projectName,college,competitionType,studentName,studentNumber,birthDay,education,major,entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl,docUrl,videoUrl,averageScore,submitStatus);
+        Project p = new Project(id,projectName,college,competitionType,studentName,studentNumber,birthDay,education,major,entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl,docUrl,videoUrl,averageScore,submitStatus,studentId);
         int res = workFillDAO.updateProject(p);
         System.out.println(p.toString());
         return res > 0 ? 1:0;
