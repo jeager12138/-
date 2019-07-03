@@ -30,6 +30,7 @@ public class CommitteeService {
         }
         String ticket = userService.addLoginTicket(committee.getId(), 3);
         map.put("ticket", ticket);
+        map.put("user", committee);
         return map;
     }
 

@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface CommitteeLoginDAO {
-    String TABLE_NAME = " Committee ";
+    String TABLE_NAME = " CommitteeLogin ";
     String INSERT_FIELDS = " userName, passwords, salt ";
     String SELECT_FIELDS = " id, " + INSERT_FIELDS;
 

@@ -24,8 +24,17 @@ public class Project {
     private String docUrl;
     private String videoUrl;
     private double averageScore;
-    private int submitStatus;     //提交状态 0已经提交 1还可修改
+    private int submitStatus;     //提交状态 0已经提交 1还可修改 2通过 3拒绝
     private int studentId;
+    private int competitionId;
+
+    public int getCompetitionId() {
+        return competitionId;
+    }
+
+    public void setCompetitionId(int competitionId) {
+        this.competitionId = competitionId;
+    }
 
     public int getStudentId() {
         return studentId;

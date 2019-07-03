@@ -45,6 +45,7 @@ public class ExpertService {
         }
         String ticket = userService.addLoginTicket(expert.getId(), 1);
         map.put("ticket", ticket);
+        map.put("user", expert);
         return map;
     }
 
