@@ -52,7 +52,7 @@ public interface WorkFillDAO {
     @Select({"Select * From " , TABLE_NAME , " where studentId = #{studentId} and competitionId=#{competitionId}"})
     List<Project> getWorkList(@Param("studentId") int studentId, @Param("competitionId") int competitionId);
 
-    @Select({"Select * from ", TABLE_NAME, " where competitionId=#{competitionId} and submitStatus=0"})
+    @Select({"Select * from ", TABLE_NAME, " where competitionId=#{competitionId} and submitStatus!=1"})
     List<Project> getAlreadyList(int competitionId);
 
 }
