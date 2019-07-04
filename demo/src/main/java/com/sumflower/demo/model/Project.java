@@ -27,6 +27,17 @@ public class Project {
     private int submitStatus;     //提交状态 0已经提交 1还可修改 2通过 3拒绝
     private int studentId;
     private int competitionId;
+    private String showForm;
+    private String searchWay;
+    private int judgeNum;
+
+    public int getJudgeNum() {
+        return judgeNum;
+    }
+
+    public void setJudgeNum(int judgeNum) {
+        this.judgeNum = judgeNum;
+    }
 
     public int getCompetitionId() {
         return competitionId;

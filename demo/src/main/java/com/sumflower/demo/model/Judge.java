@@ -8,6 +8,15 @@ public class Judge {
     private int score;
     private String suggestion;
     private int judgeStatus;   //评审状态 0是已经提交 1是可以修改
+    private int competitionId;
+
+    public int getCompetitionId() {
+        return competitionId;
+    }
+
+    public void setCompetitionId(int competitionId) {
+        this.competitionId = competitionId;
+    }
 
     public int getExpertId() {
         return expertId;
