@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface CompetitionDAO {
     String TABLE_NAME = " Competition ";
@@ -20,6 +22,9 @@ public interface CompetitionDAO {
 
     @Select({"select ", SELECT_FIELDS, " from ", TABLE_NAME, " where competitionName=#{competitionName}"})
     Competition selectByName(String competitionName);
+
+    @Select({"select * from ", TABLE_NAME})
+    List<Competition> getInfo();
 
     @Select({"select max(id) from ", TABLE_NAME})
     int selectLastId();

@@ -1,5 +1,7 @@
 package com.sumflower.demo.Controller;
 
+import com.sumflower.demo.dao.CompetitionDAO;
+import com.sumflower.demo.model.Competition;
 import com.sumflower.demo.model.HostHolder;
 import com.sumflower.demo.service.CompetitionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 
@@ -19,6 +22,8 @@ public class CompetitionController {
     HostHolder hostHolder;
     @Autowired
     CompetitionService competitionService;
+    @Autowired
+    CompetitionDAO competitionDAO;
 
     @RequestMapping(path = {"/addCompetition"}, method = {RequestMethod.POST})
     @ResponseBody
@@ -41,6 +46,13 @@ public class CompetitionController {
         } else {
             return "success";
         }
+    }
+
+    @RequestMapping(path = "/getCompetitionInfo")
+    @ResponseBody
+    public List<Competition> competition()
+    {
+        return competitionDAO.getInfo();
     }
 
 }
