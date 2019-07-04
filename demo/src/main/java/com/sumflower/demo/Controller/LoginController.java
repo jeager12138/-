@@ -49,6 +49,8 @@ public class LoginController {
             response.addCookie(cookie);
             ret.put("ticket", map.get("ticket").toString());
             ret.put("user", map.get("user"));
+            ret.put("msg", "success");
+            ret.put("userType", "student");
             return ret;
         } else {
             ret.put("msg", "fail");
@@ -74,6 +76,8 @@ public class LoginController {
 
             ret.put("ticket", map.get("ticket").toString());
             ret.put("user", map.get("user"));
+            ret.put("msg", "success");
+            ret.put("userType", "expert");
             return ret;
         } else {
             ret.put("msg", "fail");
@@ -90,17 +94,20 @@ public class LoginController {
         String passwords = (m.get("passwords")).toString();
         String userType = (m.get("userType")).toString();
 
+        Map<String, Object> ret = new HashMap<>();
         Map<String, Object> map = null;
         if (userType.equals("0")) {
             map = studentService.login(userName, passwords);
+            ret.put("userType", "student");
         } else if (userType.equals("1")) {
             map = expertService.login(userName, passwords);
+            ret.put("userType", "expert");
         } else {
             map = committeeService.login(userName, passwords);
+            ret.put("userType", "admin");
         }
 
-        Map<String, Object> ret = new HashMap<>();
-
+        System.out.println(map.get("msg"));
 
         if (map.containsKey("ticket")) {
             Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
@@ -109,6 +116,7 @@ public class LoginController {
 
             ret.put("ticket", map.get("ticket").toString());
             ret.put("user", map.get("user"));
+            ret.put("msg", "success");
             return ret;
         } else {
             ret.put("msg", "fail");
@@ -117,4 +125,3 @@ public class LoginController {
     }
 
 }
-
