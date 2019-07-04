@@ -39,8 +39,7 @@ public class PDFController{
         int id = Integer.parseInt(m.get("id").toString());
         //int id = 5;
         Project p = workFillDAO.getInfo(id);
-
-
+        if(p == null) return;
         try {
             //设置文件头：最后一个参数是设置下载文件名(这里我们叫：个人简历.pdf)
             response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(p.getProjectFullName()+ ".pdf", "UTF-8"));
