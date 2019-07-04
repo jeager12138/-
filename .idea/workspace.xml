@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e275b1-6ecf-4a43-9a9e-6aa1540586c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_javax_mail_api_1_5_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/my.log" beforeDir="false" afterPath="$PROJECT_DIR$/demo/my.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/PDFController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/sumflower/demo/Controller/PDFController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/TEST-com.sumflower.demo.DemoApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/TEST-com.sumflower.demo.DemoApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/com.sumflower.demo.DemoApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/com.sumflower.demo.DemoApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my.log" beforeDir="false" afterPath="$PROJECT_DIR$/my.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/TEST-com.sumflower.demo.DemoApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/com.sumflower.demo.DemoApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/test-classes/com/sumflower/demo/DemoApplicationTests.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+            <state relative-caret-position="250">
+              <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -281,7 +272,7 @@
       <workItem from="1561942906659" duration="3020000" />
       <workItem from="1562134877912" duration="2549000" />
       <workItem from="1562150406241" duration="255000" />
-      <workItem from="1562150692208" duration="1066000" />
+      <workItem from="1562150692208" duration="1481000" />
     </task>
     <task id="LOCAL-00001" summary="test setcookies">
       <created>1561772762551</created>
@@ -458,11 +449,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562149179845</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;javax.activation&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.activation-api&lt;/artifactId&gt;&#10;&#9;&#9;&#9;&lt;version&gt;1.2.0&lt;/version&gt;&#10;&#9;&#9;&lt;/dependency&gt;&#10;&#9;&#9;&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;javax.mail&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.mail-api&lt;/artifactId&gt;&#10;&#9;&#9;&lt;/dependency&gt;&#10;&#9;&#9;&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;com.sun.mail&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.mail&lt;/artifactId&gt;&#10;&#9;&#9;&lt;/dependency&gt;">
+      <created>1562151847012</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1562151847012</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32964000" />
+    <option name="totallyTimeSpent" value="33379000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -476,7 +474,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4977064" visible="true" weight="0.23324397" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4977064" visible="true" weight="0.23324397" />
       <window_info id="Structure" order="1" sideWeight="0.5022936" side_tool="true" weight="0.22654155" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -487,7 +485,7 @@
       <window_info id="Web" order="8" sideWeight="0.50096714" side_tool="true" weight="0.2660858" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932975" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7969169" visible="true" weight="0.30167598" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7969169" weight="0.30167598" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -550,7 +548,8 @@
     <MESSAGE value="7.3 14:22" />
     <MESSAGE value="7.3 14:23" />
     <MESSAGE value="7.3 18:19" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.3 18:19" />
+    <MESSAGE value="&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;javax.activation&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.activation-api&lt;/artifactId&gt;&#10;&#9;&#9;&#9;&lt;version&gt;1.2.0&lt;/version&gt;&#10;&#9;&#9;&lt;/dependency&gt;&#10;&#9;&#9;&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;javax.mail&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.mail-api&lt;/artifactId&gt;&#10;&#9;&#9;&lt;/dependency&gt;&#10;&#9;&#9;&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;com.sun.mail&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.mail&lt;/artifactId&gt;&#10;&#9;&#9;&lt;/dependency&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;javax.activation&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.activation-api&lt;/artifactId&gt;&#10;&#9;&#9;&#9;&lt;version&gt;1.2.0&lt;/version&gt;&#10;&#9;&#9;&lt;/dependency&gt;&#10;&#9;&#9;&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;javax.mail&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.mail-api&lt;/artifactId&gt;&#10;&#9;&#9;&lt;/dependency&gt;&#10;&#9;&#9;&lt;dependency&gt;&#10;&#9;&#9;&#9;&lt;groupId&gt;com.sun.mail&lt;/groupId&gt;&#10;&#9;&#9;&#9;&lt;artifactId&gt;javax.mail&lt;/artifactId&gt;&#10;&#9;&#9;&lt;/dependency&gt;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/sumflower/demo/configuration/WebConfiguration.java">
@@ -728,8 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        <state relative-caret-position="250">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -789,6 +788,7 @@
             <option name="proportions">
               <list>
                 <option value="0.29705882" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
