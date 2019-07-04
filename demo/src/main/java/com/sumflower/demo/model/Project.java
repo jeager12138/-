@@ -30,6 +30,31 @@ public class Project {
     private String showForm;
     private String searchWay;
     private int judgeNum;
+    private int rewardLevel;
+
+    public String getShowForm() {
+        return showForm;
+    }
+
+    public void setShowForm(String showForm) {
+        this.showForm = showForm;
+    }
+
+    public String getSearchWay() {
+        return searchWay;
+    }
+
+    public void setSearchWay(String searchWay) {
+        this.searchWay = searchWay;
+    }
+
+    public int getRewardLevel() {
+        return rewardLevel;
+    }
+
+    public void setRewardLevel(int rewardLevel) {
+        this.rewardLevel = rewardLevel;
+    }
 
     public int getJudgeNum() {
         return judgeNum;

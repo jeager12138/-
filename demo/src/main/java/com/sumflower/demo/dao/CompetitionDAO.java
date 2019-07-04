@@ -24,7 +24,7 @@ public interface CompetitionDAO {
     @Select({"select ", SELECT_FIELDS, " from ", TABLE_NAME, " where competitionName=#{competitionName}"})
     Competition selectByName(String competitionName);
 
-    @Select({"select * from ", TABLE_NAME})
+    @Select({"select * from ", TABLE_NAME, " order by id desc"})
     List<Competition> getInfo();
 
     @Select({"select max(id) from ", TABLE_NAME})

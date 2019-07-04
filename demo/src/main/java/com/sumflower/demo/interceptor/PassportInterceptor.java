@@ -39,9 +39,6 @@ public class PassportInterceptor implements HandlerInterceptor {
 
         ticket = httpServletRequest.getHeader("cookies");
 
-        logger.error("############");
-        logger.error(ticket);
-
 
         if (httpServletRequest.getCookies() != null) {
             for (Cookie cookie : httpServletRequest.getCookies()) {
