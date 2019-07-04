@@ -51,7 +51,7 @@ public class EmailService {
             multipart.addBodyPart(contentPart);
             message.setContent(multipart);//将multipart对象放到message中
             message.saveChanges(); //保存邮件
-            Transport transport = session.getTransport("smtp");//发送邮件
+            Transport transport = session.getTransport("smtp");
             transport.connect(HOST, USER, PWD);//连接服务器的邮箱
             transport.sendMessage(message, message.getAllRecipients());//把邮件发送出去
             transport.close();//关闭连接
