@@ -1,6 +1,0 @@
-com\sumflower\demo\model\Competition.class
-com\sumflower\demo\Controller\UploadFileController.class
-com\sumflower\demo\configuration\WebConfiguration.class
-com\sumflower\demo\Controller\CompetitionController.class
-com\sumflower\demo\dao\CompetitionDAO.class
-com\sumflower\demo\service\CompetitionService.class

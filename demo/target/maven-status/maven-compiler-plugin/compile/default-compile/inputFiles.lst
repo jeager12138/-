@@ -14,10 +14,12 @@ C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\service\CompetitionService.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\Controller\RanderousController.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\dao\LoginTicketDAO.java
+C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\Controller\CommitteeController.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\dao\UploadFileDao.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\model\StudentLogin.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\service\ExpertService.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\model\Project.java
+C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\model\Friend.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\model\LoginTicket.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\dao\CompetitionDAO.java
 C:\Users\76743\Desktop\Sunflower-Cup-Competition-Reporting-System\demo\src\main\java\com\sumflower\demo\interceptor\PassportInterceptor.java
