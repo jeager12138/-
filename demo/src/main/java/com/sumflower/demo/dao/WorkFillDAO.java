@@ -55,4 +55,8 @@ public interface WorkFillDAO {
     @Select({"Select * from ", TABLE_NAME, " where competitionId=#{competitionId} and submitStatus!=1"})
     List<Project> getAlreadyList(int competitionId);
 
+
+    @Select({"select * from ", TABLE_NAME, " where competitionId=#{competitionId} and judgeNum>2"})
+    List<Project> getJudgedList(int competitionId);
+
 }
