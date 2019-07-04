@@ -2,6 +2,7 @@ package com.sumflower.demo.dao;
 
 import com.sumflower.demo.model.Competition;
 import com.sumflower.demo.model.ExpertLogin;
+import com.sumflower.demo.model.Project;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -28,5 +29,8 @@ public interface CompetitionDAO {
 
     @Select({"select max(id) from ", TABLE_NAME})
     int selectLastId();
+
+    @Update({"update ", TABLE_NAME, " set competitionName=#{competitionName},startTime=#{startTime},endTime=#{endTime},description=#{description} where id=#{id}"})
+    int updateCompetition(Competition competition);
 
 }

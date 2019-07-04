@@ -21,6 +21,7 @@ com\sumflower\demo\dao\CommitteeLoginDAO.class
 com\sumflower\demo\Controller\PDFController.class
 com\sumflower\demo\Controller\WinjaceController.class
 com\sumflower\demo\dao\ExpertLoginDAO.class
+com\sumflower\demo\dao\JudgeDAO.class
 com\sumflower\demo\dao\UploadFileDao.class
 com\sumflower\demo\service\StudentService.class
 com\sumflower\demo\configuration\WebConfiguration.class
