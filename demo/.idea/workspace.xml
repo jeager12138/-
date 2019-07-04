@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44ad294e-f510-449b-aaa5-2396c5ce4241" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/my.log" beforeDir="false" afterPath="$PROJECT_DIR$/my.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/Controller/CommitteeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/Controller/CommitteeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/dao/WorkFillDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/dao/WorkFillDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/Judge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/Judge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sumflower/demo/model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/Controller/CommitteeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/Controller/CompetitionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/Controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/Controller/PDFController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/Controller/UploadFileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/configuration/WebConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/dao/CompetitionDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/dao/ExpertLoginDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/model/Competition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/model/Friend.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sumflower/demo/service/CompetitionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,8 +56,8 @@
       <file leaf-file-name="CommitteeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sumflower/demo/Controller/CommitteeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+            <state relative-caret-position="300">
+              <caret line="55" column="8" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -261,6 +269,11 @@
               <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -333,15 +346,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5270000" />
+    <option name="totallyTimeSpent" value="5439000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="633" y="0" width="653" height="687" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.18350849" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.18319328" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="4" />
@@ -356,10 +369,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3297491" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32909092" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24333064" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.5058824" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32902184" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="5" />
@@ -763,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sumflower/demo/Controller/CommitteeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+        <state relative-caret-position="300">
+          <caret line="55" column="8" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
