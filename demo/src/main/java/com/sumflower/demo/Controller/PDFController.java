@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.itextpdf.text.Font;
 import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.Project;
+import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,20 +32,20 @@ public class PDFController{
 
     @RequestMapping(path = "/api/DownloadPDF")
     @ResponseBody
-    public void pdfexport(HttpServletResponse response,@RequestBody Map m) {
+    public String pdfexport(HttpServletResponse response,@RequestBody Map m) {
         // 指定解析器
         System.setProperty("javax.xml.parsers.DocumentBuilderFactory",
                 "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
         String filename = "科技竞赛作品提交表.pdf";
         int id = Integer.parseInt(m.get("id").toString());
-        //int id = 5;
+        //int id = 12;
         Project p = workFillDAO.getInfo(id);
-
-
+        if(p == null) return "下载失败";
         try {
             //设置文件头：最后一个参数是设置下载文件名(这里我们叫：个人简历.pdf)
             response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(p.getProjectFullName()+ ".pdf", "UTF-8"));
-            response.setContentType("/application/pdf");
+            //response.setContentType("/application/pdf;charset=UTF-8");
+            response.setContentType("application/pdf");
         } catch (UnsupportedEncodingException e1) {
             e1.printStackTrace();
         }
@@ -60,7 +61,7 @@ public class PDFController{
              *
              */
             // 2 读入pdf表单
-            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技竞赛作品提交表.pdf");
+            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技竞赛作品申报表.pdf");
 
             // 3 根据表单生成一个新的pdf
             ps = new PdfStamper(reader, os);
@@ -140,5 +141,6 @@ public class PDFController{
                 e.printStackTrace();
             }
         }
+        return "下载成功";
     }
 }
