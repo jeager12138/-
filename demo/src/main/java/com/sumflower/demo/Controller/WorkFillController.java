@@ -108,7 +108,10 @@ public class WorkFillController {
         String address = (m.get("address")).toString();
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
-        String friends = (m.get("friends")).toString();
+        String friends = "";
+        if(m.get("friends") != null) {
+            friends = m.get("friends").toString();
+        }
 
         logger.error(friends);
 
@@ -123,7 +126,14 @@ public class WorkFillController {
         double averageScore = 0;
         int submitStatus = 0;
         int id = Integer.parseInt((m.get("id")).toString());
-        Project p = new Project(id,projectName,college,competitionType,studentName,studentNumber,birthDay,education,major,entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl,docUrl,videoUrl,averageScore,submitStatus,studentId);
+
+        String additionalMessage = m.get("additionalMessage").toString();
+
+        logger.error(additionalMessage);
+
+        int competitionId = competitionDAO.selectLastId();
+
+        Project p = new Project(id,projectName,college,competitionType,studentName,studentNumber,birthDay,education,major,entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl,docUrl,videoUrl,averageScore,submitStatus,studentId,competitionId,additionalMessage);
         int res = workFillDAO.updateProject(p);
         System.out.println(p.toString());
         return res > 0 ? 1:0;
@@ -146,13 +156,11 @@ public class WorkFillController {
         return projectList;
     }
 
-
     @RequestMapping(path = {"/api/ViewWorkInfo"})
     @ResponseBody
     public Project ViewWorkInfo(@RequestBody Map m) {
         int id = Integer.parseInt((m.get("id")).toString());
-        Project project = new Project();
-        project = workFillDAO.getInfo(id);
+        Project project = workFillDAO.getInfo(id);
         return project;
     }
 
@@ -176,6 +184,93 @@ public class WorkFillController {
         int id = Integer.parseInt((m.get("id")).toString());
         int res = workFillDAO.deleteProject(id);
         return res > 0 ? 1:0;
+    }
+
+
+    @RequestMapping(path = {"/api/ViewWorkListForJane"})
+    @ResponseBody
+    public List<Project> ViewWorkListForJane(@RequestBody Map m) {
+        int id = Integer.parseInt((m.get("studentId")).toString());
+        int competitionId = competitionDAO.selectLastId();
+        List<Project> projectList = workFillDAO.getWorkList(id, competitionId);
+        for(Project p : projectList) {
+            StringBuffer newAdditionMessage = new StringBuffer();
+            if(p.getProjectType()==0) {
+                if(p.getAdditionalMessage().contains("\"0\"")) {
+                    newAdditionMessage.append(" 实物、产品 ");
+                }
+                if(p.getAdditionalMessage().contains("\"1\"")) {
+                    newAdditionMessage.append(" 模型 ");
+                }
+                if(p.getAdditionalMessage().contains("\"2\"")) {
+                    newAdditionMessage.append(" 图纸 ");
+                }
+                if(p.getAdditionalMessage().contains("\"3\"")) {
+                    newAdditionMessage.append(" 磁盘 ");
+                }
+                if(p.getAdditionalMessage().contains("\"4\"")) {
+                    newAdditionMessage.append(" 现场演示 ");
+                }
+                if(p.getAdditionalMessage().contains("\"5\"")) {
+                    newAdditionMessage.append(" 图片 ");
+                }
+                if(p.getAdditionalMessage().contains("\"6\"")) {
+                    newAdditionMessage.append(" 录像 ");
+                }
+                if(p.getAdditionalMessage().contains("\"7\"")) {
+                    newAdditionMessage.append(" 样品 ");
+                }
+                p.setAdditionalMessage(newAdditionMessage.toString());
+            } else {
+                if(p.getAdditionalMessage().contains("\"0\"")) {
+                    newAdditionMessage.append(" 走访 ");
+                }
+                if(p.getAdditionalMessage().contains("\"1\"")) {
+                    newAdditionMessage.append(" 问卷 ");
+                }
+                if(p.getAdditionalMessage().contains("\"2\"")) {
+                    newAdditionMessage.append(" 现场采访 ");
+                }
+                if(p.getAdditionalMessage().contains("\"3\"")) {
+                    newAdditionMessage.append(" 人员介绍 ");
+                }
+                if(p.getAdditionalMessage().contains("\"4\"")) {
+                    newAdditionMessage.append(" 个别交谈 ");
+                }
+                if(p.getAdditionalMessage().contains("\"5\"")) {
+                    newAdditionMessage.append(" 亲临实践 ");
+                }
+                if(p.getAdditionalMessage().contains("\"6\"")) {
+                    newAdditionMessage.append(" 会议 ");
+                }
+                if(p.getAdditionalMessage().contains("\"7\"")) {
+                    newAdditionMessage.append(" 图片、照片 ");
+                }
+                if(p.getAdditionalMessage().contains("\"8\"")) {
+                    newAdditionMessage.append(" 书报刊物 ");
+                }
+                if(p.getAdditionalMessage().contains("\"9\"")) {
+                    newAdditionMessage.append(" 统计报表 ");
+                }
+                if(p.getAdditionalMessage().contains("\"10\"")) {
+                    newAdditionMessage.append(" 影视资料 ");
+                }
+                if(p.getAdditionalMessage().contains("\"11\"")) {
+                    newAdditionMessage.append(" 文件 ");
+                }
+                if(p.getAdditionalMessage().contains("\"12\"")) {
+                    newAdditionMessage.append(" 集体组织 ");
+                }
+                if(p.getAdditionalMessage().contains("\"13\"")) {
+                    newAdditionMessage.append(" 自发 ");
+                }
+                if(p.getAdditionalMessage().contains("\"14\"")) {
+                    newAdditionMessage.append(" 其他 ");
+                }
+                p.setAdditionalMessage(newAdditionMessage.toString());
+            }
+        }
+        return projectList;
     }
 
 }

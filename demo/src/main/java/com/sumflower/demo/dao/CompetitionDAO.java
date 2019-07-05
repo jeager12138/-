@@ -13,11 +13,11 @@ import java.util.List;
 @Mapper
 public interface CompetitionDAO {
     String TABLE_NAME = " Competition ";
-    String INSERT_FIELDS = " competitionName, startTime, endTime, description ";
+    String INSERT_FIELDS = " competitionName, startTime, endTime, description, competitionStatus ";
     String SELECT_FIELDS = " id, " + INSERT_FIELDS;
 
     @Insert({"insert into ", TABLE_NAME, "(", INSERT_FIELDS,
-    ") values (#{competitionName},#{startTime},#{endTime},#{description})"})
+    ") values (#{competitionName},#{startTime},#{endTime},#{description},#{competitionStatus})"})
     int addCompetition(Competition competition);
 
 
@@ -32,5 +32,8 @@ public interface CompetitionDAO {
 
     @Update({"update ", TABLE_NAME, " set competitionName=#{competitionName},startTime=#{startTime},endTime=#{endTime},description=#{description} where id=#{id}"})
     int updateCompetition(Competition competition);
+
+    @Select({"select competitionStatus from ", TABLE_NAME, " where id=#{id}"})
+    String getStatus(int id);
 
 }

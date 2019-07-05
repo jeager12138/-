@@ -15,7 +15,7 @@ public class CompetitionService {
     @Autowired
     CompetitionDAO competitionDAO;
 
-    public Map<String, String> addCompetition(String competitionName, Date startTime, Date endTime, String description) {
+    public Map<String, String> addCompetition(String competitionName, Date startTime, Date endTime, String description, String competitionStatus) {
         Map<String, String> map = new HashMap<>();
         Competition c = competitionDAO.selectByName(competitionName);
         if (c != null) {
@@ -27,6 +27,7 @@ public class CompetitionService {
             c.setDescription(description);
             c.setStartTime(startTime);
             c.setEndTime(endTime);
+            c.setCompetitionStatus(competitionStatus);
             competitionDAO.addCompetition(c);
             map.put("success", "success");
             return map;

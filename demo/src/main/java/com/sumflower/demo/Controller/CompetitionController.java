@@ -4,6 +4,7 @@ import com.sumflower.demo.dao.CompetitionDAO;
 import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.Competition;
 import com.sumflower.demo.model.HostHolder;
+import com.sumflower.demo.model.Project;
 import com.sumflower.demo.service.CompetitionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,7 @@ public class CompetitionController {
         String startTime = (m.get("startTime")).toString();
         String endTime = (m.get("endTime")).toString();
         String description = (m.get("description")).toString();
+        String competitionStatus = "doing";
 
         SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
@@ -43,7 +45,7 @@ public class CompetitionController {
         Date startDate = formatter1.parse(startTime, pos1);
         Date endDate = formatter2.parse(endTime, pos2);
 
-        Map<String, String> map = competitionService.addCompetition(competitionName, startDate, endDate, description);
+        Map<String, String> map = competitionService.addCompetition(competitionName, startDate, endDate, description, competitionStatus);
         if (map.containsKey("msg")) {
             return map.get("msg");
         } else {
@@ -97,6 +99,23 @@ public class CompetitionController {
 
         workFillDAO.giveReward(projectId, rewardLevel);
         return 0;
+    }
+
+    @RequestMapping(path = {"/getCompetitionState"})
+    @ResponseBody
+    public String getCompetitionStatus(@RequestBody Map m) {
+        int id = Integer.parseInt(m.get("id").toString());
+        return competitionDAO.getStatus(id);
+    }
+
+    @RequestMapping(path = {"/getCompetitionResult"})
+    @ResponseBody
+    public List<Project> getCompetitionResult(@RequestBody Map m) {
+        int competitionId = Integer.parseInt(m.get("id").toString());
+        int competitionType = Integer.parseInt(m.get("competitionType").toString());
+        int grade = Integer.parseInt(m.get("grade").toString());
+
+        return workFillDAO.getRewardList(competitionId, competitionType, grade);
     }
 
 }

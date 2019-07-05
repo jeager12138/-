@@ -4,6 +4,7 @@ package com.sumflower.demo.dao;
 import com.sumflower.demo.model.Judge;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -15,6 +16,12 @@ public interface JudgeDAO {
 
     @Select({"select * from ", TABLE_NAME, " where projectId = #{projectId}"})
     List<Judge> selectJudge(int projectId);
+
+    @Update({"update ", TABLE_NAME, " set score=#{score},suggestion=#{suggestion} where projectId=#{projectId} and expertId=#{expertId}"})
+    int updateJudge(Judge judge);
+
+    @Select({"select * from ", TABLE_NAME, " where projectId=#{projectId} and expertId=#{expertId}"})
+    List<Judge> getJudge(Judge judge);
 
 
 }

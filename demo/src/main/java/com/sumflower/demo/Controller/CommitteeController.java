@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -60,10 +61,12 @@ public class CommitteeController {
 
     @RequestMapping(path = {"/findJudgedList"})
     @ResponseBody
-    public List<Project> findJudgedList(@RequestBody Map m) {
-        logger.error("JudgeList interface");
+    public Map<String, Object> findJudgedList(@RequestBody Map m) {
+        Map<String, Object> map = new HashMap<>();
         int competitionId = competitionDAO.selectLastId();
-        return workFillDAO.getJudgedList(competitionId);
+        map.put("List", workFillDAO.getJudgedList(competitionId));
+        map.put("competitionStatus", competitionDAO.getStatus(competitionId).equals("doing")?0:1);
+        return map;
     }
 
     @RequestMapping(path = {"/getJudgeDetails"})

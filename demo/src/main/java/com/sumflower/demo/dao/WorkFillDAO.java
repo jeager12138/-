@@ -21,7 +21,7 @@ public interface WorkFillDAO {
             "major = #{major},entryYear = #{entryYear},projectFullName = #{projectFullName},address = #{address}," +
             "phone = #{phone},email = #{email},friends = #{friends},projectType = #{projectType},details = #{details}," +
             "invention = #{invention},keywords = #{keywords}," +
-            "submitStatus = #{submitStatus},studentId = #{studentId},competitionId=#{competitionId} where id = #{id}"})
+            "submitStatus = #{submitStatus},studentId = #{studentId},competitionId=#{competitionId},additionalMessage=#{additionalMessage} where id = #{id}"})
     int updateProject(Project project);
 
     @Update({"update Project set submitStatus = 1 where id = #{id}"})
@@ -63,5 +63,7 @@ public interface WorkFillDAO {
     @Update({"update Project set rewardLevel=#{rewardLevel} where id in ${projectId}"})
     int giveReward(@Param("projectId") String projectId, @Param("rewardLevel") int rewardLevel);
 
+    @Select({"select * from ", TABLE_NAME, " where competitionId=#{competitionId} and competitionType=#{competitionType} and rewardLevel=#{grade}"})
+    List<Project> getRewardList(@Param("competitionId") int competitionId, @Param("competitionType") int competitionType, @Param("grade") int grade);
 
 }
