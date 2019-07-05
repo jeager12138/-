@@ -34,9 +34,14 @@ public class EmailController {
     @RequestMapping(path = {"/inviteExperts"}, method = RequestMethod.POST)
     @ResponseBody
     public String SendEmail(@RequestBody Map m){
-        String receivers = (m.get("receivers").toString());
-        String context = "接受邀请：（link1），拒绝邀请：（link2）";
-        emailService.send(receivers,context);
+        String[] receivers = (m.get("receivers").toString()).split(",");
+        String[] expertId = (m.get("expertId").toString()).split(",");
+        String projectId = (m.get("projectId").toString());
+        for(int i =0; i < receivers.length; ++i ) {
+            String context = "接受邀请：(http://127.0.0.1:8000/user/register-expert?expertId=" + expertId[i] +
+                    "&projectId=" + projectId + ")，拒绝邀请：（link2）";
+            emailService.send(receivers[i], context);
+        }
         return "发送邀请邮件成功！";
     }
 }
