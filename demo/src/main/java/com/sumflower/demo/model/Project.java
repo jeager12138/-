@@ -24,7 +24,7 @@ public class Project {
     private String docUrl;
     private String videoUrl;
     private double averageScore;
-    private int submitStatus;     //提交状态 0已经提交 1还可修改 2通过 3拒绝
+    private int submitStatus;     //提交状态 0还可修改 1已经提交 2通过 3拒绝
     private int studentId;
     private int competitionId;
     private String showForm;

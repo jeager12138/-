@@ -1,6 +1,7 @@
 package com.sumflower.demo.Controller;
 
 import com.sumflower.demo.dao.CompetitionDAO;
+import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.Competition;
 import com.sumflower.demo.model.HostHolder;
 import com.sumflower.demo.service.CompetitionService;
@@ -24,6 +25,8 @@ public class CompetitionController {
     CompetitionService competitionService;
     @Autowired
     CompetitionDAO competitionDAO;
+    @Autowired
+    WorkFillDAO workFillDAO;
 
     @RequestMapping(path = {"/addCompetition"}, method = {RequestMethod.POST})
     @ResponseBody
@@ -78,6 +81,21 @@ public class CompetitionController {
         competitionDAO.updateCompetition(c);
 
         return 1;
+    }
+
+    @RequestMapping(path = {"/giveRewards"})
+    @ResponseBody
+    public int giveRewards(@RequestBody Map m) {
+        int rewardLevel = Integer.parseInt(m.get("rewardLevel").toString());
+        String rewardProject = m.get("rewardProject").toString();
+        StringBuffer sb = new StringBuffer("(");
+        sb.append(rewardProject);
+        sb.append(")");
+        System.out.println(sb);
+        String projectId = sb.toString();
+
+        workFillDAO.giveReward(projectId, rewardLevel);
+        return 0;
     }
 
 }

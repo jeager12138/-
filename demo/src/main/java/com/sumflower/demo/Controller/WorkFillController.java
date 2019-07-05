@@ -121,7 +121,7 @@ public class WorkFillController {
         String docUrl = "";
         String videoUrl =  "";
         double averageScore = 0;
-        int submitStatus = 1;
+        int submitStatus = 0;
         int id = Integer.parseInt((m.get("id")).toString());
         Project p = new Project(id,projectName,college,competitionType,studentName,studentNumber,birthDay,education,major,entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl,docUrl,videoUrl,averageScore,submitStatus,studentId);
         int res = workFillDAO.updateProject(p);
