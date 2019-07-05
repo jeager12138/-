@@ -57,9 +57,9 @@ public class CompetitionController {
         return competitionDAO.getInfo();
     }
 
-    @RequestMapping(path = "/updateCompetitonInfo")
+    @RequestMapping(path = "/updateCompetitionInfo")
     @ResponseBody
-    public int updateCompetitionInfo(@RequestBody Map m) {
+    public String updateCompetitionInfo(@RequestBody Map m) {
         int competitionId = competitionDAO.selectLastId();
         String competitionName = (m.get("competitionName")).toString();
         String startTime = (m.get("startTime")).toString();
@@ -78,9 +78,10 @@ public class CompetitionController {
         c.setDescription(description);
         c.setStartTime(startDate);
         c.setEndTime(endDate);
+        c.setId(competitionId);
         competitionDAO.updateCompetition(c);
 
-        return 1;
+        return "success";
     }
 
     @RequestMapping(path = {"/giveRewards"})

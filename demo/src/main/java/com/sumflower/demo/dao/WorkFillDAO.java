@@ -13,7 +13,7 @@ public interface WorkFillDAO {
             "entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl," +
             "docUrl,videoUrl,averageScore,submitStatus " ;
 
-    @Insert({"insert into Project (studentId,competitionId,submitStatus) values (#{studentId},#{competitionId}, 0)"})
+    @Insert({"insert into Project (studentId,competitionId,competitionType,submitStatus) values (#{studentId},#{competitionId}, 1, 0)"})
     int createProject(Project project);
 
     @Update({"update Project set projectName = #{projectName},college = #{college},competitionType = 1," +
