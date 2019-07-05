@@ -6,7 +6,6 @@ com\sumflower\demo\service\UserService.class
 com\sumflower\demo\dao\WorkFillDAO.class
 com\sumflower\demo\Controller\WorkFillController.class
 com\sumflower\demo\model\Competition.class
-com\sumflower\demo\Controller\EmailController.class
 com\sumflower\demo\model\Friend.class
 com\sumflower\demo\model\StudentLogin.class
 com\sumflower\demo\DemoApplication.class
@@ -34,5 +33,4 @@ com\sumflower\demo\dao\LoginTicketDAO.class
 com\sumflower\demo\interceptor\PassportInterceptor.class
 com\sumflower\demo\service\CompetitionService.class
 com\sumflower\demo\model\Project.class
-com\sumflower\demo\service\EmailService.class
 com\sumflower\demo\model\CommitteeLogin.class
