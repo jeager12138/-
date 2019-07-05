@@ -61,7 +61,7 @@ public class PDFController{
              *
              */
             // 2 读入pdf表单
-            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技竞赛作品提交表.pdf");
+            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技竞赛作品申报表.pdf");
 
             // 3 根据表单生成一个新的pdf
             ps = new PdfStamper(reader, os);
