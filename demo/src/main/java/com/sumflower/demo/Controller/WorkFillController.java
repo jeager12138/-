@@ -196,6 +196,9 @@ public class WorkFillController {
         for(Project p : projectList) {
             StringBuffer newAdditionMessage = new StringBuffer();
             if(p.getProjectType()==0) {
+                if(p.getAdditionalMessage()==null) {
+                    continue;
+                }
                 if(p.getAdditionalMessage().contains("\"0\"")) {
                     newAdditionMessage.append(" 实物、产品 ");
                 }
@@ -222,6 +225,9 @@ public class WorkFillController {
                 }
                 p.setAdditionalMessage(newAdditionMessage.toString());
             } else {
+                if(p.getAdditionalMessage()==null) {
+                    continue;
+                }
                 if(p.getAdditionalMessage().contains("\"0\"")) {
                     newAdditionMessage.append(" 走访 ");
                 }
