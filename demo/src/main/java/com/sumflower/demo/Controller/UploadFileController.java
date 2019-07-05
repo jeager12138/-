@@ -101,29 +101,35 @@ public class UploadFileController {
         {
             filetodelete = "http://liuterry.cn/uploadfile/" + "expert_" + filename + ";";
         }
-
-        Project project = new Project();
-        project = workFillDAO.getInfo(id);
+        System.out.println(filetodelete);
+        Project project = workFillDAO.getInfo(id);
         String docUrltodelete = project.getDocUrl();
         String picUrltodelete = project.getPicUrl();
         String videoUrltodelete = project.getVideoUrl();
+        System.out.println(picUrltodelete);
 
         Project newproject = new Project();
         newproject.setId(id);
         if (filetodelete.endsWith("pdf") | filetodelete.endsWith("PDF")) {
             String newdocUrl = deleteSubString(docUrltodelete, filetodelete );
             newproject.setDocUrl(newdocUrl);
+            newproject.setPicUrl(picUrltodelete);
+            newproject.setVideoUrl(videoUrltodelete);
         }else if(filetodelete.endsWith("png") | filetodelete.endsWith("PNG"))
         {
             String newpicUrl = deleteSubString(picUrltodelete, filetodelete);
             newproject.setPicUrl(newpicUrl);
+            newproject.setDocUrl(docUrltodelete);
+            newproject.setVideoUrl(videoUrltodelete);
         }else if(filetodelete.endsWith("mp4") | filetodelete.endsWith("MP4"))
         {
             String newvideoUrl = deleteSubString(videoUrltodelete, filetodelete);
             newproject.setVideoUrl(newvideoUrl);
+            newproject.setDocUrl(docUrltodelete);
+            newproject.setPicUrl(picUrltodelete);
         }
 
-        uploadFileDao.updateFileUrl(newproject);
+        uploadFileDao.changeFileUrl(newproject);
         return "File deleted";
     }
 
