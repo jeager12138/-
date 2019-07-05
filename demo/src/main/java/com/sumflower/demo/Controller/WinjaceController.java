@@ -13,8 +13,7 @@ public class WinjaceController {
 
     @RequestMapping(path = {"/api2"}, method = {RequestMethod.GET} )
     @ResponseBody
-    public Judge api2(){
-        Judge j = new Judge();
-        return j;
+    public String api2(){
+        return "test";
     }
 }

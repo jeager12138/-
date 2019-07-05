@@ -24,12 +24,20 @@ public class Project {
     private String docUrl;
     private String videoUrl;
     private double averageScore;
-    private int submitStatus;     //提交状态 0已经提交 1还可修改 2通过 3拒绝
+    private int submitStatus;     //提交状态 0还可修改 1已经提交 2通过 3拒绝
     private int studentId;
     private int competitionId;
-    private String showForm;
-    private String searchWay;
     private int judgeNum;
+    private int rewardLevel;
+    private String additionalMessage;
+
+    public int getRewardLevel() {
+        return rewardLevel;
+    }
+
+    public void setRewardLevel(int rewardLevel) {
+        this.rewardLevel = rewardLevel;
+    }
 
     public int getJudgeNum() {
         return judgeNum;
@@ -62,7 +70,7 @@ public class Project {
                    String entryYear, String projectFullName, String address, String phone,
                    String email, String friends, int projectType, String details, String invention,
                    String keywords, String picUrl, String docUrl, String videoUrl,
-                   double averageScore, int submitStatus,int studentId){
+                   double averageScore, int submitStatus,int studentId,int competitionId,String additionalMessage) {
         this.id = id;
         this.projectName = projectName;
         this.college = college;
@@ -88,6 +96,8 @@ public class Project {
         this.averageScore = averageScore;
         this.submitStatus = submitStatus;
         this.studentId = studentId;
+        this.additionalMessage = additionalMessage;
+        this.competitionId = competitionId;
     }
 
     @Override
@@ -118,6 +128,7 @@ public class Project {
                 ", averageScore=" + averageScore +
                 ", submitStatus=" + submitStatus +
                 ", studentId=" + studentId +
+                ", additionalMessage=" + additionalMessage +
                 '}';
     }
 
@@ -203,6 +214,14 @@ public class Project {
 
     public String getEntryYear() {
         return entryYear;
+    }
+
+    public String getAdditionalMessage() {
+        return additionalMessage;
+    }
+
+    public void setAdditionalMessage(String additionalMessage) {
+        this.additionalMessage = additionalMessage;
     }
 
     public void setEntryYear(String entryYear) {
