@@ -8,6 +8,15 @@ public class Competition {
     private Date startTime;
     private Date endTime;
     private String description;
+    private String competitionStatus;
+
+    public String getCompetitionStatus() {
+        return competitionStatus;
+    }
+
+    public void setCompetitionStatus(String competitionStatus) {
+        this.competitionStatus = competitionStatus;
+    }
 
     public int getId() {
         return id;

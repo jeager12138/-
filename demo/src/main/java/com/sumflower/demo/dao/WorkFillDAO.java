@@ -13,7 +13,7 @@ public interface WorkFillDAO {
             "entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl," +
             "docUrl,videoUrl,averageScore,submitStatus " ;
 
-    @Insert({"insert into Project (studentId,competitionId,submitStatus) values (#{studentId},#{competitionId}, 1)"})
+    @Insert({"insert into Project (studentId,competitionId,competitionType,submitStatus) values (#{studentId},#{competitionId}, 1, 0)"})
     int createProject(Project project);
 
     @Update({"update Project set projectName = #{projectName},college = #{college},competitionType = 1," +
@@ -21,10 +21,10 @@ public interface WorkFillDAO {
             "major = #{major},entryYear = #{entryYear},projectFullName = #{projectFullName},address = #{address}," +
             "phone = #{phone},email = #{email},friends = #{friends},projectType = #{projectType},details = #{details}," +
             "invention = #{invention},keywords = #{keywords}," +
-            "submitStatus = #{submitStatus},studentId = #{studentId},competitionId=#{competitionId} where id = #{id}"})
+            "submitStatus = #{submitStatus},studentId = #{studentId},competitionId=#{competitionId},additionalMessage=#{additionalMessage} where id = #{id}"})
     int updateProject(Project project);
 
-    @Update({"update Project set submitStatus = 0 where id = #{id}"})
+    @Update({"update Project set submitStatus = 1 where id = #{id}"})
     int updateProjectStatus(int id);
 
     @Update({"update Project set submitStatus = 2 where id = #{id}"})
@@ -33,7 +33,7 @@ public interface WorkFillDAO {
     @Update({"update Project set submitStatus = 3 where id = #{id}"})
     int rejectProject(int id);
 
-    @Update({"update Project set submitStatus = 1 where id = #{id}"})
+    @Update({"update Project set submitStatus = 0 where id = #{id}"})
     int giveBackProject(int id);
     /*
     @Insert({" insert into ", TABLE_NAME, "(", INSERT_FILEDS,
@@ -52,11 +52,18 @@ public interface WorkFillDAO {
     @Select({"Select * From " , TABLE_NAME , " where studentId = #{studentId} and competitionId=#{competitionId}"})
     List<Project> getWorkList(@Param("studentId") int studentId, @Param("competitionId") int competitionId);
 
-    @Select({"Select * from ", TABLE_NAME, " where competitionId=#{competitionId} and submitStatus!=1"})
+    @Select({"Select * from ", TABLE_NAME, " where competitionId=#{competitionId} and submitStatus!=0"})
     List<Project> getAlreadyList(int competitionId);
 
 
     @Select({"select * from ", TABLE_NAME, " where competitionId=#{competitionId} and judgeNum>2"})
     List<Project> getJudgedList(int competitionId);
+
+
+    @Update({"update Project set rewardLevel=#{rewardLevel} where id in ${projectId}"})
+    int giveReward(@Param("projectId") String projectId, @Param("rewardLevel") int rewardLevel);
+
+    @Select({"select * from ", TABLE_NAME, " where competitionId=#{competitionId} and competitionType=#{competitionType} and rewardLevel=#{grade}"})
+    List<Project> getRewardList(@Param("competitionId") int competitionId, @Param("competitionType") int competitionType, @Param("grade") int grade);
 
 }

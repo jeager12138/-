@@ -1,5 +1,6 @@
 package com.sumflower.demo.Controller;
 
+import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.HostHolder;
 import com.sumflower.demo.model.StudentLogin;
 import com.sumflower.demo.service.StudentService;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin
@@ -24,6 +27,8 @@ public class TerryTestController {
     StudentService studentService;
     @Autowired
     HostHolder hostHolder;
+    @Autowired
+    WorkFillDAO workFillDAO;
 
     @RequestMapping(path = {"/testCookie"})
     @ResponseBody
@@ -58,9 +63,10 @@ public class TerryTestController {
     @RequestMapping(path = {"/testMysql"})
     @ResponseBody
     public String test() {
-        StudentLogin student = studentService.getStudent("666");
+        String a = "(1,3)";
+        workFillDAO.giveReward(a, 1);
 
-        return student.getStudentName();
+        return "yes";
     }
 
 }
