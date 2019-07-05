@@ -1,6 +1,8 @@
 package com.sumflower.demo.Controller;
 
 
+import com.sumflower.demo.dao.CompetitionDAO;
+import com.sumflower.demo.dao.ExpertLoginDAO;
 import com.sumflower.demo.dao.JudgeDAO;
 import com.sumflower.demo.model.Judge;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,10 @@ public class ExpertController {
 
     @Autowired
     JudgeDAO judgeDAO;
-
+    @Autowired
+    CompetitionDAO competitionDAO;
+    @Autowired
+    ExpertLoginDAO expertLoginDAO;
 
     @RequestMapping(path = {"/updateJudgeDetail"})
     @ResponseBody
@@ -46,6 +51,24 @@ public class ExpertController {
 
         List<Judge> list = judgeDAO.getJudge(judge);
         return list.get(0);
+    }
+
+    @RequestMapping(path = {"/acceptInvite"})
+    @ResponseBody
+    public int acceptInvite(@RequestBody Map m) {
+        int projectId = Integer.parseInt(m.get("projectId").toString());
+        int expertId = Integer.parseInt(m.get("expertId").toString());
+        String expertName = expertLoginDAO.selectById(expertId).getExpertName();
+        Judge judge = new Judge();
+        judge.setSuggestion("");
+        judge.setScore(0);
+        judge.setProjectId(projectId);
+        judge.setExpertId(expertId);
+        judge.setCompetitionId(competitionDAO.selectLastId());
+        judge.setJudgeStatus(1);
+        judge.setExpertName(expertName);
+        judgeDAO.insertJudge(judge);
+        return 0;
     }
 
 }

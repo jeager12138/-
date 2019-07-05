@@ -2,6 +2,7 @@ package com.sumflower.demo.dao;
 
 
 import com.sumflower.demo.model.Judge;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -22,6 +23,9 @@ public interface JudgeDAO {
 
     @Select({"select * from ", TABLE_NAME, " where projectId=#{projectId} and expertId=#{expertId}"})
     List<Judge> getJudge(Judge judge);
+
+    @Insert({"insert into ", TABLE_NAME, " (", INSERT_FILEDS, ") values (#{projectId}, #{expertId}, #{expertName}, 0, #{suggestion}, 1, #{competitionId})"})
+    int insertJudge(Judge judge);
 
 
 }
