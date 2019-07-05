@@ -118,4 +118,11 @@ public class CompetitionController {
         return workFillDAO.getRewardList(competitionId, competitionType, grade);
     }
 
+    @RequestMapping(path = {"/finishCompetition"})
+    @ResponseBody
+    public int finishCompetition(@RequestBody Map m) {
+        int id = Integer.parseInt(m.get("competitionId").toString());
+        return competitionDAO.finishCompetition(id);
+    }
+
 }

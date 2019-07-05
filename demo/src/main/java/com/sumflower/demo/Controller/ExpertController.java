@@ -67,7 +67,15 @@ public class ExpertController {
         judge.setCompetitionId(competitionDAO.selectLastId());
         judge.setJudgeStatus(1);
         judge.setExpertName(expertName);
-        judgeDAO.insertJudge(judge);
+        List<Judge> list = judgeDAO.getJudge(judge);
+        if(list.size()==0) {
+            judgeDAO.insertJudge(judge);
+        }
+        else {
+            //nothing happened
+        }
+
+
         return 0;
     }
 

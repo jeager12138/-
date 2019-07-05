@@ -26,6 +26,4 @@ public interface JudgeDAO {
 
     @Insert({"insert into ", TABLE_NAME, " (", INSERT_FILEDS, ") values (#{projectId}, #{expertId}, #{expertName}, 0, #{suggestion}, 1, #{competitionId})"})
     int insertJudge(Judge judge);
-
-
 }
