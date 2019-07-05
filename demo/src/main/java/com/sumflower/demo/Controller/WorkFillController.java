@@ -193,90 +193,97 @@ public class WorkFillController {
         int id = Integer.parseInt((m.get("studentId")).toString());
         int competitionId = competitionDAO.selectLastId();
         List<Project> projectList = workFillDAO.getWorkList(id, competitionId);
+        int index = -1;
         for(Project p : projectList) {
+            index++;
+            if(p.getAdditionalMessage()==null) {
+                p.setAdditionalMessage("");
+                projectList.set(index, p);
+                continue;
+            }
             StringBuffer newAdditionMessage = new StringBuffer();
+            StringBuffer oldAdditionMessage = new StringBuffer(p.getAdditionalMessage());
+            oldAdditionMessage.insert(oldAdditionMessage.length()-1, ", ");
+            oldAdditionMessage.insert(1, ", ");
+            String str = oldAdditionMessage.toString();
             if(p.getProjectType()==0) {
-                if(p.getAdditionalMessage()==null) {
-                    continue;
-                }
-                if(p.getAdditionalMessage().contains("\"0\"")) {
+                if(str.contains(", 0,")) {
                     newAdditionMessage.append(" 实物、产品 ");
                 }
-                if(p.getAdditionalMessage().contains("\"1\"")) {
+                if(str.contains(", 1,")) {
                     newAdditionMessage.append(" 模型 ");
                 }
-                if(p.getAdditionalMessage().contains("\"2\"")) {
+                if(str.contains(", 2,")) {
                     newAdditionMessage.append(" 图纸 ");
                 }
-                if(p.getAdditionalMessage().contains("\"3\"")) {
+                if(str.contains(", 3,")) {
                     newAdditionMessage.append(" 磁盘 ");
                 }
-                if(p.getAdditionalMessage().contains("\"4\"")) {
+                if(str.contains(", 4,")) {
                     newAdditionMessage.append(" 现场演示 ");
                 }
-                if(p.getAdditionalMessage().contains("\"5\"")) {
+                if(str.contains(", 5,")) {
                     newAdditionMessage.append(" 图片 ");
                 }
-                if(p.getAdditionalMessage().contains("\"6\"")) {
+                if(str.contains(", 6,")) {
                     newAdditionMessage.append(" 录像 ");
                 }
-                if(p.getAdditionalMessage().contains("\"7\"")) {
+                if(str.contains(", 7,")) {
                     newAdditionMessage.append(" 样品 ");
                 }
                 p.setAdditionalMessage(newAdditionMessage.toString());
             } else {
-                if(p.getAdditionalMessage()==null) {
-                    continue;
-                }
-                if(p.getAdditionalMessage().contains("\"0\"")) {
+                if(str.contains(", 0,")) {
                     newAdditionMessage.append(" 走访 ");
                 }
-                if(p.getAdditionalMessage().contains("\"1\"")) {
+                if(str.contains(", 1,")) {
                     newAdditionMessage.append(" 问卷 ");
                 }
-                if(p.getAdditionalMessage().contains("\"2\"")) {
+                if(str.contains(", 2,")) {
                     newAdditionMessage.append(" 现场采访 ");
                 }
-                if(p.getAdditionalMessage().contains("\"3\"")) {
+                if(str.contains(", 3,")) {
                     newAdditionMessage.append(" 人员介绍 ");
                 }
-                if(p.getAdditionalMessage().contains("\"4\"")) {
+                if(str.contains(", 4,")) {
                     newAdditionMessage.append(" 个别交谈 ");
                 }
-                if(p.getAdditionalMessage().contains("\"5\"")) {
+                if(str.contains(", 5,")) {
                     newAdditionMessage.append(" 亲临实践 ");
                 }
-                if(p.getAdditionalMessage().contains("\"6\"")) {
+                if(str.contains(", 6,")) {
                     newAdditionMessage.append(" 会议 ");
                 }
-                if(p.getAdditionalMessage().contains("\"7\"")) {
+                if(str.contains(", 7,")) {
                     newAdditionMessage.append(" 图片、照片 ");
                 }
-                if(p.getAdditionalMessage().contains("\"8\"")) {
+                if(str.contains(", 8,")) {
                     newAdditionMessage.append(" 书报刊物 ");
                 }
-                if(p.getAdditionalMessage().contains("\"9\"")) {
+                if(str.contains(", 9,")) {
                     newAdditionMessage.append(" 统计报表 ");
                 }
-                if(p.getAdditionalMessage().contains("\"10\"")) {
+                if(str.contains(", 10,")) {
                     newAdditionMessage.append(" 影视资料 ");
                 }
-                if(p.getAdditionalMessage().contains("\"11\"")) {
+                if(str.contains(", 11,")) {
                     newAdditionMessage.append(" 文件 ");
                 }
-                if(p.getAdditionalMessage().contains("\"12\"")) {
+                if(str.contains(", 12,")) {
                     newAdditionMessage.append(" 集体组织 ");
                 }
-                if(p.getAdditionalMessage().contains("\"13\"")) {
+                if(str.contains(", 13,")) {
                     newAdditionMessage.append(" 自发 ");
                 }
-                if(p.getAdditionalMessage().contains("\"14\"")) {
+                if(str.contains(", 14,")) {
                     newAdditionMessage.append(" 其他 ");
                 }
                 p.setAdditionalMessage(newAdditionMessage.toString());
             }
+            projectList.set(index, p);
         }
         return projectList;
     }
+
 
 }
