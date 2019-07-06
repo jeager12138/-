@@ -89,6 +89,18 @@ public class CommitteeController {
         return 0;
     }
 
+    @RequestMapping(path = {"/rejectFirstTest"})
+    @ResponseBody
+    public int rejectFirstTest(@RequestBody Map m) {
+        String projectIdList = m.get("projectId").toString();
+        StringBuffer sb = new StringBuffer("(");
+        sb.append(projectIdList);
+        sb.append(")");
+        String str = sb.toString();
+        workFillDAO.rejectProjectList(str);
+        return 0;
+    }
+
 
 
 }
