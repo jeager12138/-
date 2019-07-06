@@ -49,8 +49,11 @@ public interface WorkFillDAO {
     @Select({"Select * From " , TABLE_NAME , " where id = #{id}"})
     Project getInfo(int id);
 
-    @Select({"Select * From " , TABLE_NAME , " where studentId = #{studentId} and competitionId=#{competitionId}"})
+    @Select({"Select * From " , TABLE_NAME , " where studentId = #{studentId} and competitionId=#{competitionId} and projectName is not null"})
     List<Project> getWorkList(@Param("studentId") int studentId, @Param("competitionId") int competitionId);
+
+    @Select({"Select * From " , TABLE_NAME , " where studentId = #{studentId} and competitionId=#{competitionId}"})
+    List<Project> getWorkListTrue(@Param("studentId") int studentId, @Param("competitionId") int competitionId);
 
     @Select({"Select * from ", TABLE_NAME, " where competitionId=#{competitionId} and submitStatus!=0"})
     List<Project> getAlreadyList(int competitionId);
@@ -66,4 +69,9 @@ public interface WorkFillDAO {
     @Select({"select * from ", TABLE_NAME, " where competitionId=#{competitionId} and competitionType=#{competitionType} and rewardLevel=#{grade}"})
     List<Project> getRewardList(@Param("competitionId") int competitionId, @Param("competitionType") int competitionType, @Param("grade") int grade);
 
+    @Update({"update Project set judgeNum=judgeNum+1 where id=#{id}"})
+    int addJudgeNum(int id);
+
+    @Update({"update Project set averageScore=#{averageScore] where id=#{id}"})
+    int updateAverage(@Param("averageScore") double averageScore, @Param("id") int id);
 }

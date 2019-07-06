@@ -43,6 +43,7 @@ public class ExpertController {
         judge.setScore(score);
         judge.setSuggestion(suggestion);
         judgeDAO.updateJudge(judge);
+
         return "success";
     }
 
@@ -74,6 +75,7 @@ public class ExpertController {
         judge.setJudgeStatus(1);
         judge.setExpertName(expertName);
         List<Judge> list = judgeDAO.getJudge(judge);
+        workFillDAO.addJudgeNum(projectId);
         if(list.size()==0) {
             judgeDAO.insertJudge(judge);
         }
@@ -101,9 +103,24 @@ public class ExpertController {
             ej.setCompetitionType(p.getCompetitionType());
             ej.setKeywords(p.getKeywords());
             ej.setProjectName(p.getProjectName());
+            ej.setProjectId(p.getId());
+            ej.setJudgeId(j.getId());
             retList.add(ej);
         }
         return retList;
+    }
+
+    @RequestMapping(path = {"/finishJudge"})
+    @ResponseBody
+    public int finishJudge(@RequestBody Map m) {
+        int id = Integer.parseInt(m.get("judgeId").toString());
+        judgeDAO.finishJudge(id);
+
+        Judge j = judgeDAO.selectJudgeById(id);
+        Project p = workFillDAO.getInfo(j.getProjectId());
+        double newAve = ((p.getJudgeNum()-1)*p.getAverageScore()+j.getScore())/p.getJudgeNum();
+        workFillDAO.updateAverage(newAve, p.getId());
+        return 0;
     }
 
 }

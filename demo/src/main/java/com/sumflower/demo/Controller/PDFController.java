@@ -1,5 +1,7 @@
 package com.sumflower.demo.Controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -8,21 +10,21 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.itextpdf.text.Font;
 import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.Project;
 import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @CrossOrigin
 @Controller
@@ -32,15 +34,15 @@ public class PDFController{
 
     @RequestMapping(path = "/api/DownloadPDF")
     @ResponseBody
-    public String pdfexport(HttpServletResponse response,@RequestBody Map m) {
+    public void pdfexport(HttpServletResponse response, @RequestParam("id") int id) {
         // 指定解析器
         System.setProperty("javax.xml.parsers.DocumentBuilderFactory",
                 "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
         String filename = "科技竞赛作品提交表.pdf";
-        int id = Integer.parseInt(m.get("id").toString());
+        //int id = Integer.parseInt(m.get("id").toString());
         //int id = 12;
         Project p = workFillDAO.getInfo(id);
-        if(p == null) return "下载失败";
+        if(p == null) return;
         try {
             //设置文件头：最后一个参数是设置下载文件名(这里我们叫：个人简历.pdf)
             response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(p.getProjectFullName()+ ".pdf", "UTF-8"));
@@ -50,6 +52,7 @@ public class PDFController{
             e1.printStackTrace();
         }
         OutputStream os = null;
+        //FileOutputStream os = new FileOutputStream(filename);
         PdfStamper ps = null;
         PdfReader reader = null;
         try {
@@ -61,7 +64,7 @@ public class PDFController{
              *
              */
             // 2 读入pdf表单
-            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技竞赛作品申报表.pdf");
+            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技作品申报表.pdf");
 
             // 3 根据表单生成一个新的pdf
             ps = new PdfStamper(reader, os);
@@ -92,7 +95,16 @@ public class PDFController{
             data.put("studentName",p.getStudentName());
             data.put("studentNumber",p.getStudentNumber());
             data.put("birthDay",p.getBirthDay());
-            data.put("education",p.getEducation());
+            String education = p.getEducation();
+            if(education.equals("大专")){
+                data.put("education","A");
+            }else if(education.equals("大学本科")){
+                data.put("education","B");
+            }else if(education.equals("硕士研究生")){
+                data.put("education","C");
+            }else if(education.equals("博士研究生")){
+                data.put("education","D");
+            }
             data.put("major",p.getMajor());
             data.put("entryYear",p.getEntryYear());
             data.put("projectFullName",p.getProjectFullName());
@@ -116,8 +128,116 @@ public class PDFController{
             data.put("invention",p.getInvention());
             data.put("keywords",p.getKeywords());
 
+            if(p.getAdditionalMessage()==null) {
+                p.setAdditionalMessage("");
+            }
+            StringBuffer newAdditionMessage = new StringBuffer();
+            StringBuffer oldAdditionMessage = new StringBuffer(p.getAdditionalMessage());
+            oldAdditionMessage.insert(oldAdditionMessage.length()-1, ", ");
+            oldAdditionMessage.insert(1, ", ");
+            String str = oldAdditionMessage.toString();
+            if(p.getCompetitionType()==0){
+                if(str.contains(", 0,")) {
+                    data.put("showFormat1","√");
+                }
+                if(str.contains(", 1,")) {
+                    data.put("showFormat2","√");
+                }
+                if(str.contains(", 2,")) {
+                    data.put("showFormat3","√");
+                }
+                if(str.contains(", 3,")) {
+                    data.put("showFormat4","√");
+                }
+                if(str.contains(", 4,")) {
+                    data.put("showFormat5","√");
+                }
+                if(str.contains(", 5,")) {
+                    data.put("showFormat6","√");
+                }
+                if(str.contains(", 6,")) {
+                    data.put("showFormat7","√");
+                }
+                if(str.contains(", 7,")) {
+                    data.put("showFormat8","√");
+                }
+            }else{
+                if(str.contains(", 0,")) {
+                    data.put("researchFormat1","√");
+                }
+                if(str.contains(", 1,")) {
+                    data.put("researchFormat2","√");
+                }
+                if(str.contains(", 2,")) {
+                    data.put("researchFormat3","√");
+                }
+                if(str.contains(", 3,")) {
+                    data.put("researchFormat4","√");
+                }
+                if(str.contains(", 4,")) {
+                    data.put("researchFormat5","√");
+                }
+                if(str.contains(", 5,")) {
+                    data.put("researchFormat6","√");
+                }
+                if(str.contains(", 6,")) {
+                    data.put("researchFormat7","√");
+                }
+                if(str.contains(", 7,")) {
+                    data.put("researchFormat8","√");
+                }
+                if(str.contains(", 8,")) {
+                    data.put("researchFormat9","√");
+                }
+                if(str.contains(", 9,")) {
+                    data.put("researchFormat10","√");
+                }
+                if(str.contains(", 10,")) {
+                    data.put("researchFormat11","√");
+                }
+                if(str.contains(", 11,")) {
+                    data.put("researchFormat12","√");
+                }
+                if(str.contains(", 12,")) {
+                    data.put("researchFormat13","√");
+                }
+                if(str.contains(", 13,")) {
+                    data.put("researchFormat14","√");
+                }
+                if(str.contains(", 14,")) {
+                    data.put("researchFormat15","√");
+                }
+            }
 
-            //Font font = new Font(bf, 12, Font.NORMAL);
+            String friends = p.getFriends();
+            JSONArray friendlist = JSONArray.parseArray(friends);
+            JSONObject friend0 = JSON.parseObject(friendlist.get(0).toString());
+            if(friend0 != null){
+                String fname0 = friend0.get("name").toString();
+                String fNumber0 = friend0.get("studentId").toString();
+                String fEducation0 = friend0.get("education").toString();
+                String fTel0 = friend0.get("phone").toString();
+                String fEmail0 = friend0.get("email").toString();
+                data.put("fNumber0",fNumber0);
+                data.put("fName0",fname0);
+                data.put("fEducation0",fEducation0);
+                data.put("fTel0",fTel0);
+                data.put("fEmail0",fEmail0);
+            }
+            JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
+            if(friend1 != null){
+                String fname1 = friend1.get("name").toString();
+                String fNumber1 = friend1.get("studentId").toString();
+                String fEducation1 = friend1.get("education").toString();
+                String fTel1 = friend1.get("phone").toString();
+                String fEmail1 = friend1.get("email").toString();
+                data.put("fNumber1",fNumber1);
+                data.put("fName1",fname1);
+                data.put("fEducation1",fEducation1);
+                data.put("fEmail1",fEmail1);
+                data.put("fTel1",fTel1);
+            }
+                //Font font = new Font(bf, 12, Font.NORMAL);
             // 7遍历data 给pdf表单表格赋值
             for (String key : data.keySet()) {
 
@@ -141,6 +261,7 @@ public class PDFController{
                 e.printStackTrace();
             }
         }
-        return "下载成功";
     }
+
+
 }

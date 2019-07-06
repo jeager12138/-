@@ -1,8 +1,5 @@
 package com.sumflower.demo.Controller;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Map;
 
 import com.sumflower.demo.dao.UploadFileDao;
@@ -51,12 +48,25 @@ public class UploadFileController {
         /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
                 new FileOutputStream(new File(filename)));
+        File dir = new File(""+loginTicket.getUserId());
         */
+
+        File dir = new File("/var/www/html/uploadfile/"
+                +loginTicket.getUserId());
+
+        if(!dir.exists()){
+            dir.mkdir();
+        }
+
+        //用于实时生成新的zip文件
+        PrintStream w = new PrintStream("/var/www/html/uploadfile/updateFolder");
+        w.print(loginTicket.getUserId());
 
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
-                        (new File("/var/www/html/uploadfile/"+filename)));
-        String FileUrl = "http://180.76.233.101/uploadfile/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
+                        (new File("/var/www/html/uploadfile/"
+                                +loginTicket.getUserId()+"/"+filename)));
+        String FileUrl = "http://180.76.233.101/uploadfile/"+loginTicket.getUserId()+"/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
         String docUrl = "" , picUrl = "" , videoUrl = "";
         if (FileUrl.endsWith("pdf") | FileUrl.endsWith("PDF")) {
             docUrl = FileUrl + ";";

@@ -51,9 +51,8 @@ public class WorkFillController {
         Project p = new Project();
         p.setStudentId(studentId);
         p.setCompetitionId(competitionId);
-        p.setFriends("");
         workFillDAO.createProject(p);
-        List<Project> projectList = workFillDAO.getWorkList(studentId, competitionId);
+        List<Project> projectList = workFillDAO.getWorkListTrue(studentId, competitionId);
         if(projectList.size() > 0){
             int id = projectList.get(projectList.size()-1).getId();
             return id;
@@ -95,7 +94,7 @@ public class WorkFillController {
 
     @RequestMapping(path = "/api/UpdateWork")
     @ResponseBody
-    public int UpdateWork(@RequestBody Map m){
+    public int UpdateWork(@RequestBody JSONObject m){
         String projectName = (m.get("projectName")).toString();
         String college = (m.get("college")).toString();
         int competitionType = Integer.parseInt((m.get("competitionType")).toString());
@@ -109,10 +108,8 @@ public class WorkFillController {
         String address = (m.get("address")).toString();
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
-        String friends = "";
-        if(m.get("friends") != null) {
-            friends = m.get("friends").toString();
-        }
+        String friends = m.getJSONArray("friends").toJSONString();
+      
 
         logger.error(friends);
 
@@ -207,7 +204,7 @@ public class WorkFillController {
             oldAdditionMessage.insert(oldAdditionMessage.length()-1, ", ");
             oldAdditionMessage.insert(1, ", ");
             String str = oldAdditionMessage.toString();
-            if(p.getProjectType()==0) {
+            if(p.getCompetitionType()==0) {
                 if(str.contains(", 0,")) {
                     newAdditionMessage.append(" 实物、产品 ");
                 }
@@ -293,7 +290,7 @@ public class WorkFillController {
         Project p = workFillDAO.getInfo(id);
         if(p.getAdditionalMessage()==null) {
             p.setAdditionalMessage("");
-            return p;
+            return p; 
         }
         StringBuffer newAdditionMessage = new StringBuffer();
         StringBuffer oldAdditionMessage = new StringBuffer(p.getAdditionalMessage());
@@ -301,7 +298,7 @@ public class WorkFillController {
         oldAdditionMessage.insert(1, ", ");
         String str = oldAdditionMessage.toString();
 
-        if(p.getProjectType()==0) {
+        if(p.getCompetitionType()==0) {
             if(str.contains(", 0,")) {
                 newAdditionMessage.append(" 实物、产品 ");
             }
