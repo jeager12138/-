@@ -107,15 +107,15 @@ public class UploadFileController {
         if(loginTicket.getUserType() == 0)//student
         {
 
-            filetodelete = "http://180.76.233.101/uploadfile/" + "student_" + loginTicket.getUserId() + "_" + filename + ";";
+            filetodelete = "http://180.76.233.101/uploadfile/" + loginTicket.getUserId() + "/" + "student_" + loginTicket.getUserId() + "_" + filename + ";";
         }else if(loginTicket.getUserType() == 2)//committee
         {
 
-            filetodelete = "http://180.76.233.101/uploadfile/" + "committee_" + loginTicket.getUserId() + "_" + filename + ";";
+            filetodelete = "http://180.76.233.101/uploadfile/" + loginTicket.getUserId() + "/" + "committee_" + loginTicket.getUserId() + "_" + filename + ";";
         }else
         {
 
-            filetodelete = "http://180.76.233.101/uploadfile/" + "expert_" + loginTicket.getUserId() + "_" + filename + ";";
+            filetodelete = "http://180.76.233.101/uploadfile/" + loginTicket.getUserId() + "/" + "expert_" + loginTicket.getUserId() + "_" + filename + ";";
         }
         System.out.println(filetodelete);
         Project project = workFillDAO.getInfo(id);
