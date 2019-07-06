@@ -2,10 +2,7 @@ package com.sumflower.demo.dao;
 
 
 import com.sumflower.demo.model.Judge;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -27,8 +24,8 @@ public interface JudgeDAO {
     @Insert({"insert into ", TABLE_NAME, " (", INSERT_FILEDS, ") values (#{projectId}, #{expertId}, #{expertName}, 0, #{suggestion}, 1, #{competitionId})"})
     int insertJudge(Judge judge);
 
-    @Select({"select * from ", TABLE_NAME, " where expertId=#{expertId}"})
-    List<Judge> getListByExpertId(int expertId);
+    @Select({"select * from ", TABLE_NAME, " where expertId=#{expertId} and competitionId=#{competitionId}"})
+    List<Judge> getListByExpertId(@Param("expertId") int expertId, @Param("competitionId") int competitionId);
 
     @Update({"update ", TABLE_NAME, " set judgeStatus=0 where id=#{id}"})
     int finishJudge(int id);

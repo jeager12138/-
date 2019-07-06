@@ -91,7 +91,8 @@ public class ExpertController {
     @ResponseBody
     public List<ExpertJudge> getJudgeListForExpert(@RequestBody Map m) {
         int expertId = Integer.parseInt(m.get("expertId").toString());
-        List<Judge> judgeList = judgeDAO.getListByExpertId(expertId);
+        int competitionId = competitionDAO.selectLastId();
+        List<Judge> judgeList = judgeDAO.getListByExpertId(expertId, competitionId);
         List<ExpertJudge> retList = new ArrayList<>();
         for(Judge j : judgeList) {
             int projectId = j.getProjectId();
