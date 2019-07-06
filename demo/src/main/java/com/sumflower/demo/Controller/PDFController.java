@@ -211,8 +211,10 @@ public class PDFController{
 
             String friends = p.getFriends();
             JSONArray friendlist = JSONArray.parseArray(friends);
-            JSONObject friend0 = JSON.parseObject(friendlist.get(0).toString());
-            if(friend0 != null){
+            int length = friendlist.size();
+            System.out.println(length);
+            if(length > 0){
+                JSONObject friend0 = JSON.parseObject(friendlist.get(0).toString());
                 String fname0 = friend0.get("name").toString();
                 String fNumber0 = friend0.get("studentId").toString();
                 String fEducation0 = friend0.get("education").toString();
@@ -224,8 +226,8 @@ public class PDFController{
                 data.put("fTel0",fTel0);
                 data.put("fEmail0",fEmail0);
             }
-            JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
-            if(friend1 != null){
+            if(length > 1){
+                JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
                 String fname1 = friend1.get("name").toString();
                 String fNumber1 = friend1.get("studentId").toString();
                 String fEducation1 = friend1.get("education").toString();
@@ -236,6 +238,32 @@ public class PDFController{
                 data.put("fEducation1",fEducation1);
                 data.put("fEmail1",fEmail1);
                 data.put("fTel1",fTel1);
+            }
+            if(length > 2){
+                JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
+                String fname1 = friend1.get("name").toString();
+                String fNumber1 = friend1.get("studentId").toString();
+                String fEducation1 = friend1.get("education").toString();
+                String fTel1 = friend1.get("phone").toString();
+                String fEmail1 = friend1.get("email").toString();
+                data.put("fNumber2",fNumber1);
+                data.put("fName2",fname1);
+                data.put("fEducation2",fEducation1);
+                data.put("fEmail2",fEmail1);
+                data.put("fTel2",fTel1);
+            }
+            if(length > 3){
+                JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
+                String fname1 = friend1.get("name").toString();
+                String fNumber1 = friend1.get("studentId").toString();
+                String fEducation1 = friend1.get("education").toString();
+                String fTel1 = friend1.get("phone").toString();
+                String fEmail1 = friend1.get("email").toString();
+                data.put("fNumber3",fNumber1);
+                data.put("fName3",fname1);
+                data.put("fEducation3",fEducation1);
+                data.put("fEmail3",fEmail1);
+                data.put("fTel3",fTel1);
             }
                 //Font font = new Font(bf, 12, Font.NORMAL);
             // 7遍历data 给pdf表单表格赋值
