@@ -116,8 +116,89 @@ public class PDFController{
             data.put("invention",p.getInvention());
             data.put("keywords",p.getKeywords());
 
+            if(p.getAdditionalMessage()==null) {
+                p.setAdditionalMessage("");
+            }
+            StringBuffer newAdditionMessage = new StringBuffer();
+            StringBuffer oldAdditionMessage = new StringBuffer(p.getAdditionalMessage());
+            oldAdditionMessage.insert(oldAdditionMessage.length()-1, ", ");
+            oldAdditionMessage.insert(1, ", ");
+            String str = oldAdditionMessage.toString();
+            if(p.getProjectType()==0){
+                if(str.contains(", 0,")) {
+                    data.put("showFormat1","√");
+                }
+                if(str.contains(", 1,")) {
+                    data.put("showFormat2","√");
+                }
+                if(str.contains(", 2,")) {
+                    data.put("showFormat3","√");
+                }
+                if(str.contains(", 3,")) {
+                    data.put("showFormat4","√");
+                }
+                if(str.contains(", 4,")) {
+                    data.put("showFormat5","√");
+                }
+                if(str.contains(", 5,")) {
+                    data.put("showFormat6","√");
+                }
+                if(str.contains(", 6,")) {
+                    data.put("showFormat7","√");
+                }
+                if(str.contains(", 7,")) {
+                    data.put("showFormat8","√");
+                }
+            }else{
+                if(str.contains(", 0,")) {
+                    data.put("researchFormat1","√");
+                }
+                if(str.contains(", 1,")) {
+                    data.put("researchFormat2","√");
+                }
+                if(str.contains(", 2,")) {
+                    data.put("researchFormat3","√");
+                }
+                if(str.contains(", 3,")) {
+                    data.put("researchFormat4","√");
+                }
+                if(str.contains(", 4,")) {
+                    data.put("researchFormat5","√");
+                }
+                if(str.contains(", 5,")) {
+                    data.put("researchFormat6","√");
+                }
+                if(str.contains(", 6,")) {
+                    data.put("researchFormat7","√");
+                }
+                if(str.contains(", 7,")) {
+                    data.put("researchFormat8","√");
+                }
+                if(str.contains(", 8,")) {
+                    data.put("researchFormat9","√");
+                }
+                if(str.contains(", 9,")) {
+                    data.put("researchFormat10","√");
+                }
+                if(str.contains(", 10,")) {
+                    data.put("researchFormat11","√");
+                }
+                if(str.contains(", 11,")) {
+                    data.put("researchFormat12","√");
+                }
+                if(str.contains(", 12,")) {
+                    data.put("researchFormat13","√");
+                }
+                if(str.contains(", 13,")) {
+                    data.put("researchFormat14","√");
+                }
+                if(str.contains(", 14,")) {
+                    data.put("researchFormat15","√");
+                }
+            }
 
-            //Font font = new Font(bf, 12, Font.NORMAL);
+
+                //Font font = new Font(bf, 12, Font.NORMAL);
             // 7遍历data 给pdf表单表格赋值
             for (String key : data.keySet()) {
 
