@@ -108,10 +108,8 @@ public class WorkFillController {
         String address = (m.get("address")).toString();
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
-        String friends = "";
-        if(m.get("friends") != null) {
-            friends = m.getJSONArray("friends").toJSONString();
-        }
+        String friends = m.getJSONArray("friends").toJSONString();
+      
 
         logger.error(friends);
 

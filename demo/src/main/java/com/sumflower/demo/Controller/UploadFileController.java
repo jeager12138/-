@@ -54,8 +54,9 @@ public class UploadFileController {
 
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
-                        (new File("/var/www/html/uploadfile/"+filename)));
-        String FileUrl = "http://180.76.233.101/uploadfile/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
+                        (new File("/var/www/html/uploadfile/"
+                                +loginTicket.getUserId()+"/"+filename)));
+        String FileUrl = "http://180.76.233.101/uploadfile/"+loginTicket.getUserId()+"/"+filename; //下载url 文档：pdf，图片：jpg，视频：mp4
         String docUrl = "" , picUrl = "" , videoUrl = "";
         if (FileUrl.endsWith("pdf") | FileUrl.endsWith("PDF")) {
             docUrl = FileUrl + ";";
