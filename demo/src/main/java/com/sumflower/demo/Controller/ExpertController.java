@@ -119,7 +119,7 @@ public class ExpertController {
 
         Judge j = judgeDAO.selectJudgeById(id);
         Project p = workFillDAO.getInfo(j.getProjectId());
-        double newAve = ((p.getJudgeNum()-1)*p.getAverageScore()+j.getScore())/p.getJudgeNum();
+        double newAve = p.getAverageScore()+j.getScore();
         workFillDAO.updateAverage(newAve, p.getId());
         return 0;
     }

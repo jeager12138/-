@@ -64,7 +64,15 @@ public class CommitteeController {
     public Map<String, Object> findJudgedList(@RequestBody Map m) {
         Map<String, Object> map = new HashMap<>();
         int competitionId = competitionDAO.selectLastId();
-        map.put("List", workFillDAO.getJudgedList(competitionId));
+        List<Project> projectList =workFillDAO.getJudgedList(competitionId);
+        int index = -1;
+        for(Project p : projectList) {
+            index++;
+            p.setAverageScore(p.getAverageScore()/p.getJudgeNum());
+            projectList.set(index, p);
+        }
+
+        map.put("List", projectList);
         map.put("competitionStatus", competitionDAO.getStatus(competitionId).equals("doing")?0:1);
         return map;
     }
