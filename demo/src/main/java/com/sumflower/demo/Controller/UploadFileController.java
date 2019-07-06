@@ -93,8 +93,10 @@ public class UploadFileController {
 
     @RequestMapping(path = "/deleteFile", method = RequestMethod.POST)
     @ResponseBody
-    public String delete(@RequestParam("id") int id, @RequestParam("filename") String filename)
+    public String delete(@RequestBody Map m)
     {
+        int id = Integer.parseInt(m.get("id").toString());
+        String filename = m.get("filename").toString();
         System.out.println(id);
 
         LoginTicket loginTicket = hostHolder.getLoginTicket();
