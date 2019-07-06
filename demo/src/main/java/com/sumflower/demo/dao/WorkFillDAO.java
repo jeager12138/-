@@ -13,7 +13,7 @@ public interface WorkFillDAO {
             "entryYear,projectFullName,address,phone,email,friends,projectType,details,invention,keywords,picUrl," +
             "docUrl,videoUrl,averageScore,submitStatus " ;
 
-    @Insert({"insert into Project (studentId,competitionId,competitionType,submitStatus,friends) values (#{studentId},#{competitionId}, 1, 0, #{friends})"})
+    @Insert({"insert into Project (studentId,competitionId,competitionType,submitStatus,friends,averageScore) values (#{studentId},#{competitionId}, 1, 0, #{friends}, 0)"})
     int createProject(Project project);
 
     @Update({"update Project set projectName = #{projectName},college = #{college},competitionType = #{competitionType}," +
@@ -78,6 +78,6 @@ public interface WorkFillDAO {
     @Update({"update Project set judgeNum=judgeNum+1 where id=#{id}"})
     int addJudgeNum(int id);
 
-    @Update({"update Project set averageScore=#{averageScore] where id=#{id}"})
+    @Update({"update Project set averageScore=#{averageScore} where id=#{id}"})
     int updateAverage(@Param("averageScore") double averageScore, @Param("id") int id);
 }
