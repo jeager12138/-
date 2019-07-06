@@ -36,4 +36,7 @@ public interface CompetitionDAO {
     @Select({"select competitionStatus from ", TABLE_NAME, " where id=#{id}"})
     String getStatus(int id);
 
+    @Update({"update ", TABLE_NAME, " set competitionStatus='over' where id=#{competitionId}"})
+    int finishCompetition(int competitionId);
+
 }

@@ -11,4 +11,7 @@ public interface UploadFileDao {
     @Update({"update Project set picUrl = concat(picUrl, #{picUrl}) , docUrl = concat(docUrl, #{docUrl}) , " +
             "videoUrl = concat(videoUrl, #{videoUrl}) where id = #{id}"})
     int updateFileUrl(Project project);
+
+    @Update({"update Project set picUrl = #{picUrl} , docUrl = #{docUrl}, videoUrl = #{videoUrl} where id = #{id}"})
+    int changeFileUrl(Project project);
 }
