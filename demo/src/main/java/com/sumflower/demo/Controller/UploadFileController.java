@@ -164,16 +164,31 @@ public class UploadFileController {
     public List<String> ViewFileNameList(@RequestBody Map m)
     {
         int id = Integer.parseInt(m.get("id").toString());
+        int type = Integer.parseInt(m.get("type").toString());
         Project project = workFillDAO.getInfo(id);
         String docUrl = project.getDocUrl();
         String picUrl = project.getPicUrl();
         String videoUrl = project.getVideoUrl();
-        String Url = docUrl + picUrl + videoUrl;
         String prefix = "http://180.76.233.101/uploadfile/";
-        String filenames = deleteSubString(Url, prefix);
-        String [] files = filenames.split(";");
-        List<String> lty = Arrays.asList(files);
-        return lty;
+        if(type == 1 )//doc
+        {
+            String filenames = deleteSubString(docUrl, prefix);
+            String [] files = filenames.split(";");
+            List<String> lty = Arrays.asList(files);
+            return lty;
+        }else if(type == 2)//pic
+        {
+            String filenames = deleteSubString(picUrl, prefix);
+            String [] files = filenames.split(";");
+            List<String> lty = Arrays.asList(files);
+            return lty;
+        }else //video
+        {
+            String filenames = deleteSubString(videoUrl, prefix);
+            String [] files = filenames.split(";");
+            List<String> lty = Arrays.asList(files);
+            return lty;
+        }
     }
 
     public String deleteSubString(String str1,String str2) {
