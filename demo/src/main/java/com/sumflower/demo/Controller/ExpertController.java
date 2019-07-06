@@ -101,9 +101,19 @@ public class ExpertController {
             ej.setCompetitionType(p.getCompetitionType());
             ej.setKeywords(p.getKeywords());
             ej.setProjectName(p.getProjectName());
+            ej.setProjectId(p.getId());
+            ej.setJudgeId(j.getId());
             retList.add(ej);
         }
         return retList;
+    }
+
+    @RequestMapping(path = {"/finishJudge"})
+    @ResponseBody
+    public int finishJudge(@RequestBody Map m) {
+        int id = Integer.parseInt(m.get("judgeId").toString());
+        judgeDAO.finishJudge(id);
+        return 0;
     }
 
 }

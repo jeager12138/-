@@ -29,4 +29,7 @@ public interface JudgeDAO {
 
     @Select({"select * from ", TABLE_NAME, " where expertId=#{expertId}"})
     List<Judge> getListByExpertId(int expertId);
+
+    @Update({"update ", TABLE_NAME, " set judgeStatus=0 where id=#{id}"})
+    int finishJudge(int id);
 }
