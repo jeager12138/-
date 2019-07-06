@@ -1,5 +1,7 @@
 package com.sumflower.demo.Controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -14,15 +16,12 @@ import com.sumflower.demo.model.Project;
 import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @CrossOrigin
 @Controller
@@ -32,15 +31,15 @@ public class PDFController{
 
     @RequestMapping(path = "/api/DownloadPDF")
     @ResponseBody
-    public String pdfexport(HttpServletResponse response,@RequestBody Map m) {
+    public void pdfexport(HttpServletResponse response, @RequestParam("id") int id) {
         // 指定解析器
         System.setProperty("javax.xml.parsers.DocumentBuilderFactory",
                 "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
         String filename = "科技竞赛作品提交表.pdf";
-        int id = Integer.parseInt(m.get("id").toString());
+        //int id = Integer.parseInt(m.get("id").toString());
         //int id = 12;
         Project p = workFillDAO.getInfo(id);
-        if(p == null) return "下载失败";
+        if(p == null) return;
         try {
             //设置文件头：最后一个参数是设置下载文件名(这里我们叫：个人简历.pdf)
             response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(p.getProjectFullName()+ ".pdf", "UTF-8"));
@@ -50,6 +49,7 @@ public class PDFController{
             e1.printStackTrace();
         }
         OutputStream os = null;
+        //FileOutputStream os = new FileOutputStream(filename);
         PdfStamper ps = null;
         PdfReader reader = null;
         try {
@@ -61,7 +61,7 @@ public class PDFController{
              *
              */
             // 2 读入pdf表单
-            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技竞赛作品申报表.pdf");
+            reader = new PdfReader(PDFController.class.getResource("/PDF/") + "科技作品申报表.pdf");
 
             // 3 根据表单生成一个新的pdf
             ps = new PdfStamper(reader, os);
@@ -141,6 +141,7 @@ public class PDFController{
                 e.printStackTrace();
             }
         }
-        return "下载成功";
     }
+
+
 }
