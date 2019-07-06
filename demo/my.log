@@ -8248,3 +8248,224 @@ java.io.FileNotFoundException: /var/www/html/uploadfile/student_2_捕获.PNG (No
 2019-07-06 21:48:59.397  INFO 11272 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2019-07-06 21:48:59.398  INFO 11272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2019-07-06 21:48:59.423  INFO 11272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2019-07-06 21:53:04.886  INFO 22028 --- [main] com.sumflower.demo.DemoApplicationTests  : Starting DemoApplicationTests on DESKTOP-9GB1UTG with PID 22028 (started by WInjace in E:\WorkSpace\Spring\Sunflower-Cup-Competition-Reporting-System\demo)
+2019-07-06 21:53:04.929  INFO 22028 --- [main] com.sumflower.demo.DemoApplicationTests  : No active profile set, falling back to default profiles: default
+2019-07-06 21:53:04.968  INFO 22028 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Sat Jul 06 21:53:04 CST 2019]; root of context hierarchy
+2019-07-06 21:53:08.146  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Sat Jul 06 21:53:04 CST 2019]; root of context hierarchy
+2019-07-06 21:53:08.216  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.passProject(java.util.Map)
+2019-07-06 21:53:08.224  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getJudgeDetails]}" onto public java.util.List<com.sumflower.demo.model.Judge> com.sumflower.demo.Controller.CommitteeController.getJudgeDetails(java.util.Map)
+2019-07-06 21:53:08.226  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveBackProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.giveBackProject(java.util.Map)
+2019-07-06 21:53:08.226  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showAlreadyList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CommitteeController.showAlreadyList()
+2019-07-06 21:53:08.226  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectProject(java.util.Map)
+2019-07-06 21:53:08.226  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findJudgedList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.CommitteeController.findJudgedList(java.util.Map)
+2019-07-06 21:53:08.226  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passFirstTest]}" onto public int com.sumflower.demo.Controller.CommitteeController.passFirstTest(java.util.Map)
+2019-07-06 21:53:08.226  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectFirstTest]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectFirstTest(java.util.Map)
+2019-07-06 21:53:08.230  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCompetition],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.addCompetition(java.util.Map)
+2019-07-06 21:53:08.230  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveRewards]}" onto public int com.sumflower.demo.Controller.CompetitionController.giveRewards(java.util.Map)
+2019-07-06 21:53:08.230  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCompetitionInfo]}" onto public java.util.List<com.sumflower.demo.model.Competition> com.sumflower.demo.Controller.CompetitionController.competition()
+2019-07-06 21:53:08.230  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCompetitionState]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.getCompetitionStatus(java.util.Map)
+2019-07-06 21:53:08.234  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updateCompetitionInfo]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.updateCompetitionInfo(java.util.Map)
+2019-07-06 21:53:08.235  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/finishCompetition]}" onto public int com.sumflower.demo.Controller.CompetitionController.finishCompetition(java.util.Map)
+2019-07-06 21:53:08.235  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCompetitionResult]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CompetitionController.getCompetitionResult(java.util.Map)
+2019-07-06 21:53:08.237  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/inviteExperts],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.EmailController.SendEmail(java.util.Map)
+2019-07-06 21:53:08.241  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewExpertList],methods=[POST]}" onto public java.util.List<com.sumflower.demo.model.ExpertLogin> com.sumflower.demo.Controller.EmailController.ViewExpertList(java.util.Map)
+2019-07-06 21:53:08.241  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getJudgeDetail]}" onto public com.sumflower.demo.model.Judge com.sumflower.demo.Controller.ExpertController.getJudgeDetail(java.util.Map)
+2019-07-06 21:53:08.241  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/acceptInvite]}" onto public int com.sumflower.demo.Controller.ExpertController.acceptInvite(java.util.Map)
+2019-07-06 21:53:08.245  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/finishJudge]}" onto public int com.sumflower.demo.Controller.ExpertController.finishJudge(java.util.Map)
+2019-07-06 21:53:08.246  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getJudgeListForExpert]}" onto public java.util.List<com.sumflower.demo.model.ExpertJudge> com.sumflower.demo.Controller.ExpertController.getJudgeListForExpert(java.util.Map)
+2019-07-06 21:53:08.246  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updateJudgeDetail]}" onto public java.lang.String com.sumflower.demo.Controller.ExpertController.updateJudgeDetail(java.util.Map)
+2019-07-06 21:53:08.247  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentLogin(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-06 21:53:08.247  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/expertReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.expertReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-06 21:53:08.251  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/studentReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-06 21:53:08.251  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DownloadPDF]}" onto public void com.sumflower.demo.Controller.PDFController.pdfexport(javax.servlet.http.HttpServletResponse,int)
+2019-07-06 21:53:08.251  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/springUpload]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.springUpload(javax.servlet.http.HttpServletRequest) throws java.lang.IllegalStateException,java.io.IOException
+2019-07-06 21:53:08.251  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testHttpServletRequest]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.suc(javax.servlet.http.HttpServletRequest)
+2019-07-06 21:53:08.251  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/setCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.setCookies(javax.servlet.http.HttpServletResponse)
+2019-07-06 21:53:08.251  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.getCookies(javax.servlet.http.HttpServletRequest)
+2019-07-06 21:53:08.251  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/get]}" onto public int com.sumflower.demo.Controller.TerryTestController.get(javax.servlet.http.HttpServletRequest)
+2019-07-06 21:53:08.255  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testMysql]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.test()
+2019-07-06 21:53:08.255  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testCookie]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.testCookie()
+2019-07-06 21:53:08.257  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/post]}" onto public java.util.Map com.sumflower.demo.Controller.TerryTestController.post(java.util.Map)
+2019-07-06 21:53:08.258  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deleteFile],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.delete(java.util.Map)
+2019-07-06 21:53:08.258  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewFileNameList],methods=[POST]}" onto public java.util.List<java.lang.String> com.sumflower.demo.Controller.UploadFileController.ViewFileNameList(java.util.Map)
+2019-07-06 21:53:08.259  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/upload],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.upload(int,org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2019-07-06 21:53:08.259  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api5]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WinjaceController.api5(java.util.Map)
+2019-07-06 21:53:08.260  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api2],methods=[GET]}" onto public java.lang.String com.sumflower.demo.Controller.WinjaceController.api2()
+2019-07-06 21:53:08.261  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/FinishWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.FinishWork(java.util.Map)
+2019-07-06 21:53:08.261  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWorkCookie]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWorkCookie(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-06 21:53:08.262  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/UpdateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.UpdateWork(com.alibaba.fastjson.JSONObject)
+2019-07-06 21:53:08.262  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkList(java.util.Map)
+2019-07-06 21:53:08.262  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfo]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfo(java.util.Map)
+2019-07-06 21:53:08.263  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DeleteWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.DeleteWork(java.util.Map)
+2019-07-06 21:53:08.263  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWork(java.util.Map)
+2019-07-06 21:53:08.264  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkListForJane]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkListForJane(java.util.Map)
+2019-07-06 21:53:08.264  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfoForJane]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfoForJane(java.util.Map)
+2019-07-06 21:53:08.269  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-06 21:53:08.269  INFO 22028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-06 21:53:08.307  INFO 22028 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-06 21:53:08.308  INFO 22028 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-06 21:53:08.360  INFO 22028 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-06 21:53:08.686  INFO 22028 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Sat Jul 06 21:53:04 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-07-06 21:53:08.688  INFO 22028 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-07-06 21:53:08.713  WARN 22028 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-07-06 21:53:08.994  INFO 22028 --- [main] com.sumflower.demo.DemoApplicationTests  : Started DemoApplicationTests in 4.518 seconds (JVM running for 5.748)
+2019-07-06 21:53:09.053  INFO 22028 --- [Thread-3] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@50b5ac82: startup date [Sat Jul 06 21:53:04 CST 2019]; root of context hierarchy
+2019-07-06 22:18:33.800  INFO 20020 --- [restartedMain] com.sumflower.demo.DemoApplication       : Starting DemoApplication on DESKTOP-9GB1UTG with PID 20020 (E:\WorkSpace\Spring\Sunflower-Cup-Competition-Reporting-System\demo\target\classes started by WInjace in E:\WorkSpace\Spring\Sunflower-Cup-Competition-Reporting-System\demo)
+2019-07-06 22:18:33.800  INFO 20020 --- [restartedMain] com.sumflower.demo.DemoApplication       : No active profile set, falling back to default profiles: default
+2019-07-06 22:18:33.925  INFO 20020 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@613f6861: startup date [Sat Jul 06 22:18:33 CST 2019]; root of context hierarchy
+2019-07-06 22:18:36.828  INFO 20020 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-07-06 22:18:36.859  INFO 20020 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-06 22:18:36.859  INFO 20020 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2019-07-06 22:18:37.000  INFO 20020 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-06 22:18:37.000  INFO 20020 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3075 ms
+2019-07-06 22:18:37.203  INFO 20020 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-07-06 22:18:37.234  INFO 20020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-07-06 22:18:37.234  INFO 20020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-07-06 22:18:37.234  INFO 20020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-07-06 22:18:37.234  INFO 20020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-07-06 22:18:38.235  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@613f6861: startup date [Sat Jul 06 22:18:33 CST 2019]; root of context hierarchy
+2019-07-06 22:18:38.314  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showAlreadyList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CommitteeController.showAlreadyList()
+2019-07-06 22:18:38.314  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.passProject(java.util.Map)
+2019-07-06 22:18:38.314  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectProject(java.util.Map)
+2019-07-06 22:18:38.314  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/rejectFirstTest]}" onto public int com.sumflower.demo.Controller.CommitteeController.rejectFirstTest(java.util.Map)
+2019-07-06 22:18:38.314  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getJudgeDetails]}" onto public java.util.List<com.sumflower.demo.model.Judge> com.sumflower.demo.Controller.CommitteeController.getJudgeDetails(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveBackProject]}" onto public int com.sumflower.demo.Controller.CommitteeController.giveBackProject(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findJudgedList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.CommitteeController.findJudgedList(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/passFirstTest]}" onto public int com.sumflower.demo.Controller.CommitteeController.passFirstTest(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/giveRewards]}" onto public int com.sumflower.demo.Controller.CompetitionController.giveRewards(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCompetition],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.addCompetition(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCompetitionInfo]}" onto public java.util.List<com.sumflower.demo.model.Competition> com.sumflower.demo.Controller.CompetitionController.competition()
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updateCompetitionInfo]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.updateCompetitionInfo(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCompetitionState]}" onto public java.lang.String com.sumflower.demo.Controller.CompetitionController.getCompetitionStatus(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/finishCompetition]}" onto public int com.sumflower.demo.Controller.CompetitionController.finishCompetition(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCompetitionResult]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.CompetitionController.getCompetitionResult(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/inviteExperts],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.EmailController.SendEmail(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewExpertList],methods=[POST]}" onto public java.util.List<com.sumflower.demo.model.ExpertLogin> com.sumflower.demo.Controller.EmailController.ViewExpertList(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/acceptInvite]}" onto public int com.sumflower.demo.Controller.ExpertController.acceptInvite(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getJudgeDetail]}" onto public com.sumflower.demo.model.Judge com.sumflower.demo.Controller.ExpertController.getJudgeDetail(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/finishJudge]}" onto public int com.sumflower.demo.Controller.ExpertController.finishJudge(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getJudgeListForExpert]}" onto public java.util.List<com.sumflower.demo.model.ExpertJudge> com.sumflower.demo.Controller.ExpertController.getJudgeListForExpert(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updateJudgeDetail]}" onto public java.lang.String com.sumflower.demo.Controller.ExpertController.updateJudgeDetail(java.util.Map)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/studentReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.studentLogin(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/expertReg/],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.sumflower.demo.Controller.LoginController.expertReg(java.util.Map,javax.servlet.http.HttpServletResponse)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DownloadPDF]}" onto public void com.sumflower.demo.Controller.PDFController.pdfexport(javax.servlet.http.HttpServletResponse,int)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.getCookies(javax.servlet.http.HttpServletRequest)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testHttpServletRequest]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.suc(javax.servlet.http.HttpServletRequest)
+2019-07-06 22:18:38.329  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/springUpload]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.springUpload(javax.servlet.http.HttpServletRequest) throws java.lang.IllegalStateException,java.io.IOException
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/setCookies]}" onto public java.lang.String com.sumflower.demo.Controller.RanderousController.setCookies(javax.servlet.http.HttpServletResponse)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/get]}" onto public int com.sumflower.demo.Controller.TerryTestController.get(javax.servlet.http.HttpServletRequest)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testMysql]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.test()
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/post]}" onto public java.util.Map com.sumflower.demo.Controller.TerryTestController.post(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testCookie]}" onto public java.lang.String com.sumflower.demo.Controller.TerryTestController.testCookie()
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deleteFile],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.delete(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/upload],methods=[POST]}" onto public java.lang.String com.sumflower.demo.Controller.UploadFileController.upload(int,org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewFileNameList],methods=[POST]}" onto public java.util.List<java.lang.String> com.sumflower.demo.Controller.UploadFileController.ViewFileNameList(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api5]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WinjaceController.api5(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api2],methods=[GET]}" onto public java.lang.String com.sumflower.demo.Controller.WinjaceController.api2()
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkListForJane]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkListForJane(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfoForJane]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfoForJane(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/UpdateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.UpdateWork(com.alibaba.fastjson.JSONObject)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkList]}" onto public java.util.List<com.sumflower.demo.model.Project> com.sumflower.demo.Controller.WorkFillController.ViewWorkList(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/ViewWorkInfo]}" onto public com.sumflower.demo.model.Project com.sumflower.demo.Controller.WorkFillController.ViewWorkInfo(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/FinishWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.FinishWork(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWork(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/CreateWorkCookie]}" onto public int com.sumflower.demo.Controller.WorkFillController.CreateWorkCookie(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/DeleteWork]}" onto public int com.sumflower.demo.Controller.WorkFillController.DeleteWork(java.util.Map)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-06 22:18:38.345  INFO 20020 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-07-06 22:18:38.392  INFO 20020 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-06 22:18:38.392  INFO 20020 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-06 22:18:38.439  INFO 20020 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-07-06 22:18:38.735  INFO 20020 --- [restartedMain] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@613f6861: startup date [Sat Jul 06 22:18:33 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-07-06 22:18:38.735  INFO 20020 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-07-06 22:18:38.767  WARN 20020 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-07-06 22:18:39.173  INFO 20020 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-06 22:18:39.435  INFO 20020 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-07-06 22:18:39.591  INFO 20020 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-07-06 22:18:39.591  INFO 20020 --- [restartedMain] com.sumflower.demo.DemoApplication       : Started DemoApplication in 6.479 seconds (JVM running for 9.731)
+2019-07-06 22:20:28.226  INFO 20020 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-06 22:20:28.227  INFO 20020 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-07-06 22:20:28.262  INFO 20020 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 35 ms
+2019-07-06 22:21:55.540 ERROR 20020 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'averageScore] where id=#{id' not found. Available parameters are [id, param1, averageScore, param2]] with root cause
+
+org.apache.ibatis.binding.BindingException: Parameter 'averageScore] where id=#{id' not found. Available parameters are [id, param1, averageScore, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:186) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:79) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:93) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198) ~[mybatis-3.4.0.jar:3.4.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434) ~[mybatis-spring-1.3.0.jar:1.3.0]
+	at com.sun.proxy.$Proxy68.update(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:295) ~[mybatis-spring-1.3.0.jar:1.3.0]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:59) ~[mybatis-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) ~[mybatis-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy79.updateAverage(Unknown Source) ~[na:na]
+	at com.sumflower.demo.Controller.ExpertController.finishJudge(ExpertController.java:122) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:849) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:760) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.22.RELEASE.jar:4.3.22.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2019-07-06 22:21:55.622  INFO 20020 --- [Thread-16] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@613f6861: startup date [Sat Jul 06 22:18:33 CST 2019]; root of context hierarchy
+2019-07-06 22:21:55.626  INFO 20020 --- [Thread-16] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

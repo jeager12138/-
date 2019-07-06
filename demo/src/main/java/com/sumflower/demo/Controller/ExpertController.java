@@ -75,9 +75,10 @@ public class ExpertController {
         judge.setJudgeStatus(1);
         judge.setExpertName(expertName);
         List<Judge> list = judgeDAO.getJudge(judge);
-        workFillDAO.addJudgeNum(projectId);
+
         if(list.size()==0) {
             judgeDAO.insertJudge(judge);
+            workFillDAO.addJudgeNum(projectId);
         }
         else {
             //nothing happened
