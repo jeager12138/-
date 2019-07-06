@@ -52,7 +52,7 @@ public class WorkFillController {
         p.setStudentId(studentId);
         p.setCompetitionId(competitionId);
         workFillDAO.createProject(p);
-        List<Project> projectList = workFillDAO.getWorkList(studentId, competitionId);
+        List<Project> projectList = workFillDAO.getWorkListTrue(studentId, competitionId);
         if(projectList.size() > 0){
             int id = projectList.get(projectList.size()-1).getId();
             return id;
@@ -108,10 +108,8 @@ public class WorkFillController {
         String address = (m.get("address")).toString();
         String phone = (m.get("phone")).toString();
         String email =  (m.get("email")).toString();
-        String friends = "";
-        if(m.get("friends") != null) {
-            friends = m.getJSONArray("friends").toJSONString();
-        }
+        String friends = m.getJSONArray("friends").toJSONString();
+      
 
         logger.error(friends);
 
