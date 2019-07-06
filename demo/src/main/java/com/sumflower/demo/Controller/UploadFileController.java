@@ -222,7 +222,7 @@ public class UploadFileController {
             obj[1] = delCount;
         }else {
             //不存在返回-1
-            obj[0] = -1;
+            obj[0] = str1;
             obj[1] = -1;
         }
         String newstr = obj[0].toString();
