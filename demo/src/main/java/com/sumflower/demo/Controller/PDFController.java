@@ -211,8 +211,8 @@ public class PDFController{
 
             String friends = p.getFriends();
             JSONArray friendlist = JSONArray.parseArray(friends);
-            JSONObject friend0 = JSON.parseObject(friendlist.get(0).toString());
-            if(friend0 != null){
+            if(friendlist.get(0) != null){
+                JSONObject friend0 = JSON.parseObject(friendlist.get(0).toString());
                 String fname0 = friend0.get("name").toString();
                 String fNumber0 = friend0.get("studentId").toString();
                 String fEducation0 = friend0.get("education").toString();
@@ -224,8 +224,8 @@ public class PDFController{
                 data.put("fTel0",fTel0);
                 data.put("fEmail0",fEmail0);
             }
-            JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
-            if(friend1 != null){
+            if(friendlist.get(1) != null){
+                JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
                 String fname1 = friend1.get("name").toString();
                 String fNumber1 = friend1.get("studentId").toString();
                 String fEducation1 = friend1.get("education").toString();
