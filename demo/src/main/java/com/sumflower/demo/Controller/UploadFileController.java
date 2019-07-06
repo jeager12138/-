@@ -33,6 +33,7 @@ public class UploadFileController {
         LoginTicket loginTicket = hostHolder.getLoginTicket();
         String filename = "";
         System.out.println(loginTicket.getUserType());
+        String originfilename = file.getOriginalFilename();
         if(loginTicket.getUserType() == 0)//student
         {
 
@@ -58,8 +59,8 @@ public class UploadFileController {
         }
 
         //用于实时生成新的zip文件
-        Writer w = new FileWriter("/var/www/html/uploadfile/updateFolder",false);
-        w.write(loginTicket.getUserId());
+        PrintStream w = new PrintStream("/var/www/html/uploadfile/updateFolder");
+        w.print(loginTicket.getUserId());
 
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
@@ -87,13 +88,15 @@ public class UploadFileController {
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
-        return "Finished";
+        return originfilename;
     }
 
     @RequestMapping(path = "/deleteFile", method = RequestMethod.POST)
     @ResponseBody
-    public String delete(@RequestParam("id") int id, @RequestParam("filename") String filename)
+    public String delete(@RequestBody Map m)
     {
+        int id = Integer.parseInt(m.get("id").toString());
+        String filename = m.get("filename").toString();
         System.out.println(id);
 
         LoginTicket loginTicket = hostHolder.getLoginTicket();
