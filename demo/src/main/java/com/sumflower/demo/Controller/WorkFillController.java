@@ -52,7 +52,7 @@ public class WorkFillController {
         p.setStudentId(studentId);
         p.setCompetitionId(competitionId);
         workFillDAO.createProject(p);
-        List<Project> projectList = workFillDAO.getWorkList(studentId, competitionId);
+        List<Project> projectList = workFillDAO.getWorkListTrue(studentId, competitionId);
         if(projectList.size() > 0){
             int id = projectList.get(projectList.size()-1).getId();
             return id;
