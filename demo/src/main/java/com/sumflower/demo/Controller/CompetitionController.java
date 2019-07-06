@@ -121,7 +121,7 @@ public class CompetitionController {
     @RequestMapping(path = {"/finishCompetition"})
     @ResponseBody
     public int finishCompetition(@RequestBody Map m) {
-        int id = Integer.parseInt(m.get("competitionId").toString());
+        int id = competitionDAO.selectLastId();
         return competitionDAO.finishCompetition(id);
     }
 

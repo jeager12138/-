@@ -4,7 +4,11 @@ package com.sumflower.demo.Controller;
 import com.sumflower.demo.dao.CompetitionDAO;
 import com.sumflower.demo.dao.ExpertLoginDAO;
 import com.sumflower.demo.dao.JudgeDAO;
+import com.sumflower.demo.dao.WorkFillDAO;
+import com.sumflower.demo.model.ExpertJudge;
+import com.sumflower.demo.model.ExpertLogin;
 import com.sumflower.demo.model.Judge;
+import com.sumflower.demo.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,6 +27,8 @@ public class ExpertController {
     CompetitionDAO competitionDAO;
     @Autowired
     ExpertLoginDAO expertLoginDAO;
+    @Autowired
+    WorkFillDAO workFillDAO;
 
     @RequestMapping(path = {"/updateJudgeDetail"})
     @ResponseBody
@@ -75,8 +81,29 @@ public class ExpertController {
             //nothing happened
         }
 
-
         return 0;
+    }
+
+    @RequestMapping(path = {"/getJudgeListForExpert"})
+    @ResponseBody
+    public List<ExpertJudge> getJudgeListForExpert(@RequestBody Map m) {
+        int expertId = Integer.parseInt(m.get("expertId").toString());
+        List<Judge> judgeList = judgeDAO.getListByExpertId(expertId);
+        List<ExpertJudge> retList = new ArrayList<>();
+        for(Judge j : judgeList) {
+            int projectId = j.getProjectId();
+            Project p = workFillDAO.getInfo(projectId);
+            if(p == null) {
+                continue;
+            }
+            ExpertJudge ej = new ExpertJudge();
+            ej.setJudgeStatus(j.getJudgeStatus());
+            ej.setCompetitionType(p.getCompetitionType());
+            ej.setKeywords(p.getKeywords());
+            ej.setProjectName(p.getProjectName());
+            retList.add(ej);
+        }
+        return retList;
     }
 
 }

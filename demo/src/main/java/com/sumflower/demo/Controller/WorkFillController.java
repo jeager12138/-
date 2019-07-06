@@ -51,6 +51,7 @@ public class WorkFillController {
         Project p = new Project();
         p.setStudentId(studentId);
         p.setCompetitionId(competitionId);
+        p.setFriends("");
         workFillDAO.createProject(p);
         List<Project> projectList = workFillDAO.getWorkList(studentId, competitionId);
         if(projectList.size() > 0){
