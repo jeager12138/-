@@ -95,7 +95,7 @@ public class WorkFillController {
 
     @RequestMapping(path = "/api/UpdateWork")
     @ResponseBody
-    public int UpdateWork(@RequestBody Map m){
+    public int UpdateWork(@RequestBody JSONObject m){
         String projectName = (m.get("projectName")).toString();
         String college = (m.get("college")).toString();
         int competitionType = Integer.parseInt((m.get("competitionType")).toString());
@@ -111,7 +111,7 @@ public class WorkFillController {
         String email =  (m.get("email")).toString();
         String friends = "";
         if(m.get("friends") != null) {
-            friends = m.get("friends").toString();
+            friends = m.getJSONArray("friends").toJSONString();
         }
 
         logger.error(friends);
