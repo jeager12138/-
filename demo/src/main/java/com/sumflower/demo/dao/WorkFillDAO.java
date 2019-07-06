@@ -66,4 +66,9 @@ public interface WorkFillDAO {
     @Select({"select * from ", TABLE_NAME, " where competitionId=#{competitionId} and competitionType=#{competitionType} and rewardLevel=#{grade}"})
     List<Project> getRewardList(@Param("competitionId") int competitionId, @Param("competitionType") int competitionType, @Param("grade") int grade);
 
+    @Update({"update Project set judgeNum=judgeNum+1 where id=#{id}"})
+    int addJudgeNum(int id);
+
+    @Update({"update Project set averageScore=#{averageScore] where id=#{id}"})
+    int updateAverage(@Param("averageScore") double averageScore, @Param("id") int id);
 }
