@@ -4443,7 +4443,7 @@ org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or nu
 2019-07-05 18:39:54.721 ERROR 6335 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : ############
 2019-07-05 18:39:54.721 ERROR 6335 --- [http-nio-8080-exec-1] c.s.d.interceptor.PassportInterceptor    : null
 2019-07-05 18:40:33.664  INFO 6335 --- [http-nio-8080-exec-1] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
-2019-07-05 18:40:33.847 ERROR 6335 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+2019-07-05 18:40:33.847 ERROR 6335 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException:
 ### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '), videoUrl = null) where id = 27' at line 1
 ### The error may involve com.sumflower.demo.dao.UploadFileDao.changeFileUrl-Inline
 ### The error occurred while setting parameters
@@ -4725,7 +4725,7 @@ Caused by: java.io.EOFException: Can not read response from server. Expected to 
 	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3472) ~[mysql-connector-java-5.1.47.jar:5.1.47]
 	... 96 common frames omitted
 
-2019-07-05 18:43:56.530 ERROR 6344 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+2019-07-05 18:43:56.530 ERROR 6344 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException:
 ### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
 
 The last packet successfully received from the server was 10 milliseconds ago.  The last packet sent successfully to the server was 9 milliseconds ago.
@@ -5126,7 +5126,7 @@ java.io.FileNotFoundException: /var/www/html/uploadfile/student_2_捕获.PNG (No
 2019-07-06 09:21:31.623  WARN 7498 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by handler execution: org.springframework.web.bind.MissingServletRequestParameterException: Required int parameter 'id' is not present
 2019-07-06 09:22:16.620  WARN 7498 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by handler execution: org.springframework.web.bind.MissingServletRequestParameterException: Required int parameter 'id' is not present
 2019-07-06 09:23:50.992  INFO 7498 --- [http-nio-8080-exec-7] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
-2019-07-06 09:23:51.127 ERROR 7498 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+2019-07-06 09:23:51.127 ERROR 7498 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException:
 ### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '), videoUrl = null) where id = 12' at line 1
 ### The error may involve com.sumflower.demo.dao.UploadFileDao.changeFileUrl-Inline
 ### The error occurred while setting parameters
