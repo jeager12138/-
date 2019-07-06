@@ -293,7 +293,7 @@ public class WorkFillController {
         Project p = workFillDAO.getInfo(id);
         if(p.getAdditionalMessage()==null) {
             p.setAdditionalMessage("");
-            return p;
+            return p; 
         }
         StringBuffer newAdditionMessage = new StringBuffer();
         StringBuffer oldAdditionMessage = new StringBuffer(p.getAdditionalMessage());
