@@ -124,7 +124,7 @@ public class PDFController{
             oldAdditionMessage.insert(oldAdditionMessage.length()-1, ", ");
             oldAdditionMessage.insert(1, ", ");
             String str = oldAdditionMessage.toString();
-            if(p.getProjectType()==0){
+            if(p.getCompetitionType()==0){
                 if(str.contains(", 0,")) {
                     data.put("showFormat1","√");
                 }
