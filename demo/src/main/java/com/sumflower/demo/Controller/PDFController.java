@@ -10,6 +10,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.itextpdf.text.Font;
 import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.Project;
@@ -92,7 +95,16 @@ public class PDFController{
             data.put("studentName",p.getStudentName());
             data.put("studentNumber",p.getStudentNumber());
             data.put("birthDay",p.getBirthDay());
-            data.put("education",p.getEducation());
+            String education = p.getEducation();
+            if(education.equals("大专")){
+                data.put("education","A");
+            }else if(education.equals("大学本科")){
+                data.put("education","B");
+            }else if(education.equals("硕士研究生")){
+                data.put("education","C");
+            }else if(education.equals("博士研究生")){
+                data.put("education","D");
+            }
             data.put("major",p.getMajor());
             data.put("entryYear",p.getEntryYear());
             data.put("projectFullName",p.getProjectFullName());
@@ -197,7 +209,34 @@ public class PDFController{
                 }
             }
 
-
+            String friends = p.getFriends();
+            JSONArray friendlist = JSONArray.parseArray(friends);
+            JSONObject friend0 = JSON.parseObject(friendlist.get(0).toString());
+            if(friend0 != null){
+                String fname0 = friend0.get("name").toString();
+                String fNumber0 = friend0.get("studentId").toString();
+                String fEducation0 = friend0.get("education").toString();
+                String fTel0 = friend0.get("phone").toString();
+                String fEmail0 = friend0.get("email").toString();
+                data.put("fNumber0",fNumber0);
+                data.put("fName0",fname0);
+                data.put("fEducation0",fEducation0);
+                data.put("fTel0",fTel0);
+                data.put("fEmail0",fEmail0);
+            }
+            JSONObject friend1 = JSON.parseObject(friendlist.get(1).toString());
+            if(friend1 != null){
+                String fname1 = friend1.get("name").toString();
+                String fNumber1 = friend1.get("studentId").toString();
+                String fEducation1 = friend1.get("education").toString();
+                String fTel1 = friend1.get("phone").toString();
+                String fEmail1 = friend1.get("email").toString();
+                data.put("fNumber1",fNumber1);
+                data.put("fName1",fname1);
+                data.put("fEducation1",fEducation1);
+                data.put("fEmail1",fEmail1);
+                data.put("fTel1",fTel1);
+            }
                 //Font font = new Font(bf, 12, Font.NORMAL);
             // 7遍历data 给pdf表单表格赋值
             for (String key : data.keySet()) {
