@@ -50,7 +50,15 @@ public class UploadFileController {
         /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
                 new FileOutputStream(new File(filename)));
+        File dir = new File(""+loginTicket.getUserId());
         */
+
+        File dir = new File("/var/www/html/uploadfile/"
+                +loginTicket.getUserId());
+
+        if(!dir.exists()){
+            dir.mkdir();
+        }
 
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
