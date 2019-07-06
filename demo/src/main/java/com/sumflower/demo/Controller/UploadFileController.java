@@ -36,6 +36,7 @@ public class UploadFileController {
         LoginTicket loginTicket = hostHolder.getLoginTicket();
         String filename = "";
         System.out.println(loginTicket.getUserType());
+        String originfilename = file.getOriginalFilename();
         if(loginTicket.getUserType() == 0)//student
         {
 
@@ -77,7 +78,7 @@ public class UploadFileController {
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
-        return "Finished";
+        return originfilename;
     }
 
     @RequestMapping(path = "/deleteFile", method = RequestMethod.POST)
