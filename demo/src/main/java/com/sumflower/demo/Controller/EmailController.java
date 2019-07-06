@@ -34,7 +34,7 @@ public class EmailController {
     @RequestMapping(path = {"/inviteExperts"}, method = RequestMethod.POST)
     @ResponseBody
     public String SendEmail(@RequestBody Map m){
-        String[] receivers = (m.get("receivers").toString()).split(",");
+        String[] receivers = (m.get("emails").toString()).split(",");
         String[] expertId = (m.get("expertId").toString()).split(",");
         String projectId = (m.get("projectId").toString());
         for(int i =0; i < receivers.length; ++i ) {
