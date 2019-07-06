@@ -165,11 +165,23 @@ public class UploadFileController {
     {
         int id = Integer.parseInt(m.get("id").toString());
         int type = Integer.parseInt(m.get("type").toString());
+        LoginTicket loginTicket = hostHolder.getLoginTicket();
+        int usertypenum = loginTicket.getUserType();
         Project project = workFillDAO.getInfo(id);
         String docUrl = project.getDocUrl();
         String picUrl = project.getPicUrl();
         String videoUrl = project.getVideoUrl();
-        String prefix = "http://180.76.233.101/uploadfile/";
+        String prefix = "http://180.76.233.101/uploadfile/"+loginTicket.getUserId()+"/";
+        if(usertypenum == 0)//students
+        {
+            prefix = prefix + "student_" + loginTicket.getUserId() + "_";
+        }else if(usertypenum == 1)//experts
+        {
+            prefix = prefix + "expert_" + loginTicket.getUserId() + "_";
+        }else //committee
+        {
+            prefix = prefix + "committee_" + loginTicket.getUserId() + "_";
+        }
         if(type == 1 )//doc
         {
             String filenames = deleteSubString(docUrl, prefix);
