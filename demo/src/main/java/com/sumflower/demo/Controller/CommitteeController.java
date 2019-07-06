@@ -77,6 +77,18 @@ public class CommitteeController {
         return judgeDAO.selectJudge(projectId);
     }
 
+    @RequestMapping(path = {"/passFirstTest"})
+    @ResponseBody
+    public int passFirstTest(@RequestBody Map m) {
+        String projectIdList = m.get("projectId").toString();
+        StringBuffer sb = new StringBuffer("(");
+        sb.append(projectIdList);
+        sb.append(")");
+        String str = sb.toString();
+        workFillDAO.passProjectList(str);
+        return 0;
+    }
+
 
 
 }

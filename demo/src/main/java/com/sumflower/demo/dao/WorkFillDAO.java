@@ -30,6 +30,9 @@ public interface WorkFillDAO {
     @Update({"update Project set submitStatus = 2 where id = #{id}"})
     int passProject(int id);
 
+    @Update({"update Project set submitStatus = 2 where id in ${projectId}"})
+    int passProjectList(@Param("projectId") String projectId);
+
     @Update({"update Project set submitStatus = 3 where id = #{id}"})
     int rejectProject(int id);
 
