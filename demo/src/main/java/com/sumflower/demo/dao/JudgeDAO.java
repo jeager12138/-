@@ -32,4 +32,7 @@ public interface JudgeDAO {
 
     @Update({"update ", TABLE_NAME, " set judgeStatus=0 where id=#{id}"})
     int finishJudge(int id);
+
+    @Select({"select * from ", TABLE_NAME, " where id=#{id}"})
+    Judge selectJudgeById(int id);
 }
