@@ -38,8 +38,8 @@ public class EmailController {
         String[] expertId = (m.get("expertId").toString()).split(",");
         String projectId = (m.get("projectId").toString());
         for(int i =0; i < receivers.length; ++i ) {
-            String context = "接受邀请：(http://127.0.0.1:8000/user/register-expert?expertId=" + expertId[i] +
-                    "&projectId=" + projectId + ")，拒绝邀请：（link2）";
+            String context = "接受邀请：(http://180.76.233.101/user/register-expert?expertId=" + expertId[i] +
+                    "&projectId=" + projectId + ")，拒绝邀请：（http://180.76.233.101/user/invitation-result）";
             emailService.send(receivers[i], context);
         }
         return "发送邀请邮件成功！";
