@@ -1,8 +1,7 @@
 package com.sumflower.demo.Controller;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import com.sumflower.demo.dao.UploadFileDao;
@@ -36,6 +35,7 @@ public class UploadFileController {
         LoginTicket loginTicket = hostHolder.getLoginTicket();
         String filename = "";
         System.out.println(loginTicket.getUserType());
+        String originfilename = file.getOriginalFilename();
         if(loginTicket.getUserType() == 0)//student
         {
 
@@ -50,7 +50,19 @@ public class UploadFileController {
         /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
                 new FileOutputStream(new File(filename)));
+        File dir = new File(""+loginTicket.getUserId());
         */
+
+        File dir = new File("/var/www/html/uploadfile/"
+                +loginTicket.getUserId());
+
+        if(!dir.exists()){
+            dir.mkdir();
+        }
+
+        //用于实时生成新的zip文件
+        PrintStream w = new PrintStream("/var/www/html/uploadfile/updateFolder");
+        w.print(loginTicket.getUserId());
 
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
@@ -78,13 +90,15 @@ public class UploadFileController {
         outputStream.write(file.getBytes());
         outputStream.flush();
         outputStream.close();
-        return "Finished";
+        return originfilename;
     }
 
     @RequestMapping(path = "/deleteFile", method = RequestMethod.POST)
     @ResponseBody
-    public String delete(@RequestParam("id") int id, @RequestParam("filename") String filename)
+    public String delete(@RequestBody Map m)
     {
+        int id = Integer.parseInt(m.get("id").toString());
+        String filename = m.get("filename").toString();
         System.out.println(id);
 
         LoginTicket loginTicket = hostHolder.getLoginTicket();
@@ -143,6 +157,38 @@ public class UploadFileController {
             uploadFileDao.changeFileUrl(newproject);
         }
         return "File deleted";
+    }
+
+    @RequestMapping(path = "/viewFileNameList" , method = RequestMethod.POST)
+    @ResponseBody
+    public List<String> ViewFileNameList(@RequestBody Map m)
+    {
+        int id = Integer.parseInt(m.get("id").toString());
+        int type = Integer.parseInt(m.get("type").toString());
+        Project project = workFillDAO.getInfo(id);
+        String docUrl = project.getDocUrl();
+        String picUrl = project.getPicUrl();
+        String videoUrl = project.getVideoUrl();
+        String prefix = "http://180.76.233.101/uploadfile/";
+        if(type == 1 )//doc
+        {
+            String filenames = deleteSubString(docUrl, prefix);
+            String [] files = filenames.split(";");
+            List<String> lty = Arrays.asList(files);
+            return lty;
+        }else if(type == 2)//pic
+        {
+            String filenames = deleteSubString(picUrl, prefix);
+            String [] files = filenames.split(";");
+            List<String> lty = Arrays.asList(files);
+            return lty;
+        }else //video
+        {
+            String filenames = deleteSubString(videoUrl, prefix);
+            String [] files = filenames.split(";");
+            List<String> lty = Arrays.asList(files);
+            return lty;
+        }
     }
 
     public String deleteSubString(String str1,String str2) {

@@ -16,7 +16,7 @@ public interface WorkFillDAO {
     @Insert({"insert into Project (studentId,competitionId,competitionType,submitStatus,friends) values (#{studentId},#{competitionId}, 1, 0, #{friends})"})
     int createProject(Project project);
 
-    @Update({"update Project set projectName = #{projectName},college = #{college},competitionType = 1," +
+    @Update({"update Project set projectName = #{projectName},college = #{college},competitionType = #{competitionType}," +
             "studentName = #{studentName},studentNumber = #{studentNumber},birthDay = #{birthDay},education = #{education}," +
             "major = #{major},entryYear = #{entryYear},projectFullName = #{projectFullName},address = #{address}," +
             "phone = #{phone},email = #{email},friends = #{friends},projectType = #{projectType},details = #{details}," +
@@ -29,6 +29,12 @@ public interface WorkFillDAO {
 
     @Update({"update Project set submitStatus = 2 where id = #{id}"})
     int passProject(int id);
+
+    @Update({"update Project set submitStatus = 2 where id in ${projectId}"})
+    int passProjectList(@Param("projectId") String projectId);
+
+    @Update({"update Project set submitStatus = 3 where id in ${projectId}"})
+    int rejectProjectList(@Param("projectId") String projectId);
 
     @Update({"update Project set submitStatus = 3 where id = #{id}"})
     int rejectProject(int id);
