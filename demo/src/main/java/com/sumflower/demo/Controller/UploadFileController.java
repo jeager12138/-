@@ -1,5 +1,7 @@
 package com.sumflower.demo.Controller;
 import java.io.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import com.sumflower.demo.dao.UploadFileDao;
@@ -155,6 +157,23 @@ public class UploadFileController {
             uploadFileDao.changeFileUrl(newproject);
         }
         return "File deleted";
+    }
+
+    @RequestMapping(path = "/viewFileNameList" , method = RequestMethod.POST)
+    @ResponseBody
+    public List<String> ViewFileNameList(@RequestBody Map m)
+    {
+        int id = Integer.parseInt(m.get("id").toString());
+        Project project = workFillDAO.getInfo(id);
+        String docUrl = project.getDocUrl();
+        String picUrl = project.getPicUrl();
+        String videoUrl = project.getVideoUrl();
+        String Url = docUrl + picUrl + videoUrl;
+        String prefix = "http://180.76.233.101/uploadfile/";
+        String filenames = deleteSubString(Url, prefix);
+        String [] files = filenames.split(";");
+        List<String> lty = Arrays.asList(files);
+        return lty;
     }
 
     public String deleteSubString(String str1,String str2) {
