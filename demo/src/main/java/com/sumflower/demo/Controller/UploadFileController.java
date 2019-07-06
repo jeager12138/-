@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import com.sumflower.demo.dao.UploadFileDao;
+import com.sumflower.demo.dao.WorkFillDAO;
 import com.sumflower.demo.model.HostHolder;
 import com.sumflower.demo.model.LoginTicket;
 import com.sumflower.demo.model.Project;
@@ -23,6 +24,9 @@ public class UploadFileController {
     @Autowired
     UploadFileDao uploadFileDao;
 
+    @Autowired
+    WorkFillDAO workFillDAO;
+
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public String upload(@RequestParam("id") int id , @RequestParam("file") MultipartFile file) throws IOException {// 文件上传
@@ -35,13 +39,13 @@ public class UploadFileController {
         if(loginTicket.getUserType() == 0)//student
         {
 
-            filename = "student_"+loginTicket.getUserId() + "_" + file.getOriginalFilename();
+            filename = "student_" + loginTicket.getUserId() + "_" + file.getOriginalFilename();
         }else if(loginTicket.getUserType() == 2)//committee
         {
-            filename = "committee" + "_" +file.getOriginalFilename();
+            filename = "committee" + "_" + file.getOriginalFilename();
         }else
         {
-            filename = "expert_"+file.getOriginalFilename();
+            filename = "expert_" + file.getOriginalFilename();
         }
         /*本地测试
         BufferedOutputStream outputStream = new BufferedOutputStream(
@@ -75,5 +79,74 @@ public class UploadFileController {
         outputStream.flush();
         outputStream.close();
         return "Finished";
+    }
+
+    @RequestMapping(path = "/deleteFile", method = RequestMethod.POST)
+    @ResponseBody
+    public String delete(@RequestParam("id") int id, @RequestParam("filename") String filename)
+    {
+        System.out.println(id);
+
+        LoginTicket loginTicket = hostHolder.getLoginTicket();
+        String filetodelete;
+        System.out.println(loginTicket.getUserType());
+        if(loginTicket.getUserType() == 0)//student
+        {
+
+            filetodelete = "http://liuterry.cn/uploadfile/" + "student_" + loginTicket.getUserId() + "_" + filename + ";";
+        }else if(loginTicket.getUserType() == 2)//committee
+        {
+            filetodelete = "http://liuterry.cn/uploadfile/" + "committee" + "_" + filename + ";";
+        }else
+        {
+            filetodelete = "http://liuterry.cn/uploadfile/" + "expert_" + filename + ";";
+        }
+        System.out.println(filetodelete);
+        Project project = workFillDAO.getInfo(id);
+        String docUrltodelete = project.getDocUrl();
+        String picUrltodelete = project.getPicUrl();
+        String videoUrltodelete = project.getVideoUrl();
+        System.out.println(picUrltodelete);
+
+        Project newproject = new Project();
+        newproject.setId(id);
+        if (filetodelete.endsWith("pdf") | filetodelete.endsWith("PDF")) {
+            String newdocUrl = deleteSubString(docUrltodelete, filetodelete );
+            newproject.setDocUrl(newdocUrl);
+            newproject.setPicUrl(picUrltodelete);
+            newproject.setVideoUrl(videoUrltodelete);
+        }else if(filetodelete.endsWith("png") | filetodelete.endsWith("PNG"))
+        {
+            String newpicUrl = deleteSubString(picUrltodelete, filetodelete);
+            newproject.setPicUrl(newpicUrl);
+            newproject.setDocUrl(docUrltodelete);
+            newproject.setVideoUrl(videoUrltodelete);
+        }else if(filetodelete.endsWith("mp4") | filetodelete.endsWith("MP4"))
+        {
+            String newvideoUrl = deleteSubString(videoUrltodelete, filetodelete);
+            newproject.setVideoUrl(newvideoUrl);
+            newproject.setDocUrl(docUrltodelete);
+            newproject.setPicUrl(picUrltodelete);
+        }
+
+        uploadFileDao.changeFileUrl(newproject);
+        return "File deleted";
+    }
+
+    public String deleteSubString(String str1,String str2) {
+        StringBuffer sb = new StringBuffer(str1);
+        int delCount = 0;
+        String newstr = "";
+
+        while (true) {
+            int index = sb.indexOf(str2);
+            if(index == -1) {
+                break;
+            }
+            sb.delete(index, index+str2.length());
+            delCount++;
+        }
+        newstr = sb.toString();
+        return newstr;
     }
 }
