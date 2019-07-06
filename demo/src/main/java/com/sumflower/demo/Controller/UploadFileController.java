@@ -58,8 +58,8 @@ public class UploadFileController {
         }
 
         //用于实时生成新的zip文件
-        Writer w = new FileWriter("/var/www/html/uploadfile/updateFolder",false);
-        w.write(loginTicket.getUserId());
+        PrintStream w = new PrintStream("/var/www/html/uploadfile/updateFolder");
+        w.print(loginTicket.getUserId());
 
         BufferedOutputStream outputStream =
                 new BufferedOutputStream(new FileOutputStream
