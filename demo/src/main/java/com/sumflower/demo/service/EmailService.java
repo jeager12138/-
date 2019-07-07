@@ -15,7 +15,7 @@ public class EmailService {
     static String TO = ""; // 收件人地址
     static String USER = "sunflowercup@163.com"; // 用户名
     static String PWD = "sunflower1234"; // 163的授权码
-    static String SUBJECT = "向日葵小班邀请您参加翻斗花园小霸王争霸赛！"; // 邮件标题
+    static String SUBJECT = "向日葵小班邀请您参加第三届向日葵杯科技竞赛！"; // 邮件标题
     static String[] TOS = TO.split(",");
     /**
      * 发送邮件
